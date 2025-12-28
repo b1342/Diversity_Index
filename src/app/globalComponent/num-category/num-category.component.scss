@@ -1,0 +1,36 @@
+.cubReport{
+  background-color: #FFFFFF;
+  width:100%; 
+  margin-top: 10px;
+  color: #0C3058;
+  font-size:0.83em;
+  direction: ltr;
+  height: 100%; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cssCSV{
+  display: inline-block; 
+  padding-right: 10px;
+  height: 95%;
+  text-align: right;
+}
+
+.image{  
+  width:  50%; 
+  cursor: pointer; 
+}
+
+.colorCatgory{ 
+    display: inline-block;
+    border-radius: 4px;
+    margin-left: 5px;
+    margin-top: 5px;
+    padding: 6px;
+    min-width:30%;
+    max-width:30%;
+    // min-height:43%;
+    // max-height:43%;
+    text-align: center;
+}

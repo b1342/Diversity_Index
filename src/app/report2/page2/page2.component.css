@@ -1,0 +1,50 @@
+.tblGraf
+  { border-collapse:separate; 
+    margin-right: 5px;
+    border-spacing: 0 1em;}
+
+
+.tblGraf td{
+    border-radius: 5px;     
+    height: 50%;
+    padding-left: 2%;   
+    font-size: 1.2em;
+    color: #0c3058;   
+    background-color: #ffffff;
+
+   
+}
+/* .cssCSV{
+    cursor: pointer;
+    vertical-align: top;
+}
+.image{
+    width: 15px;
+    height: 30px;
+    margin: 1%;
+} */
+.txtImage{
+    font-size: 0.6em;
+    margin-right: 10%;
+    color: #0C3058;
+}
+
+
+.tblGraf td div{
+    /* padding-left: 3%;
+    padding-right: 20px; */
+   
+}
+
+.divGraf{
+    width: 100%;
+}
+
+.fillGraf{
+    width: 100%;
+    background-color: red;
+}
+.academicImg{
+    border-radius: 5px;
+    border-right: solid 5px;    
+}

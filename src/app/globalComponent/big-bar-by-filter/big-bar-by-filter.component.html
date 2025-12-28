@@ -1,0 +1,19 @@
+
+
+
+<div class="row-item" >   
+    <div class="stateNoData" *ngIf="maxScala < 0">אין נתונים להצגה</div>      
+       <ul style="list-style: none;padding: 0;width: 90%;" *ngIf="maxScala > 0" >
+       <li *ngFor="let item of godelData ;  let i = index;" style="padding: 0;height: 15%;">          
+        <div class="tdDiv"  style="margin: 5px;">
+            <div class=" shem" >
+                    {{getGodelName(i+1)[0]?.name}}
+            </div>    
+            <div class="tdDiv-inside"
+                [ngStyle]="{'width':(stateData(i+1)[0]?.count_emp / maxScala )*60 + '%','background-color':colorCatgory(i+1)}"></div>
+             <span class="achuz">{{stateData(i+1)[0]?.count_emp | number:'1.0-2'}}
+            </span>
+        </div>  
+</li>
+</ul> 
+</div>

@@ -1,0 +1,29 @@
+.dilog{   
+    height: 50%; 
+    width: 550px;
+    color: black; 
+}
+.tdPerot{
+    width: 100%;   
+    padding-right:10px;
+    height: 100%; 
+    text-align: right;
+    direction: rtl; 
+    padding: 3% 10% 3% 15%;
+    line-height: 25px;
+    background-color: #ffffff;    
+    width: 100%;
+    font-weight: 500;
+}
+
+.remark{
+    font-size: 25px
+}
+
+.thanc{
+    text-align: center;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 3% 15% 3% 15%;;
+}
+.tdPerot a{ text-decoration: underline; }

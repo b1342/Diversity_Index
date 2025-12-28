@@ -1,0 +1,37 @@
+.tags{
+  font-size: 0.85em;
+  
+}
+.tagSpan{   
+ height: 25px;
+ line-height: 25px;
+ padding: 0px 10px;  
+ display: inline-block; 
+ color: #0C3058;  
+}
+.tags a{
+ background-color: #BAD1F8;
+ height: 25px;
+ line-height: 25px;
+ padding: 0px 10px;
+ border-radius: 30px;
+ min-width :142px;
+ display: inline-block;
+ color: #0C3058;
+ cursor: pointer;
+}
+
+.perotMDD{
+  font-size: 0.99em;font-weight: 400; display: inline-block;
+  color: #015F8B;
+  font-style: italic;
+  cursor: pointer;    
+}
+
+.imageMDD{
+  height: 2%;
+  width: 1%;
+  position: absolute;
+  
+  
+}

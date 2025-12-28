@@ -1,0 +1,221 @@
+/* You can add global styles to this file, and also import other style files */
+/* @import "../node_modules/bootstrap/dist/css/bootstrap.min.css"; */
+
+@media only screen and (min-width: 1000px) {
+  body{
+    font-size: 14px;
+   
+    }
+  }
+@media only screen and (min-width: 1200px) {
+  body{
+    font-size: 15px;
+    
+    }
+  }
+@media only screen and (min-width: 1300px) {
+  body{
+    font-size: 16px;
+   
+    }
+  }
+  @media only screen and (min-width: 1400px) {
+    body{
+      font-size: 18px;
+      }
+  }
+  @media only screen and (min-width: 1600px) {
+    body{
+      font-size: 20px;
+      }
+    }
+  @media only screen and (min-width: 1800px) {
+    body{
+      font-size: 22px;
+      }    
+  }
+@font-face {
+    font-family: "Rubik";
+    src: local("Rubik"), url(./assets/fonts/rubik/Rubik-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Rubik";
+  src: local("Rubik"), url(./assets/fonts/rubik/Rubik-Italic.ttf) format("truetype");
+  font-style: italic;
+}
+@font-face {
+  font-family: "Rubik";
+  src: local("Rubik"), url(./assets/fonts/rubik/Rubik-SemiBold.ttf) format("truetype");
+  font-weight: 600;
+}
+@font-face {
+font-family: "Rubik";
+src: local("Rubik"), url(./assets/fonts/rubik/Rubik-SemiBoldItalic.ttf) format("truetype");
+font-style: italic;
+font-weight: 600;
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: local("Rubik"), url(./assets/fonts/rubik/Rubik-Bold.ttf) format("truetype");
+  font-weight: 700;
+}
+@font-face {
+font-family: "Rubik";
+src: local("Rubik"), url(./assets/fonts/rubik/Rubik-BoldItalic.ttf) format("truetype");
+font-style: italic;
+font-weight: 700;
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: local("Rubik"), url(./assets/fonts/rubik/Rubik-ExtraBold.ttf) format("truetype");
+  font-weight: 800;
+}
+@font-face {
+font-family: "Rubik";
+src: local("Rubik"), url(./assets/fonts/rubik/Rubik-ExtraBoldItalic.ttf) format("truetype");
+font-style: italic;
+font-weight: 800;
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: local("Rubik"), url(./assets/fonts/rubik/Rubik-Black.ttf) format("truetype");
+  font-weight: 900;
+}
+@font-face {
+font-family: "Rubik";
+src: local("Rubik"), url(./assets/fonts/rubik/Rubik-BlackItalic.ttf) format("truetype");
+font-style: italic;
+font-weight: 900;
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: local("Rubik"), url(./assets/fonts/rubik/Rubik-Medium.ttf) format("truetype");
+  font-weight: 500;
+} 
+
+@font-face {
+  font-family: "Rubik";
+  src: local("Rubik"), url(./assets/fonts/rubik/Rubik-MediumItalic.ttf) format("truetype");
+  font-weight: 500;
+  font-style: italic;
+} 
+@font-face {
+  font-family: "Rubik";
+  src: local("Rubik"), url(./assets/fonts/rubik/Rubik-Light.ttf) format("truetype");
+  font-weight: 300;
+} 
+@font-face {
+  font-family: "Rubik";
+  src: local("Rubik"), url(./assets/fonts/rubik/Rubik-LightItalic.ttf) format("truetype");
+  font-weight: 300;
+  font-style: italic;
+} 
+
+@font-face {
+  font-family: "Rubik";
+  src: local("Rubik"), url(./assets/fonts/rubik/Rubik-Regular.ttf) format("truetype");
+  font-weight: 400;  
+} 
+
+@font-face {
+  font-family: "Rubik";
+  src: local("Rubik"), url(./assets/fonts/rubik/Rubik-Italic.ttf) format("truetype");
+  font-weight: 400;  
+  font-style: italic;  
+} 
+@font-face {
+  font-family: "Heebo";
+  src: local("Heebo"), url(./assets/fonts/static/Heebo-Regular.ttf) format("truetype");
+  font-weight: 400;  
+} 
+@font-face {
+  font-family: "Heebo";
+  src: local("Heebo"), url(./assets/fonts/static/Heebo-Medium.ttf) format("truetype");
+  font-weight: 500;    
+} 
+html, body {
+  background: transparent;
+  font-family: "Rubik", 'Rubik' !important;
+  margin: 0;
+  padding: 0;    
+  overflow-y: hidden;
+  font-weight: 400;
+  
+}
+input {
+    font-family: "Rubik", 'Rubik' !important;
+}
+ul{
+  margin:0px;
+}
+.sticky { position: fixed; top: 0; width: 100%;z-index: 999;}
+
+.highlightClass{
+  background-color: #FFFF00
+}
+.container{
+  display: block;
+}
+.mat-content {
+  display: inline-block !important;
+  width: 100%;
+}
+.mat-expansion-panel-header {
+  height:auto !important;
+  display: inline-block !important;
+  width: 100%;
+}
+.mat-expansion-panel-content{
+  display: none !important;
+}
+.mat-expanded p{
+  margin: 0;
+  text-overflow: initial !important;
+  white-space: break-spaces !important;
+  overflow: hidden;
+  direction: rtl;
+}
+
+.mat-expansion-panel-spacing {
+  margin: 0px 0 !important;
+}
+
+.mat-expanded .list-item-arrow div {
+      
+  background-image: url(/assets/arrowUp.png) !important ;
+  
+}
+.mat-dialog-container{
+  padding:7px 12px 12px 12px !important;
+} 
+/*.cdk-global-scrollblock {
+  overflow-x: hidden;
+} */
+.chart{
+  width: 100%;
+  height: 100%;
+  float: right;
+  margin-bottom: 0px !important; 
+}
+.echarts-div{
+  margin-bottom: 0px !important;
+}
+
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #015F8B; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+

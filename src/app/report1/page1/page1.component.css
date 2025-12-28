@@ -1,0 +1,88 @@
+.tblGraf
+  { border-collapse:separate; 
+    border-spacing: 0 0em;}
+
+
+.tblGraf td{
+    border-radius: 5px;
+    border-top: solid 10px #f2f7ff;
+    border-right: solid 5px #f2f7ff;
+    border-left: solid 5px #f2f7ff;
+    width: 33%;
+    height: 50%;      
+    font-size: 1.2em;
+    color: #0c3058;   
+    background-color: #ffffff;
+
+   
+}
+
+.tblGraf td div{
+    padding-left: 5px;
+    padding-right: 5px;
+   
+    width: 100%;
+   
+   
+}
+
+.tdContainer{
+    height: 80%;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    
+
+}
+.perotMDD{
+    font-size: 0.99em;font-weight: 400; display: inline-block;
+    cursor: pointer;
+    color: #015F8B;
+    font-style: italic;}
+
+.stateNoData{
+    font-size: 0.7em;
+    text-align:center;
+    margin-top: 12%;
+}
+.chart{
+    margin-bottom: 0px;  
+}
+.tags{
+    font-size: 0.8em;
+    
+}
+.tagSpan{   
+   height: 25px;
+   line-height: 25px;
+   padding: 0px 10px;  
+   display: inline-block; 
+}
+ .tags a{
+   background-color: #BAD1F8;
+   height: 25px;
+   line-height: 25px;
+   padding: 0px 10px;
+   border-radius: 30px;
+   min-width :142px;
+   display: inline-block; 
+   color: #0C3058;
+   cursor: pointer;
+}
+.image{
+    height: 2%;
+    width: 1%;
+    position: absolute;
+    
+    
+}
+.cssCSV{
+    cursor: pointer;
+}
+.divHaeder{
+    float: right;
+    margin-right: 15px;
+}
+
+.kotar{
+    height: 25px;
+}

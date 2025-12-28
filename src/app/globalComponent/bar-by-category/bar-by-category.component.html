@@ -1,0 +1,17 @@
+
+<div class="row-item" >
+      <div class="stateNoData" *ngIf="maxScala < 0">אין נתונים להצגה</div> 
+       <ul style="list-style: none;padding: 0;width: 70%;"  *ngIf="maxScala > 0">
+       <li *ngFor="let item of givunGroupData ;  let i = index;" style="padding: 0;height: 2%;">
+        <div class="tdDiv"  style="margin: 0px;">
+             <div class="tdDiv-inside"
+                [ngStyle]="{'width':(stateData(item.value)[0]?.value / maxScala )*80 +'%','background-color':colorCatgory(item.value)}"></div>
+             <span class="achuz">{{stateData(item.value)[0]?.value | number:'1.0-' + numToFixed}}
+            </span>
+        </div>  
+</li>
+</ul> 
+<div  title="אקסל"  *ngIf="maxScala > 0" class="cssCSV" (click)="exportAsCSV()">
+      <img class="image" src="./assets/Library/Icons/svg/excel.svg"  />
+</div>  
+</div>

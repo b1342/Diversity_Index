@@ -1,0 +1,70 @@
+.tdDiv{
+  background-color:white; 
+  width: 100%;
+  margin-top: 3%;
+
+}
+.tdDiv-inside{
+ float: left; 
+ margin:1% 0% 1% 0%;
+ vertical-align: bottom;
+ height: 0.8em;
+}
+.shem{ 
+    float: left !important;    
+    text-align: left;
+    margin-right: 2px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;  
+    max-width: 20%; 
+    min-width: 20%;   
+}
+.achuz
+{       
+    text-align: left;
+    padding-left: 2px;
+    float: left !important;
+}
+.row-item div
+{
+   
+    display: inline-block;
+   
+
+}
+
+
+.row-item
+{   
+    width: 100%;   
+    background-color: #FFFFFF;  
+    color: #0C3058;  
+    display: flex;
+    padding-top: 5%;
+    justify-content: center;
+    max-width: 100%;
+    height: 100%;
+    font-size: 0.9em;
+}
+
+.divTbl4 .row-item
+{
+  font-size: 0.73em !important;
+}
+
+.divTbl4 .tdDiv-inside{
+   height: 0.7em !important;
+   margin-top:1% 0% 1% 0% !important;
+}
+
+
+.divTbl4 li{
+  height: 5% !important;
+}
+
+.stateNoData{
+  font-size: 0.7em;
+  text-align:center;
+  margin-top: 12%;
+}

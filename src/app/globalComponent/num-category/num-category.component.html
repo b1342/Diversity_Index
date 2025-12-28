@@ -1,0 +1,26 @@
+<div class="cubReport">
+      <div  title="אקסל"  *ngIf="stateData(1).length>0||stateData(2).length>0||stateData(3).length>0||stateData(4).length>0||stateData(5).length>0" class="cssCSV" (click)="exportAsCSV()">
+          <img class="image" src="./assets/Library/Icons/svg/excel.svg"  />
+      </div>
+    <!-- <div class="stateNoData" *ngIf="stateData.length < 1">אין נתונים להצגה</div>   -->
+    <div  style="width: 80%;">   
+          <div class="colorCatgory" [ngStyle]="{'border': '0.5px solid' + colorCatgory(1), 'color': colorCatgory(1)}">
+                <span *ngIf="stateData(1).length>0">{{stateData(1)[0]?.value | number:'1.0-0' }}</span> 
+                <span *ngIf="stateData(1).length<1">-</span></div>
+          <div class="colorCatgory" [ngStyle]="{'border': '0.5px solid' + colorCatgory(2), 'color': colorCatgory(2)}">
+                <span *ngIf="stateData(2).length>0">{{stateData(2)[0]?.value | number:'1.0-0' }}</span> 
+                <span *ngIf="stateData(2).length<1">-</span></div>   
+          <div class="colorCatgory" [ngStyle]="{'border': '0.5px solid' + colorCatgory(3), 'color': colorCatgory(3)}">
+                <span *ngIf="stateData(3).length>0">{{stateData(3)[0]?.value | number:'1.0-0' }}</span> 
+                <span *ngIf="stateData(3).length<1">-</span></div> 
+          <br> 
+          <div class="colorCatgory" [ngStyle]="{'border': '0.5px solid' + colorCatgory(4), 'color': colorCatgory(4)}">
+                <span *ngIf="stateData(4).length>0">{{stateData(4)[0]?.value | number:'1.0-0' }}</span> 
+                <span *ngIf="stateData(4).length<1">-</span> </div>         
+          <div class="colorCatgory" [ngStyle]="{'border': '0.5px solid' + colorCatgory(5), 'color': colorCatgory(5)}">
+             <span *ngIf="stateData(5).length>0">{{stateData(5)[0]?.value | number:'1.0-0' }}</span> 
+             <span *ngIf="stateData(5).length<1">-</span>
+         </div>
+   </div> 
+    
+</div>

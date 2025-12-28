@@ -1,0 +1,104 @@
+
+<div class="header-cont" *ngIf="appStore.homePageData && appStore.homePageSumData && appStore.homePageSumAllData" [ngStyle]="{'height': height + 'px' }">
+    <table style="width:100%;height: 100%;">
+      <tr style="width:100%;height: 10%;">        
+        <td colspan="6" style="vertical-align: bottom">
+            <!-- <img class="logo" src="./assets/worldIcon.png"   > -->
+            <div class="title" style="font-size: 1.3em;" >מבט על קבוצות המדד 
+               <span class="span_title">(נתוני {{numAll[0]?.year}})</span> 
+             </div>
+            <div (click)="openAgdarotMadd()" >                
+                <div class="perotMDD" ><img  src="./assets/Library/Icons/svg/info.svg"  /> 
+                  <span style="margin-right: 3px;">הגדרות המדד</span> </div>
+             </div> 
+          </td> 
+        
+          </tr>
+           <tr style="width:100%;height: 70%;">
+            <td  [ngStyle]="{'width':17 +'%'}"> 
+              <div style="width:100%;height: 100%">
+                <div  class="homeIn" style="width:100%;height: 48%" > 
+                    <div style="display: inline-block;padding-top: 26%" >
+                        <div class="title" >{{numAll[0]?.value | number:'1.0-2'}}</div><br>
+                        <div class="span_title">כלל האוכ' בגיל העבודה<br>(64-18)</div>
+                        <div style="" > 
+                          <img class="image" src="./assets/Library/Icons/Png/VectorBottom.png"  /> 
+                        </div>                       
+                     </div>
+                      <div style="display:inline-block;float:left;margin-top: 30%;" >
+                          <img class="image" src="./assets/Library/Icons/Png/Vector.png" /> 
+                      </div>                
+                  
+                 </div> 
+                 <div  class="homeIn sumForAcdemic" >
+                    <div style="display: inline-block;padding-top: 6%" >
+                        <div class="title" >{{numAllAcadmic[0]?.value | number:'1.0-2'}}%</div><br>
+                        <div class="span_title">אקדמאים, מתוכם</div>
+                     </div>
+                      <div style="display:inline-block;float:left;margin-top: 10%;" >
+                        <img class="image" src="./assets/Library/Icons/Png/VectorFFFFF.png"  /> 
+                      </div>
+                 </div>           
+                 <div  class="homeIn sumForAcdemic">  
+                 <div style="display: inline-block;padding-top: 6%" >
+                    <div class="title" >{{numAllNoAcadmic[0]?.value | number:'1.0-2'}}%</div><br>
+                    <div class="span_title">לא אקדמאים, מתוכם</div>
+                 </div>
+                  <div style="display:inline-block;float:left;margin-top: 10%;" >
+                    <img class="image" src="./assets/Library/Icons/Png/VectorFFFFF.png"  /> 
+                  </div>
+             </div> 
+            </div>       
+            </td>   
+           <td  [ngStyle]="{'width':16.5 +'%'}" >
+<!--               <div  class="homeIn">
+                 
+                  <div class="title" >
+                    <span style="margin-right: 3px;">{{numAll}}</span>
+                    <img class="image" src="./assets/Library/Icons/Png/Vector.png" /> 
+                  </div>
+                   <div class="numAcademic" >
+                    <span style="margin-right: 3px;">כלל האוכ' בגיל העבודה<br>(64-18) </span>
+                   </div>
+                    <div class="numNoAcademic" >
+                      <img class="image" src="./assets/Library/Icons/Png/VectorBottom.png"  /> 
+                    </div>
+               </div>  -->
+               <graf_in_page style="height: 100%;" catgory=1></graf_in_page>
+              
+           </td>
+           
+          <td  [ngStyle]="{'width':16.5 +'%'}">             
+              <graf_in_page style="height: 100%;" catgory=2></graf_in_page>
+          </td>  
+          <td  [ngStyle]="{'width':16.5 +'%'}">             
+              <graf_in_page style="height: 100%;" catgory=3></graf_in_page>
+          </td>  
+          <td  [ngStyle]="{'width':16.5 +'%'}">             
+              <graf_in_page style="height: 100%;" catgory=4></graf_in_page>
+          </td> 
+          <td  [ngStyle]="{'width':16.5 +'%'}">             
+              <graf_in_page style="height: 100%;" catgory=5></graf_in_page>
+          </td> 
+                              
+                                  
+      </tr>
+      <tr  style="width:100%;height: 20%;">
+          <td colspan="6" class="remark">
+              <div style="margin-top: 15px;"><span style="font-weight: 700; font-size: 18px;">צוות המדד</span> </div>
+              <div><span class="remarkKotar">פרופ' אלכסנדרה קלב,</span><br>החוג לסוציולוגיה ואנתרופולוגיה, <br>אוניברסיטת תל אביב</div>
+              <div><span class="remarkKotar">יפית אלפנדרי,</span><br>לשכת הסטטיסטיקן הלאומי, <br>הלשכה המרכזית לסטטיסטיקה</div>
+              <div><span class="remarkKotar">אילה גינת,</span><br>אגף מיקרו-כלכלה, <br>הלשכה המרכזית לסטטיסטיקה</div>
+              <div><span class="remarkKotar">ציפי ברמן, </span><br>עורכת ראשית ומעצבת המדד<br>עורכת המדד מטעם נציבות שיוויון הזדמנויות</div>
+              <div class="opisoft" ><img style="vertical-align: bottom;" src="./assets/Library/logos/opisoft.png"  /> 
+                <div style="font-weight: 600">powerd by</div> 
+             </div> 
+
+          </td>
+      </tr>
+       </table>
+    <div></div>
+    </div>
+  
+  
+  

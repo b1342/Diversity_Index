@@ -1,0 +1,58 @@
+<div  class="kotar">
+    <div (click)="openPage()" style="cursor: pointer;" class="selectTitel"> 
+      <img src="./assets/Library/Icons/Png/Arrow back.png"  /> חזרה</div>
+    <div>  השוואת נתוני <br> הגיוון ב 4 ענפים</div>  
+    <div  class="kotar-filter">סינון לפי</div>
+            <div class="selectTitel">גודל עסק</div>
+            <select
+            (change)="onSelect($event,godelFilter,'godel')" [(ngModel)]="appStore.selectgodel">
+                <option *ngFor="let godel of godelFilter" [ngValue]="godel">
+                  {{godel.name}}
+                </option>
+          </select>  
+          <!-- <select
+                (change)="onSelect($event)" [(ngModel)]="selectedMosad">
+                <option *ngFor="let mosad of yearFilter" [ngValue]="mosad">
+                  {{mosad.name}}
+                </option>
+          </select>    -->
+          <div class="selectTitel">שנים</div>
+          <select *ngIf="appStore.yearFilterData"
+          (change)="onSelect($event,yearFilter,'year')"  [(ngModel)]="appStore.selectyear">
+                <option *ngFor="let year of yearFilter" [ngValue]="year">
+                  {{year.name}}
+                </option>
+          </select> 
+          <div class="selectTitel">מין</div>  
+          <select 
+          (change)="onSelect($event,ganderFilter,'gander')"[(ngModel)]="appStore.selectgander">
+                <option *ngFor="let gander of ganderFilter" [ngValue]="gander">
+                  {{gander.name}}
+                </option>
+          </select>  
+          <div class="selectTitel">גיל</div>  
+          <select 
+                (change)="onSelect($event,gilFilter,'gil')" [(ngModel)]="appStore.selectgil">
+                <option *ngFor="let gil of gilFilter" [ngValue]="gil">
+                  {{gil.name}}
+                </option>
+          </select> 
+           <div class="selectTitel">השכלה</div> 
+          <select
+              (change)="onSelect($event,academicFilter,'academic')" [(ngModel)]="appStore.selectacademic">
+              <option *ngFor="let academic of academicFilter" [ngValue]="academic">
+                {{academic.name}}
+              </option>
+            </select>  
+          
+          <div (click)="loadFiltersData()">
+              
+             <div class="remark"> <img class="image" src="./assets/Library/Icons/svg/reset.svg"  /> 
+              <span style="margin-right: 5px;">נקה</span></div>
+           </div>  
+           <!-- <div (click)="openAgdarotMadd()" >
+                 
+                 <div class="perotMDD" ><img class="image" src="./assets/Library/Icons/svg/info.svg"  /> 
+                  <span style="margin-right: 5px;">הגדרות המדד</span> </div>
+           </div>    -->
+    </div>

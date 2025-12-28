@@ -1,0 +1,41 @@
+.cubReport{
+    background-color: #D0E2FF;
+    width:100%;
+    margin-top: 10px;
+    color: #0C3058;
+    font-size:0.83em;
+    display: flex;
+    align-items: center;
+    padding-right: 15%;
+}
+
+.divTbl{
+    margin-right: 10px;
+    width: 19.8%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.colorCatgory{
+    width: 5px;
+    height: 5px;
+    display: inline-block;
+    margin-left: 3px;
+    vertical-align: middle;
+}
+
+.tagSpan{   
+    display: inline-block; 
+    color: #0C3058;  
+    font-size: 0.85em;
+    width: 100%
+   }
+.tagSpan select{   
+    background: #FFFFFF;
+    border: 1px solid #BAD1F8;
+    border-radius: 30px;
+    padding: 3px;
+    width: 100%;
+    color: #0C3058;
+    font-size: 0.85em;
+   }

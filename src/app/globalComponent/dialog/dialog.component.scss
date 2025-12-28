@@ -1,0 +1,100 @@
+
+.mat-dialog-title{
+    direction: rtl;
+    text-align: right;
+  
+}
+
+.mat-dialog-content{  
+    direction: rtl;
+    text-align: right;
+  
+    }
+
+.tblDilog{
+    font-size: 0.8em;font-weight: 400; display: inline-block;
+    border-collapse:separate; 
+    border-spacing: 0 0em;
+    width: 90%;
+    display: table;
+    margin-top: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
+
+
+   
+}
+.tblDilog td{
+    //border-radius: 5px;
+    // border-top: solid 10px #f2f7ff;
+    // border-right: solid 5px #f2f7ff;
+    // border-left: solid 5px #f2f7ff;
+    // width: 30%;
+    // height: 50%;
+    padding-bottom: 2%;   
+    // font-size: 1em;
+    // color: #0c3058; 
+    // font-weight: 800;
+    // background-color: #ffffff;
+
+   
+}
+
+.tblDilog td div{
+    padding-left: 3%;
+    padding-right: 20px;
+   
+}
+
+.dilog{
+     color: #015F8B;
+     height: 50%;  
+   
+    
+}
+
+.tdKotar{
+    width: 20%;
+    background-color: #B7D0F8;
+    padding-right:10px;
+    display: inline-block;
+    font-style: italic;
+    display: table-cell;
+    font-weight: 500;
+    // padding-top: 1%;
+    // padding-bottom: 1%;
+    // padding-left: 1%;
+    height: 100%;    
+
+}
+.tdPerot{
+    width: 80%;
+    background-color: #DCE8FB;
+    //border-radius: 5px;
+    padding-right:10px;
+    display: inline-block;
+    display: table-cell;
+    // padding-top: 1%;
+    // padding-bottom: 1%;
+    // padding-left: 1%;
+    height: 100%;    
+    //border-top: solid 5px #f2f7ff;
+   // border-right: solid 5px #f2f7ff;
+   // border-left: solid 5px #f2f7ff;
+}
+.trDialog{
+    width: 100%;
+}
+.remark{
+    font-size: 0.7em;font-weight: 400; display: inline-block;
+    cursor: pointer;
+    font-style: italic;
+    margin-right: 4px;
+}
+.image{
+    width: 13px;   
+}
+.opanPDF{
+    cursor: pointer; 
+    margin-left: 5%;
+}

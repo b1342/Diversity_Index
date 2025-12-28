@@ -1,0 +1,117 @@
+.cubReport{
+    background-color: #D0E2FF;
+    width:100%;
+    margin-top: 10px;
+    color: #0C3058;
+    font-size:0.83em;
+    padding: 7% 10% 0% 5%;
+}
+
+.divTbl4{
+    margin-right: 10px;
+    width: 19.8%;
+    display: inline-block;
+    vertical-align: top;
+   
+}
+.divEcharts{
+    display: inline-block;
+    width: 39.5%;
+    /* margin-top: 10px;
+    color: #0C3058;
+    font-size:0.83em;
+    direction: ltr;*/
+    height: 100%;  
+   
+
+}
+
+
+.divHaeder{
+    float: right;
+    margin-right: 15px;
+    text-align: right;
+}
+
+.stateNoData{
+    font-size: 0.7em;
+    text-align:center;
+    margin-top: 12%;
+}
+
+
+.tdContainer{ 
+    padding-top: 5px;
+    padding-bottom: 10px;  
+    border-radius: 5px;
+    border-top: solid 10px #f2f7ff;
+    border-right: solid 5px #f2f7ff;
+    border-left: solid 5px #f2f7ff;
+    color: #0c3058;   
+    background-color: #ffffff;
+    padding-left: 5px;
+    padding-right: 5px;
+
+}
+.tdContainer div{
+    padding-top: 5px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 90%;
+}
+
+.image{
+    width: 3%;
+    margin-top: 10px;
+    margin-left: 10px;
+    
+}
+.cssCSV{
+    cursor: pointer;
+}
+
+.kotar{
+    height: 10% !important;
+}
+.kotar-app-bar-by-filter{
+    font-size:0.73em !important;
+    color: #0c3058;   
+    background-color: #ffffff;
+    margin-top: 10px;
+}
+
+.grafBarDiv{
+    background-color:white;
+    height: 50%; 
+    display: inline-block;
+    width: 26%;
+    text-align: center;
+  }
+  .grafBar{
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+
+  .barAllAcl{
+    background-color: white;
+    width:100%;
+    margin-top: 10px;
+    color: #0C3058;
+    font-size:0.83em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cssCSVcub{
+    display: inline-block; 
+    padding-top: 5%;
+    height: 15%;
+    text-align: right;
+  }
+  
+  .imageCSV{  
+    width:  50%; 
+    cursor: pointer; 
+  }

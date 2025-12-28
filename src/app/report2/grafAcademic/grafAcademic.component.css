@@ -1,0 +1,148 @@
+.smart-header {
+    width: 100% !important;    
+}
+
+.smart-header .header-title{
+    display: inline-block;
+    width: 25% !important;   
+    color: #0C3058;
+    font-size: 0.5em;
+    padding: 0;
+    font-weight: 500;
+   /* // padding-left: 11%; */
+    padding-left:8.5%;
+    
+
+}
+.smart-header .header-title div{ display: inline-block;}
+.cssCSV{
+    display: inline-block;
+    cursor: pointer;
+    /* //vertical-align: top; */
+    padding-right: 10px;
+}
+.image{  
+    width:  50%;
+}
+
+.div-buttons-small{
+    float: right;
+    margin-top: 0.5em;
+}
+
+.sub-title{
+    padding: 5px;
+    color: #0070C0;
+    font-weight: bold;
+    text-align: center;
+}
+.row-item
+{
+    float:right;
+    width: 25%;
+    min-width: 25%;
+    max-width: 25% !important;
+    padding-right: 0px;
+}
+.row-container{
+    height: 0vh;
+    font-size: 0.29em;
+    color: #636668;
+    font-style: italic;
+    font-weight: 600;   
+}
+.achuz
+{    
+    width:14%;
+    text-align: left;
+    padding-left: 1px;
+    float: left !important;
+}
+.row-item div
+{
+    display: inline-block;
+
+}
+.container
+{
+   
+    float:left;
+    width:100%;
+    height: 80%;
+}
+.container ul
+{ padding: 0;
+}
+
+.tefusa-container .row-container
+{
+    padding-right: 1em;
+}
+.tdDiv{
+    background-color:white;
+    height: 3.5%;
+    width: 100%;
+
+}
+.tdDiv-inside{
+   background-color: yellow;
+   width:20%;
+   float: left;
+   height: 5px;
+   margin-top:1px;
+  
+}
+.tdDiv-header
+{
+    font-family: 'Rubik' !important;
+    font-size: 1.3em;
+    font-weight: bold;
+    width:28%;
+    text-align:center;
+}
+.tdDiv-header:first-child{
+    text-align: left;
+}
+.machlakot-header-spacer
+{
+ width:10%;
+}
+.header-pnimit
+{
+    height: 2.5em;
+}
+.header-item
+{
+    float:right
+}
+.shem
+{   
+     
+    float: left !important;
+    max-width: 44%;
+    min-width: 44%;
+    text-align: right;
+    margin-right: 2px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    
+}
+
+.disabled
+{
+    background-color: #e9dddd;
+    height: 6px;
+    margin-top: 4px;
+    opacity: 0.95;
+}
+.achuz-disabled
+{
+    line-height: 19px;
+    opacity: 0.95;
+    color:#e9dddd;
+    font-size: 1.3em;
+    font-weight: 700;
+    text-align: center
+}
+

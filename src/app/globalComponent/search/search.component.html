@@ -1,0 +1,43 @@
+
+ <div class="search" dir="rtl"  *ngIf="numAll && getNumAllByCatgory">        
+
+<table  dir="rtl"  style="width: 100%; margin-left: -15px;"  [ngStyle]="{'height': height + 'px' }">
+    <tr>
+        <td width="10.6%" height="25%" style="vertical-align: top;">
+            <div class="koter">הרכב כוח עבודה<br> בישראל({{numAll[0]?.year}})&nbsp;></div>
+        </td>
+        <td width="17.6%" height="25%" >
+            <div class="cubMdd" [ngStyle]="{'border-right': '5px solid' + colorCatgory(1)}">
+                <span class="num">{{getNumAllByCatgory(1)[0]?.value}}%</span>&nbsp; {{NameCatgory(1)[0]?.name}}
+            </div>                 
+        </td>          
+        <td width="17.6%" height="25%">
+            <div class="cubMdd" [ngStyle]="{'border-right': '5px solid' + colorCatgory(2)}">
+                <span class="num">{{getNumAllByCatgory(2)[0]?.value}}%</span>&nbsp; {{NameCatgory(2)[0]?.name}}
+            </div>
+        </td>
+        <td width="17.6%" height="25%" >
+            
+     <div class="cubMdd" [ngStyle]="{'border-right': '5px solid' + colorCatgory(3)}">
+        <span class="num">{{getNumAllByCatgory(3)[0]?.value}}%</span>&nbsp; {{NameCatgory(3)[0]?.name}}
+      </div>
+        </td>
+        <td width="17.6%" height="25%" >
+            
+            <div class="cubMdd" [ngStyle]="{'border-right': '5px solid' + colorCatgory(4)}">
+               <span class="num">{{getNumAllByCatgory(4)[0]?.value}}%</span>&nbsp; {{NameCatgory(4)[0]?.name}}
+             </div>
+               </td>
+        <td width="17.6%" height="25%" >
+            <div class="cubMdd" [ngStyle]="{'border-right': '5px solid' + colorCatgory(5)}">
+                <span class="num">{{getNumAllByCatgory(5)[0]?.value}}%</span>&nbsp; {{NameCatgory(5)[0]?.name}}
+              </div>
+        </td>
+       
+        
+    </tr>
+
+   
+</table>
+
+</div>

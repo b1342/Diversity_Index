@@ -1,0 +1,38 @@
+// background image style//
+:host ::ng-deep .BG-Image{
+    width:100%;
+    height:100%;
+    position: fixed; 
+    left: 0px; 
+    top: 0px; 
+    z-index: -1
+    
+}
+
+//layout style//
+.layout
+{
+    width: 100%; 
+    height: 100%; 
+  //  position: fixed; 
+    left: 0px; 
+    top: 0px; 
+    z-index: -1;
+    overflow-y: auto;
+}
+
+:host ::ng-deep p{
+   color:white;
+   margin:0px;
+    
+}
+.header{
+  width: 100%;
+  height: 65px;
+//margin-bottom: 15px;
+}
+.stateNoData{
+  font-size: 2.5em;
+  text-align:center;
+  margin-top: 12%;
+}

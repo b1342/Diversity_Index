@@ -1,0 +1,75 @@
+<div  class="kotar">
+    <div (click)="openPage()" style="cursor: pointer;" class="selectTitel"> 
+      <img src="./assets/Library/Icons/Png/Arrow back.png"  /> חזרה</div>
+    <div> יצוג שכר לפי<br> קבוצה בכל הענפים<br> ובכל השנים</div>
+    <!-- <div  >סקטור</div>
+          <select         
+              (change)="onSelectSektor($event)" [(ngModel)]="selectedSektor">
+                <option *ngFor="let sektor of sektorFilter" [ngValue]="sektor">
+                  {{sektor.name}}
+                </option>
+          </select> -->
+          <div  style="padding-top: 15%;"></div>
+          <select 
+          (change)="onSelect($event,mddFilter,'mdd')"  [(ngModel)]="appStore.selectmdd">
+                <option *ngFor="let mdd of mddFilter" [ngValue]="mdd">
+                  {{mdd.name}}
+                </option>
+          </select>
+    <div  class="kotar-filter">סינון לפי</div>
+            <div class="selectTitel">גודל עסק</div>
+            <select *ngIf="appStore.godelFilterData"
+            (change)="onSelect($event,godelFilter,'godel')" [(ngModel)]="appStore.selectgodel">
+                <option *ngFor="let godel of godelFilter" [ngValue]="godel">
+                  {{godel.name}}
+                </option>
+          </select>  
+          <!-- <select
+                (change)="onSelect($event)" [(ngModel)]="selectedMosad">
+                <option *ngFor="let mosad of yearFilter" [ngValue]="mosad">
+                  {{mosad.name}}
+                </option>
+          </select>    -->
+          <!-- <div class="selectTitel">שנים</div>
+          <select *ngIf="appStore.yearFilterData"
+          (change)="onSelect($event,yearFilter,'year')"  [(ngModel)]="appStore.selectyear">
+                <option *ngFor="let year of yearFilter" [ngValue]="year">
+                  {{year.name}}
+                </option>
+          </select>  -->
+          <div class="selectTitel">קבוצת גיוון</div>         
+          <select *ngIf="appStore.givunGroupFilterData"
+          (change)="onSelect($event,givunGroupFilter,'givunGroup')" [(ngModel)]="appStore.selectgivunGroup">
+                <option *ngFor="let givunGroup of givunGroupFilter" [ngValue]="givunGroup">
+                  {{givunGroup.name}}
+                </option>
+          </select>
+          <div class="selectTitel">מין</div>  
+          <select *ngIf="appStore.ganderFilterData" [disabled] = this.appStore.disableGander
+          (change)="onSelect($event,ganderFilter,'gander')"[(ngModel)]="appStore.selectgander">
+                <option *ngFor="let gander of ganderFilter" [ngValue]="gander">
+                  {{gander.name}}
+                </option>
+          </select>  
+          <div class="selectTitel">גיל</div>  
+          <select *ngIf="appStore.gilFilterData" [disabled] = this.appStore.disableGil
+                (change)="onSelect($event,gilFilter,'gil')" [(ngModel)]="appStore.selectgil">
+                <option *ngFor="let gil of gilFilter" [ngValue]="gil">
+                  {{gil.name}}
+                </option>
+          </select> 
+          <div class="selectTitel">השכלה</div> 
+          <select *ngIf="appStore.academicFilterData"
+          (change)="onSelect($event,academicFilter,'academic')" [(ngModel)]="appStore.selectacademic">
+          <option *ngFor="let academic of academicFilter" [ngValue]="academic">
+            {{academic.name}}
+          </option>
+    </select>   
+          
+          <div (click)="loadFiltersData()">
+              
+             <div class="remark"> <img class="image" src="./assets/Library/Icons/svg/reset.svg"  /> 
+              <span style="margin-right: 5px;">נקה</span></div>
+           </div>  
+           
+    </div>

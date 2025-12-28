@@ -1,0 +1,20 @@
+
+
+<div class="content" style="width: 100%; "  [ngStyle]="{'height': height + 'px' }">
+<div class="loader" *ngIf="appStore.givunGroupFilterData?.length===0"></div>
+<table  *ngIf="appStore.givunGroupFilterData?.length>0" dir="rtl"  style="width: 100%; "  [ngStyle]="{'height': 100 + '%' }">
+    <tr >
+          <td width="12%" height="100%"  > 
+                  <div class="contentfilters">
+                      <app-filter></app-filter>
+                  </div>
+         </td>
+          <td width="88%" height="100%" > 
+                  <div class="contentdata">
+                          <app-search ></app-search>                          
+                          <app-page1></app-page1>
+                  </div>   
+        </td>
+      </tr>
+ </table>
+</div>

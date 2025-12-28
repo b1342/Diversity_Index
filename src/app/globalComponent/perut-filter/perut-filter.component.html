@@ -1,0 +1,17 @@
+<span class="tags">
+  <span *ngIf="filterSTR" class="tagSpan"> {{filterSTR}}&nbsp;&nbsp;</span>
+  <ng-container *ngFor="let tag of tags">
+      <a  (click)="remove_tag_click(tag)"> {{tag.value.name}}<span style="float: left;margin-right: 5px">x</span> </a> &nbsp;
+  </ng-container>
+  <ng-container>
+      <div (click)="openAgdarotMadd()" style="display: inline-block;width: 9%;float: left;margin-left: 1%;">                 
+          <div class="perotMDD"  >
+          <img class="imageMDD" src="./assets/Library/Icons/svg/info.svg" /> 
+          <span style="margin-right: 20px;">הגדרות המדד</span> 
+      </div>
+  </div>
+  </ng-container>
+</span>
+
+  
+  

@@ -1,0 +1,62 @@
+.kotar{
+    color: #0c3058; 
+    background-color: #deebff;
+    font-size: 0.85em;
+    font-weight: 500;
+    font-style: italic;
+    display: inline-block;   
+    padding-top: 8%;
+    padding-right: 8%;
+    line-height: 19px;
+    height: 100%;
+    width: 100%;
+    
+}
+.kotar div{
+    padding-top: 12%; 
+}
+.kotar select{
+    font-size: 0.83em;
+    font-weight: 400;
+    color: #0c3058;    
+    height: 3%;
+    width: 70%;
+    border-top-color: white;
+    border-right-color: white;
+    border-left-color: white;
+    direction: rtl;
+   
+}
+.kotar-filter{
+    font-size: 1.1em;
+    padding-top: 18%;
+}
+.image{
+    height: 2%;
+    vertical-align: bottom;
+}
+.remark{
+    font-size: 0.9em;font-weight: 400; display: inline-block;
+    cursor: pointer;
+    
+}
+.perotMDD{
+    font-size: 0.9em;font-weight: 400; display: inline-block;
+    cursor: pointer;
+    
+    //  background-image:url('/../assets/Library/Icons/png/info.png');
+    //  background-repeat: no-repeat;
+ 
+    
+}
+.divImgPerot{
+    background-image: url('/../assets/Library/Icons/png/info.png');
+    background-repeat: repeat-y;
+}
+
+.selectTitel{
+    padding-top: 1% !important; 
+    padding-right: 5px;
+    font-size: 0.8em;
+    font-weight: 400;
+}

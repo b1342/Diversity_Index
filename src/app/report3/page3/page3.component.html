@@ -1,0 +1,34 @@
+<app-perut-filter [report]=3 style="height:35px;"></app-perut-filter>
+<div  width="100%"  [ngStyle]="{'height': height+100 + 'px' }">
+<div  style="width:16%;" height="100%" class="divTbl" >
+    <div class="tagSpan" style="margin-bottom:3px">
+        סינון ענפים >
+    </div>
+    <div class="cubReport" [ngStyle]="{'height': height/5 + 'px' }">
+        סך המועסקים בענף   &nbsp;<br>
+        הנבחר לפי גודל עסק  &nbsp; &nbsp;
+    </div>
+    <div *ngFor="let item of stateNameMadd">
+        <app-perut-category [ngStyle]="{'height': height/5 + 'px' }" headerTxt={{item.name}}></app-perut-category>
+   </div>
+</div>
+<div  height="100%" class="divTbl" *ngFor="let item of [0,1,2,3]" >
+        <div class="tagSpan">
+                <select *ngIf="appStore.anafFilterData"
+                (change)="onSelect($event,anafFilter,item)"  [(ngModel)]="selectanaf[item]">
+                      <option *ngFor="let anaf of anafFilter" [ngValue]="anaf">
+                        {{anaf.name}}
+                      </option>
+                </select> 
+        </div>
+        <app-bar-by-filter [Scala]=dataGraf(selectanaf[item].value,appStore.countEmpSum)  [ngStyle]="{'height': height/5 + 'px' }" ></app-bar-by-filter>
+        <app-num-category [Scala]=dataGraf(selectanaf[item].value,appStore.givunGroupData0) [ngStyle]="{'height': height/5 + 'px' }"></app-num-category>
+        <app-bar-by-category [Scala]=dataGraf(selectanaf[item].value,appStore.givunGroupData1) [NumToFixed]=0 [ngStyle]="{'height': height/5 + 'px' }" ></app-bar-by-category>
+        <app-bar-by-category [Scala]=dataGraf(selectanaf[item].value,appStore.givunGroupData2) [NumToFixed]=2  [ngStyle]="{'height': height/5 + 'px' }"></app-bar-by-category>
+        <app-bar-by-category [Scala]=dataGraf(selectanaf[item].value,appStore.givunGroupData3) [NumToFixed]=2  [ngStyle]="{'height': height/5 + 'px' }" ></app-bar-by-category>
+    </div>
+ <!-- <div width="20%"  height="100%"  class="divTbl"  [ngStyle]="{'height': height + 'px' }">
+    
+    <app-num-category></app-num-category>
+</div> -->
+</div>

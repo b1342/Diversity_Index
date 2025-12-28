@@ -1,0 +1,144 @@
+.header-cont
+{
+    background-color: #f2f7ff;
+    width: 100%;
+    top: 0;
+    color:#015F8B ;
+    padding: 10%;
+}
+.span_title
+{
+  font-size: 0.8em;
+  
+}
+.container{
+  height: 100%;
+}
+  
+.homeIn {
+  background-color: #ffff;
+  margin-top: 2%;
+  border-radius: 5px;
+ 
+}
+
+.grafBar{
+  background-color: yellow;
+  height: 100%;
+  float: left;
+
+}
+.barAllAcl{
+  text-align: center;
+ // display: inline-block;
+}
+.row-item
+{
+    float:right;
+    width: 25%;
+    min-width: 12%;
+    max-width: 25% !important;
+    padding-right: 0px;
+}
+.grafBarDiv{
+  background-color:white;
+  height: 80%;
+  margin-top: 10%;
+  width: 25px;
+  display: inline-block;
+}
+.grafBarDiv div{
+  
+  
+}
+.grafBarTxtTop{
+  vertical-align: top;
+  height: 58%;
+  text-align: right;
+  padding-right: 15px;
+}
+.grafBarTxt{
+  display: inline-block;
+  font-size: 0.83em;
+  height: 80%;
+  margin-top: 10%;
+  vertical-align: top;
+}
+.image{
+  width: 10px;
+  height: 27px;
+}
+
+.perotMDD{
+  float: left;
+  cursor: pointer;  
+}
+.headerTxt{
+   font-weight: 400;
+}
+.title
+{   
+    direction: rtl;
+    font-size: 1.4em;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    text-align: right;
+  
+  }
+  .logo{
+        float: right;
+  
+        object-fit: contain;
+      
+  }
+  .ui-inputswitch {
+    box-shadow: 10px 5px 10px 0 #bdc6e3;
+    width:5em
+  }
+  .operate-me
+  {
+    width: 159px;
+  height: 34px;
+  //font-family: SegoeUI;
+  font-size: 1em;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.35;
+  letter-spacing: normal;
+  text-align: right;
+  color: #ffffff;
+  }
+  .button-pages
+  {
+    padding-left: 30px;
+    padding-top: 10px;
+  }
+  .header-image{
+    height:50px;
+    margin-top: 7px;
+    margin-left: 10px;
+  }
+
+  .divTop{
+    width:100%;
+    height: 48%;
+    padding-top: 2%;
+    border-top: solid 2px; 
+  }
+
+  .divPerutGander{
+    width:30%;
+    height: 23%;
+    display: inline-block;
+    font-size: 0.7em;
+    vertical-align: top;
+    margin-top: 3%;
+  }
+
+  .imgTxt{
+    font-size: 0.83em;
+    vertical-align: bottom;
+  }
