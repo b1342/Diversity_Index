@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AppState } from '../../app.state';
 import { RootService } from '../../root.service';
-import { Angular2Csv } from 'angular2-csv';
+import { Angular2Csv } from 'angular2-csv/Angular2-csv';
 
 
 @Component({
@@ -91,15 +91,8 @@ export class GrafAcademicComponent implements OnInit {
 
 
 
-    get stateNameMadd(): any {
+    get stateNameMadd(): any {    
     return this.appStore.mddFilterData;
   }
-
-
-
- 
-
- 
-
 
 }

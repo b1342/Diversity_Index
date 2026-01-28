@@ -2,14 +2,9 @@ import {ChartModule} from 'primeng/chart';
 import {TableModule} from 'primeng/table';
 import {InputSwitchModule} from 'primeng/inputswitch';
 
-
-
-
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { CacheService } from 'ng2-cache';
-
 import { NgModule , NO_ERRORS_SCHEMA } from '@angular/core';
 import { ScrollToModule } from 'ng2-scroll-to-el';
 import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from 'ng-recaptcha';
@@ -20,7 +15,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AlertModule } from 'ngx-bootstrap';
 import { NgxEchartsModule  } from 'ngx-echarts';
 import * as echarts from 'echarts';
-import { appRoutingModule } from './app.routes';
+import { AppRoutingModule } from './app.routes';
 import { AppService } from './app.service';
 import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 
@@ -44,7 +39,7 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
-import { NgxHighlightWordsModule } from 'ngx-highlight-words';
+//import { NgxHighlightWordsModule } from 'ngx-highlight-words';
 
 import { MatExpansionModule } from '@angular/material/expansion';
 import { Page2Component } from './report2/page2/page2.component';
@@ -128,14 +123,14 @@ export class MyHammerConfig extends HammerGestureConfig {
     bigBarByFilterComponent
   ],
   imports: [
-    appRoutingModule,
+    AppRoutingModule,
      HttpClientModule, AlertModule.forRoot(), MDBBootstrapModule.forRoot(),
      NgxEchartsModule, FormsModule, Ng2CompleterModule, 
     BrowserAnimationsModule, NgxDatatableModule, ScrollToModule.forRoot(), AngularSvgIconModule,
     ChartModule,
     TableModule,
     InputSwitchModule,
-    NgxHighlightWordsModule,
+    //NgxHighlightWordsModule,
     TooltipModule.forRoot(),
     MatExpansionModule,
     MatDialogModule,

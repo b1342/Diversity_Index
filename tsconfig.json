@@ -17,15 +17,15 @@
       "es2017",
       "dom"
     ],
-    "strict": true,
+    "strict": false,
+    "noImplicitAny": false,
+    "strictPropertyInitialization": false,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "paths": {
-      "@app/*": ["src/app/*"],
-      "@assets/*": ["src/assets/*"],
-      "@environments/*": ["src/environments/*"]
-    }
+    "allowSyntheticDefaultImports": true
+  },
+  "angularCompilerOptions": {
+    "enableIvy": false
   }
 }

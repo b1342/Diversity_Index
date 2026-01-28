@@ -93,9 +93,9 @@ export class RootService {
         if(data) { console.log(data);
         if ( data == '405' )  { this.appStore.isReady = false; return; }    
         let res= new Array<object>();     
-        data.sort((a, b) => Number(a.Column1) < Number(b.Column1) ? -1 : Number(a.Column1) <Number(b.Column1 ? 1 : 0)). 
+        data.sort((a, b) => Number(a.column1) < Number(b.column1) ? -1 : Number(a.column1) <Number(b.column1 ? 1 : 0)). 
         forEach((item, index) => {
-            if(index > 0 && Number(item['Column1']>-1)) res.push({name: item['Column0'], value: Number(item['Column1'])
+            if(index > 0 && Number(item['column1']>-1)) res.push({name: item['column0'], value: Number(item['column1'])
             });
         }); 
         this.appStore[name+'FilterData'] = res;
@@ -121,10 +121,13 @@ export class RootService {
       try {
       let numRowCount;    
       console.log('starALLDataByFilter' + numRows + ' ' +Date());
-      this.http.post(this.url,{        
-        selectgivunGroup: givunGroup, 
-        selectCount: numRows,              
-        }).subscribe((data: any) => { 
+      // this.http.post(this.url,{        
+      //   selectgivunGroup: givunGroup, 
+      //   selectCount: numRows,              
+      //   })
+      alert(givunGroup)
+      alert(numRows)
+       this.http.get(this.url + givunGroup).subscribe((data: any) => { 
           if(data) {  
           if ( data == '405' )  { return  this.appStore.isReady = false;   }              
           let res= new Array<factData>();     
@@ -179,33 +182,34 @@ export class RootService {
           this.recaptchaV3Service.execute('importantAction')
           .subscribe((token: string) => {
               console.log('starALLDataByFilter'  +Date());
-              this.http.post(this.url,{ 
-                selectgivunGroup: givunGroup, 
-                tokenCaptcha : token          
-                }).subscribe((data: any) => {         
+              this.http.get(this.url+ givunGroup
+              //   selectgivunGroup: givunGroup, 
+              //   tokenCaptcha : token          
+              //   }
+              ).subscribe((data: any) => {         
                   if(data) { 
                   if ( data == '405' )  { this.appStore.isReady = false; return;  }           
                   else {let res= new Array<factData>();     
                   data.forEach((item, index) => {
                   this.appStore.factAll.push({
-                      year : Number(item['Column0']),
-                      anaf_sivug : item['Column1'],
-                      anaf_Name: item['Column14'],
-                      anaf_Name_Short: item['Column15'],
-                      givun_group: item['Column16'],
-                      id_givun_group: Number(item['Column17']),
-                      anaf_Global: item['Column13'],
-                      anaf_Type_Id : Number(item['Column3']),
-                      anaf_Global_Id : Number(item['Column2']), 
-                      godel_id  : Number(item['Column4']), 
-                      leom_id: Number(item['Column5']),
-                      gender_id: Number(item['Column6']),
-                      kv_gil_id: Number(item['Column7']),
-                      ifAcademicid: Number(item['Column8']),
-                      count_emp: Number(Number(item['Column9']).toFixed(0)),
-                      tziunei_yetzug: Number(item['Column10']),
-                      tziun_shivioniut_sahar: Number(item['Column11']),
-                      average_salary: Number(Number(item['Column12']).toFixed(0)),              
+                      year : Number(item['column0']),
+                      anaf_sivug : item['column1'],
+                      anaf_Name: item['column14'],
+                      anaf_Name_Short: item['column15'],
+                      givun_group: item['column16'],
+                      id_givun_group: Number(item['column17']),
+                      anaf_Global: item['column13'],
+                      anaf_Type_Id : Number(item['column3']),
+                      anaf_Global_Id : Number(item['column2']), 
+                      godel_id  : Number(item['column4']), 
+                      leom_id: Number(item['column5']),
+                      gender_id: Number(item['column6']),
+                      kv_gil_id: Number(item['column7']),
+                      ifAcademicid: Number(item['column8']),
+                      count_emp: Number(Number(item['column9']).toFixed(0)),
+                      tziunei_yetzug: Number(item['column10']),
+                      tziun_shivioniut_sahar: Number(item['column11']),
+                      average_salary: Number(Number(item['column12']).toFixed(0)),              
                     });             
                 });}
                 this.appStore.isReady = true;         
@@ -252,10 +256,11 @@ export class RootService {
     //     }
        
 
-     getData(name,token) {           
-          return this.http.post(this.url + 'GetDatafilter' ,{ 
-            nameFilter: name, 
-            tokenCaptcha : token});       
+     getData(name,token) {          
+          // return this.http.post(this.url + 'GetDatafilter' ,{ 
+           return this.http.get(this.url + name );
+            // nameFilter: name, 
+            // tokenCaptcha : token});       
      }
     
     async loadFilterToData() {
@@ -271,8 +276,13 @@ export class RootService {
         this.loadFilterData('godel'),
         this.loadFilterData('gil'),
         this.loadFilterData('anafGlobal'), 
-       // this.loadFilterData('givunGroup'),          
-        ]).then(function(data) {               
+       // this.loadFilterData('givunGroup'), 
+      ]).then((data) => {
+        console.log('Data loaded:', data);
+      }).catch((error) => {
+        console.error('Error loading data:', error);
+               
+        }).then(function(data) {               
       });
     }
     //פונקציה המחזירה נתונים כל פעם 180 רשומות כל עוד חוזרים נתונים
@@ -319,16 +329,16 @@ export class RootService {
         try { 
          await this.loadFilterToData(),
         // loadAcademicPrcntData(), 
-        // this.loadHomePageData(),
-        // this.loadaHomeSumAllData(),
-        // this.loadaHomeSumData(),
-        // this.loadFilterAnafAllData(),       
-        // this.loadFilterData('year'),
-        // this.loadFilterData('leom'),
-        // this.loadFilterData('godel'),
-        // this.loadFilterData('gil'),
-        // this.loadFilterData('anafGlobal'), 
-        //   //this.loadFilterData('givunGroup'), 
+         //this.PageData(),
+         //this.loadaHomeSumAllData(),
+         //this.loadaHomeSumData(),
+         //this.loadFilterAnafAllData(),       
+         //this.loadFilterData('year'),
+         //this.loadFilterData('leom'),
+         //this.loadFilterData('godel'),
+         //this.loadFilterData('gil'),
+         //this.loadFilterData('anafGlobal'), 
+         //this.loadFilterData('givunGroup'), 
         this.appStore.ganderFilterData=[{value :0, name : 'סך הכל'},
         {value :1,name : `גברים`} ,{value :3,name : `נשים`}]  
         this.appStore.selectgander=this.appStore.ganderFilterData[0]; 
@@ -355,26 +365,26 @@ export class RootService {
       try {
         this.recaptchaV3Service.execute('importantAction')
       .subscribe((token: string) => {
-        this.getData('Equality_countEmp_Sum',token).subscribe((data: any) => { console.log(data);
+        this.getData('countEmpSum',token).subscribe((data: any) => { console.log(data);
         if ( data == '405' )  { this.appStore.isReady = false; return; }     
         let res= new Array<CountEmpSum>();          
         data.forEach((item, index) => {
-            if(index > 0 && Number(item['Column5']) > -1) res.push({
-            godel : item['Column0'],	
-            kv_gil: item['Column1'],	
-            year: Number(item['Column2']),
-            IfAcademic: item['Column3'],		
-            anaf_type: item['Column4'],		
-            count_emp: Number(Number(item['Column5']).toFixed(0)),
-            anaf_sivug: item['Column6'],
-            anaf_Type_Id: Number(item['Column7']),	
-            anaf_Global_Id: Number(item['Column8']),	
-            anaf_Global: item['Column9'],	
-            anaf_Name: item['Column10'],		
-            anaf_Name_Short: item['Column11'],	
-            godel_id: Number(item['Column12']),
-            kv_gil_id: Number(item['Column13']),
-            IfAcademic_id: Number(item['Column14']),   
+            if(index > 0 && Number(item['column5']) > -1) res.push({
+            godel : item['column0'],	
+            kv_gil: item['column1'],	
+            year: Number(item['column2']),
+            IfAcademic: item['column3'],		
+            anaf_type: item['column4'],		
+            count_emp: Number(Number(item['column5']).toFixed(0)),
+            anaf_sivug: item['column6'],
+            anaf_Type_Id: Number(item['column7']),	
+            anaf_Global_Id: Number(item['column8']),	
+            anaf_Global: item['column9'],	
+            anaf_Name: item['column10'],		
+            anaf_Name_Short: item['column11'],	
+            godel_id: Number(item['column12']),
+            kv_gil_id: Number(item['column13']),
+            IfAcademic_id: Number(item['column14']),   
           });          
         });
         this.appStore.countEmpSumData = res; 
@@ -386,21 +396,21 @@ export class RootService {
         try {
           this.recaptchaV3Service.execute('importantAction')
           .subscribe((token: string) => {
-            this.getData('Equality_AcademicPrcnt',token).subscribe((data: any) => { 
+            this.getData('academicPrcntData',token).subscribe((data: any) => { 
               console.log(data);
             if ( data == '405' )  { this.appStore.isReady = false; return; }      
             let res= new Array<academicPrcnt>();          
             data.forEach((item, index) => {
                 if(index > 0) res.push({
-                  anaf_Global: item['Column0'], 
-                  anaf_sivug: item['Column1'], 
-                  anaf_Name: item['Column2'], 
-                  anaf_Global_Id: item['Column3'],
-                  anaf_Type_Id: item['Column4'],
-                  anaf_Name_Short: item['Column5'],	
-                  academic_prcnt_2020:item['Column6'],
-                  non_academic_2020:item['Column7'],	
-                  year: item['Column8']                  
+                  anaf_Global: item['column0'], 
+                  anaf_sivug: item['column1'], 
+                  anaf_Name: item['column2'], 
+                  anaf_Global_Id: item['column3'],
+                  anaf_Type_Id: item['column4'],
+                  anaf_Name_Short: item['column5'],	
+                  academic_prcnt_2020:item['column6'],
+                  non_academic_2020:item['column7'],	
+                  year: item['column8']                  
                 });
             }); 
             this.appStore.academicPrcnt = res;   
@@ -415,12 +425,12 @@ export class RootService {
           try {
          this.recaptchaV3Service.execute('importantAction')
             .subscribe((token: string) => {
-              this.getData('Equality_anaf',token).subscribe((data: any) => { 
+              this.getData('anaf',token).subscribe((data: any) => { 
                   if ( data == '405' )  { this.appStore.isReady = false; return; }      
                   let res= new Array<FilterStrData>();          
                   //sort((a, b) => Number(a.column1) < Number(b.column1) ? -1 : Number(a.column1) <Number(b.column1 ? 1 : 0)). 
                   data.forEach((item, index) => {
-                      if(index > 0) res.push({name: item['Column4'], value: item['Column5']
+                      if(index > 0) res.push({name: item['column4'], value: item['column5']
                       });
                   }); 
                   this.appStore.anafFilterData = res;
@@ -442,12 +452,13 @@ export class RootService {
       let res= new Array<homeSumAllData>();     
       data.forEach((item, index) => {
           if(index > 0) res.push({           
-           value : Number(item['Column0']),
-           year : Number(item['Column1'])                         
+           value : Number(item['column0']),
+           year : Number(item['column1'])                         
         });
     });   
     this.appStore.homePageSumAllData = res;
-   });
+   });  
+   
   }); 
   } catch (error) {
   }
@@ -456,17 +467,20 @@ export class RootService {
     try { 
       this.recaptchaV3Service.execute('importantAction')
       .subscribe((token: string) => {
-    this.getData('Equality_globaldata_academic',token).subscribe((data: any) => { console.log(data);
-      if ( data == '405' )  {this.appStore.isReady = false; return; }             
+
+    this.getData('Equality_globaldata_academic',token).subscribe((data: any) => { console.log("kkkkkkkkkk",data);
+      if ( data == '405' )  {this.appStore.isReady = false; return; }    
       let res= new Array<homeSumData>();     
       data.forEach((item, index) => {
+        console.log(item);
           if(index > 0) res.push({
-            IfAcademic : item['Column0'],
-           value : Number(item['Column1']),
-           year : Number(item['Column2']), 
-           IfAcademic_id  : Number(item['Column3'])                   
+          IfAcademic : (item['column0']),
+           value : Number(item['column1']),
+           year: Number(item['column2']),
+           IfAcademic_id  : Number(item['column3']),                   
         });
     });   
+    
     this.appStore.homePageSumData = res;
    });
   }); 
@@ -480,18 +494,20 @@ export class RootService {
     this.getData('Equality_globaldata',token).subscribe((data: any) => {  console.log(data);
       if ( data == '405' )  { this.appStore.isReady = false; return; }            
       let res= new Array<homeData>();     
-      data.forEach((item, index) => {
-          if(index > 0) res.push({
-           madad_group : item['Column0'],
-           description : item['Column1'],
-           gender: item['Column2'],          
-           value : Number(item['Column3']),
-           year : Number(item['Column4']), 
-           gender_id : Number(item['Column5']), 
-           description_id: Number(item['Column6']),
-           madad_group_id: Number(item['Column7'])           
+      data.forEach((item, index) => {        
+        if(index > 0) res.push({
+           madad_group : item['column0'],
+           description : item['column1'],
+           gender: item['column2'],          
+           value : Number(item['column3']),
+           year : Number(item['column4']), 
+           gender_id : Number(item['column5']), 
+           description_id: Number(item['column6']),
+           madad_group_id: Number(item['column7'])           
         });
     });     
+    console.log(res,"res2");
+    
     this.appStore.homePageData = res; 
     this.loadDataHome();
     }); 
@@ -726,10 +742,10 @@ convertMegamaDataToChartReport4(anafSivug :string,viewMDD :string,numToFixed: nu
            },
            formatter: function (params) {    
              //console.log(params.sort((a, b) => a.data > b.data ? -1 : a.data > b.data ? 1 : 0));     
-            let res = '<p dir="rtl" style="font-family:arial;line-height:20px;color:#000">' + params[0].name + '</p>';
+            let res = '<p dir="rtl" style="line-height:20px;color:#000">' + params[0].name + '</p>';
             params.sort((a, b) => Number(a.data) > Number(b.data) ? -1 : Number(a.data) > Number(b.data) ? 1 : 0).forEach(item => {
                 if (item.data !== '') {
-                    const xx = '<p dir="rtl" style="font-family:arial;line-height:20px;color:#000">'
+                    const xx = '<p dir="rtl" style="line-height:20px;color:#000">'
                     + item.marker + ' ' +  item.seriesName + ': ' + formatNumber(Number(item.data), "en-IN", "1.0-" +numToFixed) + '</p>';
                     res += xx;
                 }
@@ -840,10 +856,10 @@ convertMegamaDataToChartReport4(anafSivug :string,viewMDD :string,numToFixed: nu
                  type: 'none'
              },
              formatter: function (params) {    
-             let res = '<p dir="rtl" style="font-family:arial;line-height:20px;color:#000">' + params[0].name + '</p>';
+             let res = '<p dir="rtl" style="line-height:20px;color:#000">' + params[0].name + '</p>';
              params.sort((a, b) => Number(a.data) > Number(b.data) ? -1 : Number(a.data) > Number(b.data) ? 1 : 0).forEach(item => {
                  if (item.data !== '' && Number(item.data) > 0) {
-                     const xx = '<p dir="rtl" style="font-family:arial;line-height:20px;color:#000">'
+                     const xx = '<p dir="rtl" style="line-height:20px;color:#000">'
                      + item.marker + ' ' +  item.seriesName + ': ' + formatNumber(Number(item.data), "en-IN", "1.0-" +numToFixed) + '</p>';
                      res += xx;
                  }
@@ -972,4 +988,3 @@ convertMegamaDataToChartReport4(anafSivug :string,viewMDD :string,numToFixed: nu
     return null;
   }
 }
-

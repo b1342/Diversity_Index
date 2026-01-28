@@ -15,7 +15,7 @@ import { DialogAlertComponent } from './globalComponent/dialog-alert/dialog-aler
 })
 export class AppComponent implements  OnInit {
   ngOnInit() {
-   
+    console.log('AppStore:', this.appStore);
   }
   // @HostBinding('@routerTransition') routerTransition;
   @HostBinding('class.app-container') container = true; 

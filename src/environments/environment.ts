@@ -4,7 +4,7 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  get API_ENDPOINT(): string { return 'http://localhost:55867/api/values/'; },
+  get API_ENDPOINT(): string { return 'http://localhost:5000/api/values/'; },
   production: false,
   recaptcha: {
     siteKey: '6Lcb6TkhAAAAAP-iZG6W4Au6I4x6jKxxx5sy6Q_V',

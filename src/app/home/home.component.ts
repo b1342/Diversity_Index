@@ -3,7 +3,7 @@ import { AppState, FilterData, factData } from '../app.state';
 import * as echarts from 'echarts';
 import { RootService } from '../root.service';
 import { DatatableComponent, TableColumn } from '@swimlane/ngx-datatable';
-import { Angular2Csv } from 'angular2-csv';
+import { Angular2Csv } from 'angular2-csv/Angular2-csv';
 import { Router } from '@angular/router';
 import { MatDialogRef, MatDialogConfig, MatDialog } from '@angular/material';
 import { DialogAlertComponent } from '../globalComponent/dialog-alert/dialog-alert.component';

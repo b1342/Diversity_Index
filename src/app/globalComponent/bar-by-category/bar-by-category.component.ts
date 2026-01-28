@@ -2,7 +2,8 @@
 import { Component, OnInit, HostBinding, Input } from '@angular/core';
 import { RootService } from 'src/app/root.service';
 import { AppState, FilterData } from 'src/app/app.state';
-import { Angular2Csv } from 'angular2-csv';
+import { Angular2Csv } from 'angular2-csv/Angular2-csv';
+
 
 
 

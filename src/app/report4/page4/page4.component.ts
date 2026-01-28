@@ -4,7 +4,7 @@ import * as echarts from 'echarts';
 import { RootService } from '../../root.service';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { DialogComponent } from 'src/app/globalComponent/dialog/dialog.component';
-import { Angular2Csv } from 'angular2-csv';
+import { Angular2Csv } from 'angular2-csv/Angular2-csv';
 
 @Component({
   selector: 'app-page4',
