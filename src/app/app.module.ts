@@ -15,8 +15,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AlertModule } from 'ngx-bootstrap';
 import { NgxEchartsModule  } from 'ngx-echarts';
 import * as echarts from 'echarts';
-import { AppRoutingModule } from './app.routes';
-import { AppService } from './app.service';
+import { AppRoutingModule } from './app.routes';   
+import { AppService } from './app.service';  
 import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 
 import { FormsModule } from '@angular/forms';
