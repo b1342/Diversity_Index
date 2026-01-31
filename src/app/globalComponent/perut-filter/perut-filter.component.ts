@@ -2,7 +2,7 @@
 import { Component, OnInit, HostBinding, Input } from '@angular/core';
 import { RootService } from 'src/app/root.service';
 import { AppState } from 'src/app/app.state';
-import { MatDialogConfig, MatDialog } from '@angular/material';
+import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
 import { Report3Service } from 'src/app/report3/report3.service';
 

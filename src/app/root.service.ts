@@ -4,7 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { appStore } from './app.store';
 import { Observable } from 'rxjs';
 import { environment } from '../environments/environment';
-// import { Http, Response } from '@angular/http';
+
 
 import { Injectable } from '@angular/core';
 import { AppState, AppStateError, FilterData, factData, homeData, homeSumData, homeSumAllData, FilterStrData, academicPrcnt, DataByGivunGroup, CountEmpSum } from './app.state';
@@ -14,7 +14,6 @@ import 'rxjs/add/operator/toPromise';
 import { HttpClientModule, HttpClient, HttpResponse, HttpHeaders } from '@angular/common/http';
 import { formatNumber } from '@angular/common';
 import { strictEqual } from 'assert';
-import { stringify } from '@angular/core/src/util';
 import { IfStmt } from '@angular/compiler';
 import { ReCaptchaV3Service } from 'ng-recaptcha';
 //import * as XLSX from 'ts-xlsx';

@@ -1,5 +1,5 @@
 
-import { CompleterData } from 'ng2-completer';
+
 
 
 export interface Item {

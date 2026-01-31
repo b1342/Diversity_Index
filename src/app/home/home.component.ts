@@ -4,7 +4,7 @@ import * as echarts from 'echarts';
 import { RootService } from '../root.service';
 import { DatatableComponent, TableColumn } from '@swimlane/ngx-datatable';
 import { Router } from '@angular/router';
-import { MatDialogRef, MatDialogConfig, MatDialog } from '@angular/material';
+import { MatDialogRef, MatDialogConfig, MatDialog } from '@angular/material/dialog';
 import { DialogAlertComponent } from '../globalComponent/dialog-alert/dialog-alert.component';
 import { ReCaptchaV3Service } from 'ng-recaptcha';
 

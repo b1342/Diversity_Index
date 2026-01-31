@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppState } from '../../app.state';
 import { RootService } from '../../root.service';
-import { MatDialogConfig } from '@angular/material';
+import { MatDialogConfig } from '@angular/material/dialog';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from 'src/app/globalComponent/dialog/dialog.component';
 import { Router } from '@angular/router';

@@ -1,47 +1,44 @@
-import {ChartModule} from 'primeng/chart';
-import {TableModule} from 'primeng/table';
-import {InputSwitchModule} from 'primeng/inputswitch';
+import { ChartModule } from 'primeng/chart';
+import { TableModule } from 'primeng/table';
+import { InputSwitchModule } from 'primeng/inputswitch';
 
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CacheService } from 'ng2-cache';
-import { NgModule , NO_ERRORS_SCHEMA } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
 import { ScrollToModule } from 'ng2-scroll-to-el';
 import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from 'ng-recaptcha';
 
-import { Response } from '@angular/http';
 import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AlertModule } from 'ngx-bootstrap';
-import { NgxEchartsModule  } from 'ngx-echarts';
+import { AlertModule } from 'ngx-bootstrap/alert';
+import { NgxEchartsModule } from 'ngx-echarts';
 import * as echarts from 'echarts';
-import { AppRoutingModule } from './app.routes';   
-import { AppService } from './app.service';  
+import { AppRoutingModule } from './app.routes';
+import { AppService } from './app.service';
 import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 
 import { FormsModule } from '@angular/forms';
-import { Ng2CompleterModule } from 'ng2-completer';
+//import { Ng2CompleterModule } from 'ng2-completer';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 
-import { MatDialogModule, MatButtonModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material';
-import { Pipe, PipeTransform } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
-import { Http, RequestOptions } from '@angular/http';
-// import { AuthHttp, AuthConfig } from 'angular2-jwt';
 
-import {report1Component} from './report1/report1.component'
-import {report2Component} from './report2/report2.component'
+import { report1Component } from './report1/report1.component';
+import { report2Component } from './report2/report2.component';
+import { report3Component } from './report3/report3.component';
+import { report4Component } from './report4/report4.component';
+
 import { APP_STORE_PROVIDER } from './app.store';
 import { RootService } from './root.service';
 
-
 import { AngularSvgIconModule } from 'angular-svg-icon';
-
-
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
+//import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
-//import { NgxHighlightWordsModule } from 'ngx-highlight-words';
 
 import { MatExpansionModule } from '@angular/material/expansion';
+
 import { Page2Component } from './report2/page2/page2.component';
 import { Page1Component } from './report1/page1/page1.component';
 import { FilterComponent } from './report1/filter/filter.component';
@@ -53,11 +50,9 @@ import { GrafInPageComponent } from './home/grafInPage/graf_in_page.component';
 import { MenuComponent } from './globalComponent/menu/menu.component';
 import { DialogComponent } from './globalComponent/dialog/dialog.component';
 import { SearchComponent } from './globalComponent/search/search.component';
-import { report3Component } from './report3/report3.component';
 import { Filter3Component } from './report3/filter3/filter3.component';
 import { Page3Component } from './report3/page3/page3.component';
 import { PerutFilterComponent } from './globalComponent/perut-filter/perut-filter.component';
-import { report4Component } from './report4/report4.component';
 import { Page4Component } from './report4/page4/page4.component';
 import { Filter4Component } from './report4/filter4/filter4.component';
 import { perutCategoryComponent } from './globalComponent/perut-category/perut-category.component';
@@ -66,6 +61,7 @@ import { barByFilterComponent } from './globalComponent/bar-by-filter/bar-by-fil
 import { barByCategoryComponent } from './globalComponent/bar-by-category/bar-by-category.component';
 import { DialogAlertComponent } from './globalComponent/dialog-alert/dialog-alert.component';
 import { bigBarByFilterComponent } from './globalComponent/big-bar-by-filter/big-bar-by-filter.component';
+
 import { environment } from 'src/environments/environment';
 import { Interceptor } from './Interceptor';
 // tslint:disable-next-line:use-pipe-transform-interface
@@ -124,8 +120,10 @@ export class MyHammerConfig extends HammerGestureConfig {
   ],
   imports: [
     AppRoutingModule,
-     HttpClientModule, AlertModule.forRoot(), MDBBootstrapModule.forRoot(),
-     NgxEchartsModule, FormsModule, Ng2CompleterModule, 
+     HttpClientModule,
+    AlertModule.forRoot(), 
+    //MDBBootstrapModule.forRoot(),
+     NgxEchartsModule, FormsModule, 
     BrowserAnimationsModule, NgxDatatableModule, ScrollToModule.forRoot(), AngularSvgIconModule,
     ChartModule,
     TableModule,

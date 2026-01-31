@@ -2,7 +2,7 @@
 import { RootService } from './../../root.service';
 import { Component, OnInit, HostBinding, Input } from '@angular/core';
 import { AppState } from '../../app.state';
-import { MatDialogConfig, MatDialog } from '@angular/material';
+import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 

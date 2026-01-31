@@ -3,7 +3,7 @@ import { AppState } from '../../app.state';
 import * as echarts from 'echarts';
 import { RootService } from '../../root.service';
 import { DatatableComponent, TableColumn } from '@swimlane/ngx-datatable';
-import { MatDialog, MatDialogConfig } from '@angular/material';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { DialogComponent } from 'src/app/globalComponent/dialog/dialog.component';
 
 @Component({
