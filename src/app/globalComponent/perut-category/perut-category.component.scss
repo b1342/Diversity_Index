@@ -1,24 +1,28 @@
-.cubReport{
-  background-color: #D0E2FF;
-  width:100%;
-  margin-top: 10px;
-  color: #0C3058;
-  font-size:0.83em;
-  height: 100%;
+.cubReport {
+  width: 100%;
   max-width: 100%;
+  height: 100%;
+  margin-top: 10px;
+  padding-right: 15%;
+  background-color: #d0e2ff;
+  color: #0c3058;
+  font-size: 0.83em;
   display: flex;
   align-items: center;
-  padding-right: 15%;
-  // justify-content: center;
 }
 
-
-
-.colorCatgory{
-  font-size:0.6em !important;
+.colorCatgory {
   width: 5px;
   height: 5px;
   display: inline-block;
-  margin-left: 3px;
   vertical-align: middle;
+  margin-left: 3px;
+  font-size: 0.6em;
+}
+.legend-container {
+  font-size: 0.83em;
+}
+
+.legend-title {
+  font-size: 1.25em;
 }

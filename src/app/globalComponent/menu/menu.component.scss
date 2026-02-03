@@ -1,69 +1,79 @@
-.header-cont
-{
-    padding-right: 10px;
-    height: 65px;
-    font-family: 'Heebo';
-    // box-shadow: 10px 5px 10px 0 #bdc6e3;
-    //background-image: linear-gradient(to left, #30a7fb 100%, #72c4fb -50%);
-    background-color: #015F8B;
-    position: fixed;
-    width: 100%;
-    top: 0;
+.header-cont {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 65px;
+
+  padding-right: 10px;
+
+  font-family: 'Heebo';
+  background-color: #015f8b;
 }
-.span_title
-{
+
+.span_title {
   font-size: 0.65em;
   font-weight: 400;
 }
-   
-.title
-{
-    float: right;
-    direction: rtl;
-    min-width: 424px;
-    font-size: 1.4em;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    letter-spacing: normal;
-    text-align: right;
-    color: #ffffff;
-    //  background-image: url(/assets/worldIcon.png);
-    background-position-x: right;
-    background-position-y: center;
-    background-repeat: no-repeat;
-    cursor: pointer;
-  }
-  .logo{
-        float: right;  
-        object-fit: contain;
-      
-  }
-  .ui-inputswitch {
-    box-shadow: 10px 5px 10px 0 #bdc6e3;
-    width:5em
-  }
-  .operate-me
-  {
-    width: 159px;
+
+.title {
+  float: right;
+  direction: rtl;
+
+  min-width: 424px;
+
+  font-size: 1.4em;
+  font-weight: 500;
+
+  text-align: right;
+  letter-spacing: normal;
+  color: #ffffff;
+
+  background-position: right center;
+  background-repeat: no-repeat;
+
+  cursor: pointer;
+}
+
+.logo {
+  float: right;
+  object-fit: contain;
+}
+
+.ui-inputswitch {
+  width: 5em;
+  box-shadow: 10px 5px 10px 0 #bdc6e3;
+}
+
+.operate-me {
+  width: 159px;
   height: 34px;
-  //font-family: SegoeUI;
+
   font-size: 1em;
   font-weight: 600;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.35;
-  letter-spacing: normal;
+
   text-align: right;
   color: #ffffff;
-  }
-  .button-pages
-  {
-    padding-left: 30px;
-    padding-top: 10px;
-  }
-  .header-image{
-    height:9%;
-    margin-top: 2px;
-    margin-left: 10px;
-  }
+}
+
+.button-pages {
+  padding-left: 30px;
+  padding-top: 10px;
+}
+
+.header-image {
+  height: 9%;
+  margin: 2px 0 0 10px;
+}
+.header-table {
+  width: 100%;
+}
+
+.title-cell {
+  width: 51%;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}

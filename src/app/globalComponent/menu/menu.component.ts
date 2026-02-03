@@ -1,11 +1,7 @@
-
 import { Component, OnInit, HostBinding } from '@angular/core';
+import { Router } from '@angular/router';
 import { RootService } from 'src/app/root.service';
 import { AppState } from 'src/app/app.state';
-import { Router } from '@angular/router';
-
-
-
 
 @Component({
   selector: 'app-menu',
@@ -13,19 +9,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
+
   @HostBinding('class.container') container = true;
 
-  constructor(private rootService: RootService, private appStore: AppState,
-    public router: Router) {
+  constructor(
+    private readonly rootService: RootService,
+    private readonly appStore: AppState,
+    public router: Router
+  ) {}
 
-  }
+  ngOnInit(): void {}
 
-
-  ngOnInit() {
-
-  }
-  homePage(){
+  homePage(): void {
     this.router.navigateByUrl('/');
   }
-  
+
 }

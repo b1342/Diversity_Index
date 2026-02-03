@@ -1,70 +1,71 @@
-.tdDiv{
-  background-color:white; 
+.tdDiv {
+  background-color: #ffffff;
   width: 100%;
   margin-top: 3%;
-
-}
-.tdDiv-inside{
- float: left; 
- margin:1% 0% 1% 0%;
- vertical-align: bottom;
- height: 0.8em;
-}
-.shem{ 
-    float: left !important;    
-    text-align: left;
-    margin-right: 2px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;  
-    max-width: 20%; 
-    min-width: 20%;   
-}
-.achuz
-{       
-    text-align: left;
-    padding-left: 2px;
-    float: left !important;
-}
-.row-item div
-{
-   
-    display: inline-block;
-   
-
 }
 
-
-.row-item
-{   
-    width: 100%;   
-    background-color: #FFFFFF;  
-    color: #0C3058;  
-    display: flex;
-    padding-top: 5%;
-    justify-content: center;
-    max-width: 100%;
-    height: 100%;
-    font-size: 0.9em;
+.tdDiv-inside {
+  float: left;
+  margin: 1% 0;
+  vertical-align: bottom;
+  height: 0.8em;
 }
 
-.divTbl4 .row-item
-{
-  font-size: 0.73em !important;
+.shem {
+  float: left;
+  text-align: left;
+  margin-right: 2px;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+
+  max-width: 20%;
+  min-width: 20%;
 }
 
-.divTbl4 .tdDiv-inside{
-   height: 0.7em !important;
-   margin-top:1% 0% 1% 0% !important;
+.achuz {
+  text-align: left;
+  padding-left: 2px;
+  float: left;
 }
 
-
-.divTbl4 li{
-  height: 5% !important;
+.row-item div {
+  display: inline-block;
 }
 
-.stateNoData{
+.row-item {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+
+  background-color: #ffffff;
+  color: #0c3058;
+
+  display: flex;
+  justify-content: center;
+
+  padding-top: 5%;
+  font-size: 0.9em;
+}
+
+/* Variant inside divTbl4 */
+
+.divTbl4 .row-item {
+  font-size: 0.73em;
+}
+
+.divTbl4 .tdDiv-inside {
+  height: 0.7em;
+  margin: 1% 0;
+}
+
+.divTbl4 li {
+  height: 5%;
+}
+
+.stateNoData {
   font-size: 0.7em;
-  text-align:center;
+  text-align: center;
   margin-top: 12%;
 }

@@ -45,6 +45,7 @@ import { FilterComponent } from './report1/filter/filter.component';
 import { Filter2Component } from './report2/filter/filter2.component';
 import { GrafAcademicComponent } from './report2/grafAcademic/grafAcademic.component';
 import { HomeComponent } from './home/home.component';
+import { BrowserModule } from '@angular/platform-browser';
 import { PageHomeComponent } from './home/pageHome/page_home.component';
 import { GrafInPageComponent } from './home/grafInPage/graf_in_page.component';
 import { MenuComponent } from './globalComponent/menu/menu.component';
@@ -58,12 +59,14 @@ import { Filter4Component } from './report4/filter4/filter4.component';
 import { perutCategoryComponent } from './globalComponent/perut-category/perut-category.component';
 import { numCategoryComponent } from './globalComponent/num-category/num-category.component';
 import { barByFilterComponent } from './globalComponent/bar-by-filter/bar-by-filter.component';
-import { barByCategoryComponent } from './globalComponent/bar-by-category/bar-by-category.component';
+import { BarByCategoryComponent  } from './globalComponent/bar-by-category/bar-by-category.component';
 import { DialogAlertComponent } from './globalComponent/dialog-alert/dialog-alert.component';
 import { bigBarByFilterComponent } from './globalComponent/big-bar-by-filter/big-bar-by-filter.component';
 
 import { environment } from 'src/environments/environment';
 import { Interceptor } from './Interceptor';
+import { CommonModule } from '@angular/common';
+
 // tslint:disable-next-line:use-pipe-transform-interface
 @Pipe({
   name: 'million'
@@ -115,16 +118,22 @@ export class MyHammerConfig extends HammerGestureConfig {
     perutCategoryComponent,
     numCategoryComponent,
     barByFilterComponent,
-    barByCategoryComponent,
+    BarByCategoryComponent ,
     bigBarByFilterComponent
   ],
   imports: [
+    CommonModule,
+    BrowserModule,
     AppRoutingModule,
      HttpClientModule,
     AlertModule.forRoot(), 
     //MDBBootstrapModule.forRoot(),
-     NgxEchartsModule, FormsModule, 
-    BrowserAnimationsModule, NgxDatatableModule, ScrollToModule.forRoot(), AngularSvgIconModule,
+     NgxEchartsModule.forRoot({
+  echarts: () => import('echarts')
+}),
+     FormsModule, 
+    BrowserAnimationsModule, NgxDatatableModule,
+    ScrollToModule.forRoot(), AngularSvgIconModule,
     ChartModule,
     TableModule,
     InputSwitchModule,

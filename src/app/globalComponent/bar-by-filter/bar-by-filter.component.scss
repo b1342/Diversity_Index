@@ -1,78 +1,75 @@
-.tdDiv{
-  background-color:white; 
+.tdDiv {
+  background-color: #ffffff;
   width: 100%;
-
-}
-.tdDiv-inside{
- float: left; 
- margin-top:2%; 
- vertical-align: bottom;
- height: 0.4em;
-}
-.shem{ 
-    float: left !important;    
-    text-align: left;
-    margin-right: 2px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;  
-    max-width: 18%; 
-    min-width: 18%;   
-}
-.achuz
-{    
-    text-align: left;
-    padding-left: 1px;
-    float: left !important;
-}
-.row-item div
-{
-   
-    display: inline-block;
-   
-
 }
 
-
-.row-item
-{   
-    width: 100%;   
-    background-color: #FFFFFF;  
-    color: #0C3058;  
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 100%;
-    height: 100%;
-    margin-top: 10px;
-    font-size: 0.45em;
-   
-   
+.tdDiv-inside {
+  float: left;
+  margin-top: 2%;
+  vertical-align: bottom;
+  height: 0.4em;
 }
 
-.divTbl4 .row-item
-{
-  font-size: 0.73em !important;
+.shem {
+  float: left;
+  text-align: left;
+  margin-right: 2px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 18%;
+  min-width: 18%;
 }
 
-.divTbl4 .tdDiv-inside{
-   height: 0.7em !important;
-   margin-top:1% 0% 1% 0% !important;
+.achuz {
+  text-align: left;
+  padding-left: 1px;
+  float: left;
 }
 
-
-.divTbl4 li{
-  height: 5% !important;
+.row-item div {
+  display: inline-block;
 }
 
-.cssCSV{
-  display: inline-block; 
+.row-item {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  margin-top: 10px;
+
+  background-color: #ffffff;
+  color: #0c3058;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 0.45em;
+}
+
+/* Variant inside divTbl4 */
+
+.divTbl4 .row-item {
+  font-size: 0.73em;
+}
+
+.divTbl4 .tdDiv-inside {
+  height: 0.7em;
+  margin: 1% 0;
+}
+
+.divTbl4 li {
+  height: 5%;
+}
+
+.cssCSV {
+  display: inline-block;
   padding-right: 10px;
   height: 95%;
   text-align: left;
 }
 
-.image{  
-  width:  50%; 
-  cursor: pointer; 
+.image {
+  width: 50%;
+  cursor: pointer;
 }

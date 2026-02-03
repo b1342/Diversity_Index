@@ -2,6 +2,15 @@ import { Component, OnInit, HostBinding, Input } from '@angular/core';
 import { RootService } from 'src/app/root.service';
 import { AppState } from 'src/app/app.state';
 
+interface ScalaItem {
+  givun: number;
+  id_givun_group: number;
+  givunName: string;
+  value: number;
+  nameMdd: string;
+  anaf_Name_Short: string;
+}
+
 @Component({
   selector: 'app-num-category',
   templateUrl: './num-category.component.html',
@@ -11,23 +20,20 @@ export class numCategoryComponent implements OnInit {
 
   @HostBinding('class.container') container = true;
 
-  @Input('headerTxt') headerTxt: string;
-  @Input('Scala') scalaData: any;
+  @Input('headerTxt') headerTxt!: string;
+  @Input('Scala') scalaData!: ScalaItem[];
 
   constructor(
-    private rootService: RootService,
-    private appStore: AppState
+    private readonly rootService: RootService,
+    private readonly appStore: AppState
   ) {}
 
-  ngOnInit() {}
+  ngOnInit(): void {}
 
-  stateData(index: number): any {
+  stateData(index: number): ScalaItem[] {
     return this.scalaData
-      .filter(x => x.givun === index)
-      .sort((a, b) =>
-        a.id_givun_group > b.id_givun_group ? -1 :
-        a.id_givun_group < b.id_givun_group ? 1 : 0
-      );
+      ?.filter(item => item.givun === index)
+      .sort((a, b) => b.id_givun_group - a.id_givun_group) || [];
   }
 
   colorCatgory(catgory: number): string {
@@ -35,18 +41,23 @@ export class numCategoryComponent implements OnInit {
   }
 
   /* =========================
-     CSV EXPORT – NEW VERSION
+     CSV EXPORT
      ========================= */
 
-  private downloadCsv(filename: string, rows: any[], title?: string) {
-    if (!rows || !rows.length) {
+  private downloadCsv(
+    filename: string,
+    rows: Record<string, any>[],
+    title?: string
+  ): void {
+
+    if (!rows?.length) {
       return;
     }
 
     const separator = ',';
     const keys = Object.keys(rows[0]);
 
-    let csvContent = '\uFEFF'; // BOM – עברית תקינה באקסל
+    let csvContent = '\uFEFF';
 
     if (title) {
       csvContent += `"${title}"\n`;
@@ -57,9 +68,12 @@ export class numCategoryComponent implements OnInit {
     csvContent += rows
       .map(row =>
         keys.map(key => {
-          let cell =
-            row[key] === null || row[key] === undefined ? '' : row[key];
-          cell = cell.toString().replace(/"/g, '""');
+          const rawCell = row[key];
+          const cell =
+            rawCell === null || rawCell === undefined
+              ? ''
+              : rawCell.toString().replace(/"/g, '""');
+
           return `"${cell}"`;
         }).join(separator)
       )
@@ -68,49 +82,54 @@ export class numCategoryComponent implements OnInit {
     const blob = new Blob([csvContent], {
       type: 'text/csv;charset=utf-8;'
     });
+
     const url = URL.createObjectURL(blob);
 
     const link = document.createElement('a');
-    link.setAttribute('href', url);
-    link.setAttribute('download', `${filename}.csv`);
+    link.href = url;
+    link.download = `${filename}.csv`;
     link.click();
+
+    URL.revokeObjectURL(url);
   }
 
-  exportAsCSV() {
+  exportAsCSV(): void {
+
+    if (!this.scalaData?.length) {
+      return;
+    }
+
     let nameKotar = ' לפי קבוצת גיוון';
-    let tableToExport: any[] = [];
+    const firstItem = this.scalaData[0];
 
-    if (this.scalaData) {
-      tableToExport.push({
+    const tableToExport: Record<string, any>[] = [
+      {
         godel: 'קבוצת גיוון',
-        mdd: this.scalaData[0].nameMdd
-      });
-      nameKotar = this.scalaData[0].nameMdd + nameKotar;
-    }
+        mdd: firstItem.nameMdd
+      }
+    ];
 
-    for (let i = 0; i < this.scalaData.length; i++) {
+    nameKotar = firstItem.nameMdd + nameKotar;
+
+    this.scalaData.forEach(item => {
       tableToExport.push({
-        godel: this.scalaData[i].givunName,
-        mdd: Number(this.scalaData[i].value).toFixed(0)
+        godel: item.givunName,
+        mdd: Number(item.value).toFixed(0)
       });
-    }
+    });
 
-    let titleCsv = nameKotar;
+    let titleCsv = `${nameKotar},${firstItem.anaf_Name_Short}`;
 
-    if (this.scalaData) {
-      titleCsv += ',' + this.scalaData[0].anaf_Name_Short;
-    }
-
-    this.appStore.tags.forEach(element => {
-      switch (element.type) {
+    this.appStore.tags.forEach(tag => {
+      switch (tag.type) {
         case 'gil':
           titleCsv += ',גיל:';
           break;
         default:
           titleCsv += ',';
-          break;
       }
-      titleCsv += element.value.name;
+
+      titleCsv += tag.value.name;
     });
 
     this.downloadCsv(nameKotar, tableToExport, titleCsv);

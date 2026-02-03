@@ -8,25 +8,24 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 })
 export class DialogAlertComponent implements OnInit {
 
-  width: number;
+  width!: number;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any,private dialogRef: MatDialogRef<DialogAlertComponent>) {
-      this.width =  window.innerWidth-((window.innerWidth)/100*550);
-
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: unknown,
+    private readonly dialogRef: MatDialogRef<DialogAlertComponent>
+  ) {
+    const screenWidth = window.innerWidth;
+    this.width = screenWidth - (screenWidth / 100 * 550);
   }
 
-  ngOnInit() {
-    
-  }
+  ngOnInit(): void {}
 
-  closeDilog()
-  {
+  closeDilog(): void {
     this.dialogRef.close();
-
   }
 
-  mailto(emailAddress: string, emailSubject: any) {
-    return "mailto:" + emailAddress + "?subject=" + emailSubject
-}
-  
+  mailto(emailAddress: string, emailSubject: string): string {
+    return `mailto:${emailAddress}?subject=${encodeURIComponent(emailSubject)}`;
+  }
+
 }

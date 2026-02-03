@@ -1,26 +1,111 @@
 <div class="cubReport">
-      <div  title="אקסל"  *ngIf="stateData(1).length>0||stateData(2).length>0||stateData(3).length>0||stateData(4).length>0||stateData(5).length>0" class="cssCSV" (click)="exportAsCSV()">
-          <img class="image" src="./assets/Library/Icons/svg/excel.svg"  />
+
+  <ng-container *ngIf="
+      stateData(1).length > 0 ||
+      stateData(2).length > 0 ||
+      stateData(3).length > 0 ||
+      stateData(4).length > 0 ||
+      stateData(5).length > 0
+    ">
+
+    <div
+      class="cssCSV"
+      title="אקסל"
+      (click)="exportAsCSV()"
+    >
+      <img
+        class="image"
+        src="./assets/Library/Icons/svg/excel.svg"
+        alt="Export to Excel"
+      />
+    </div>
+
+  </ng-container>
+
+  <div style="width: 80%;">
+
+    <!-- 1 -->
+    <ng-container *ngIf="stateData(1) as s1">
+      <div
+        class="colorCatgory"
+        [ngStyle]="{
+          border: '0.5px solid ' + colorCatgory(1),
+          color: colorCatgory(1)
+        }"
+      >
+        <span *ngIf="s1.length > 0">
+          {{ s1[0]?.value | number:'1.0-0' }}
+        </span>
+        <span *ngIf="s1.length < 1">-</span>
       </div>
-    <!-- <div class="stateNoData" *ngIf="stateData.length < 1">אין נתונים להצגה</div>   -->
-    <div  style="width: 80%;">   
-          <div class="colorCatgory" [ngStyle]="{'border': '0.5px solid' + colorCatgory(1), 'color': colorCatgory(1)}">
-                <span *ngIf="stateData(1).length>0">{{stateData(1)[0]?.value | number:'1.0-0' }}</span> 
-                <span *ngIf="stateData(1).length<1">-</span></div>
-          <div class="colorCatgory" [ngStyle]="{'border': '0.5px solid' + colorCatgory(2), 'color': colorCatgory(2)}">
-                <span *ngIf="stateData(2).length>0">{{stateData(2)[0]?.value | number:'1.0-0' }}</span> 
-                <span *ngIf="stateData(2).length<1">-</span></div>   
-          <div class="colorCatgory" [ngStyle]="{'border': '0.5px solid' + colorCatgory(3), 'color': colorCatgory(3)}">
-                <span *ngIf="stateData(3).length>0">{{stateData(3)[0]?.value | number:'1.0-0' }}</span> 
-                <span *ngIf="stateData(3).length<1">-</span></div> 
-          <br> 
-          <div class="colorCatgory" [ngStyle]="{'border': '0.5px solid' + colorCatgory(4), 'color': colorCatgory(4)}">
-                <span *ngIf="stateData(4).length>0">{{stateData(4)[0]?.value | number:'1.0-0' }}</span> 
-                <span *ngIf="stateData(4).length<1">-</span> </div>         
-          <div class="colorCatgory" [ngStyle]="{'border': '0.5px solid' + colorCatgory(5), 'color': colorCatgory(5)}">
-             <span *ngIf="stateData(5).length>0">{{stateData(5)[0]?.value | number:'1.0-0' }}</span> 
-             <span *ngIf="stateData(5).length<1">-</span>
-         </div>
-   </div> 
-    
+    </ng-container>
+
+    <!-- 2 -->
+    <ng-container *ngIf="stateData(2) as s2">
+      <div
+        class="colorCatgory"
+        [ngStyle]="{
+          border: '0.5px solid ' + colorCatgory(2),
+          color: colorCatgory(2)
+        }"
+      >
+        <span *ngIf="s2.length > 0">
+          {{ s2[0]?.value | number:'1.0-0' }}
+        </span>
+        <span *ngIf="s2.length < 1">-</span>
+      </div>
+    </ng-container>
+
+    <!-- 3 -->
+    <ng-container *ngIf="stateData(3) as s3">
+      <div
+        class="colorCatgory"
+        [ngStyle]="{
+          border: '0.5px solid ' + colorCatgory(3),
+          color: colorCatgory(3)
+        }"
+      >
+        <span *ngIf="s3.length > 0">
+          {{ s3[0]?.value | number:'1.0-0' }}
+        </span>
+        <span *ngIf="s3.length < 1">-</span>
+      </div>
+    </ng-container>
+
+    <br />
+
+    <!-- 4 -->
+    <ng-container *ngIf="stateData(4) as s4">
+      <div
+        class="colorCatgory"
+        [ngStyle]="{
+          border: '0.5px solid ' + colorCatgory(4),
+          color: colorCatgory(4)
+        }"
+      >
+        <span *ngIf="s4.length > 0">
+          {{ s4[0]?.value | number:'1.0-0' }}
+        </span>
+        <span *ngIf="s4.length < 1">-</span>
+      </div>
+    </ng-container>
+
+    <!-- 5 -->
+    <ng-container *ngIf="stateData(5) as s5">
+      <div
+        class="colorCatgory"
+        [ngStyle]="{
+          border: '0.5px solid ' + colorCatgory(5),
+          color: colorCatgory(5)
+        }"
+      >
+        <span *ngIf="s5.length > 0">
+          {{ s5[0]?.value | number:'1.0-0' }}
+        </span>
+        <span *ngIf="s5.length < 1">-</span>
+      </div>
+    </ng-container>
+
+  </div>
+
 </div>

@@ -8,26 +8,23 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 })
 export class DialogComponent implements OnInit {
 
-  width: number;
+  width!: number;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any,private dialogRef: MatDialogRef<DialogComponent>) {
-      this.width =  window.innerWidth-((window.innerWidth)/100*60);
-
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: unknown,
+    private readonly dialogRef: MatDialogRef<DialogComponent>
+  ) {
+    const screenWidth = window.innerWidth;
+    this.width = screenWidth - (screenWidth / 100 * 60);
   }
 
-  ngOnInit() {
-    
-  }
+  ngOnInit(): void {}
 
-  closeDilog()
-  {
+  closeDilog(): void {
     this.dialogRef.close();
-
-  }
-  opanPDF()
-  {
-    window.open('./assets/mddPdf.pdf','_blank');
-    
   }
 
+  opanPDF(): void {
+    window.open('./assets/mddPdf.pdf', '_blank');
+  }
 }

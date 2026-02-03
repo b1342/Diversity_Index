@@ -1,57 +1,50 @@
-.tdDiv{
-  background-color:white; 
+.tdDiv {
+  background-color: #ffffff;
   width: 100%;
-
-}
-.tdDiv-inside{
- background-color: yellow;
- float: left; 
- margin-top:2%; 
- vertical-align: bottom;
- height: 0.4em;
-
-
 }
 
-.achuz
-{    
-   
-    text-align: left;
-    padding-left: 1px;
-    float: left !important;
-}
-.row-item div
-{
-   
-    display: inline-block;
-   
-
+.tdDiv-inside {
+  background-color: yellow;
+  float: left;
+  margin-top: 2%;
+  vertical-align: bottom;
+  height: 0.4em;
 }
 
-
-.row-item
-{   
-    width: 100%;   
-    background-color: #FFFFFF;  
-    color: #0C3058;  
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 100%;
-    height: 100%;
-    margin-top: 10px;
-    font-size: 0.45em;
-   
-   
+.achuz {
+  text-align: left;
+  padding-left: 1px;
+  float: left;
 }
-.cssCSV{
-  display: inline-block; 
+
+.row-item div {
+  display: inline-block;
+}
+
+.row-item {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  margin-top: 10px;
+
+  background-color: #ffffff;
+  color: #0c3058;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 0.45em;
+}
+
+.cssCSV {
+  display: inline-block;
   padding-right: 10px;
   height: 95%;
   text-align: left;
 }
 
-.image{  
-  width:  50%; 
-  cursor: pointer; 
+.image {
+  width: 50%;
+  cursor: pointer;
 }

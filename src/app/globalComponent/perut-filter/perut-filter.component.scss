@@ -1,37 +1,66 @@
-.tags{
+.tags {
   font-size: 0.85em;
-  
-}
-.tagSpan{   
- height: 25px;
- line-height: 25px;
- padding: 0px 10px;  
- display: inline-block; 
- color: #0C3058;  
-}
-.tags a{
- background-color: #BAD1F8;
- height: 25px;
- line-height: 25px;
- padding: 0px 10px;
- border-radius: 30px;
- min-width :142px;
- display: inline-block;
- color: #0C3058;
- cursor: pointer;
 }
 
-.perotMDD{
-  font-size: 0.99em;font-weight: 400; display: inline-block;
-  color: #015F8B;
+.tagSpan {
+  height: 25px;
+  line-height: 25px;
+  padding: 0 10px;
+
+  display: inline-block;
+  color: #0c3058;
+}
+
+.tags a {
+  min-width: 142px;
+
+  height: 25px;
+  line-height: 25px;
+  padding: 0 10px;
+
+  display: inline-block;
+  border-radius: 30px;
+
+  background-color: #bad1f8;
+  color: #0c3058;
+
+  cursor: pointer;
+}
+
+.perotMDD {
+  display: inline-block;
+
+  font-size: 0.99em;
+  font-weight: 400;
   font-style: italic;
-  cursor: pointer;    
+
+  color: #015f8b;
+  cursor: pointer;
 }
 
-.imageMDD{
-  height: 2%;
-  width: 1%;
+.imageMDD {
   position: absolute;
-  
-  
+
+  width: 1%;
+  height: 2%;
+}
+.tag-link {
+  cursor: pointer;
+}
+
+.tag-close {
+  float: left;
+  margin-right: 5px;
+}
+
+.agdarot-container {
+  display: inline-block;
+  width: 9%;
+  float: left;
+  margin-left: 1%;
+  cursor: pointer;
+}
+
+.agdarot-text {
+  margin-right: 20px;
 }

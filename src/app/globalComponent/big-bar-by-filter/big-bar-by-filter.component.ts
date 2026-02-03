@@ -2,6 +2,11 @@ import { Component, OnInit, HostBinding, Input } from '@angular/core';
 import { RootService } from 'src/app/root.service';
 import { AppState, FilterData } from 'src/app/app.state';
 
+interface ScalaItem {
+  godel_id: number;
+  count_emp: number;
+}
+
 @Component({
   selector: 'app-big-bar-by-filter',
   templateUrl: './big-bar-by-filter.component.html',
@@ -9,74 +14,74 @@ import { AppState, FilterData } from 'src/app/app.state';
 })
 export class bigBarByFilterComponent implements OnInit {
 
-  height: number;
   @HostBinding('class.container') container = true;
 
-  @Input('Scala') scalaData: any;
-  @Input('catgory') catgory: number;
+  @Input('Scala') scalaData!: ScalaItem[];
+  @Input('catgory') catgory!: number;
+
+  height!: number;
 
   constructor(
-    private rootService: RootService,
-    private appStore: AppState
+    private readonly rootService: RootService,
+    private readonly appStore: AppState
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.height = (window.innerHeight - 300) / 5;
   }
 
   colorCatgory(index: number): string {
-    if (this.catgory === -1) {
-      return this.appStore.selectgodel.value === index ||
-             this.appStore.selectgodel.value === 0
-        ? '#1A6F96'
-        : '#D1DDE2';
-    } else {
-      return this.appStore.selectgodel.value === index ||
-             this.appStore.selectgodel.value === 0
-        ? '#8F4091'
-        : '#D1DDE2';
-    }
+    const isSelected =
+      this.appStore.selectgodel.value === index ||
+      this.appStore.selectgodel.value === 0;
+
+    const activeColor = this.catgory === -1 ? '#1A6F96' : '#8F4091';
+
+    return isSelected ? activeColor : '#D1DDE2';
   }
 
   get maxScala(): number {
-    return Math.max.apply(
-      this,
-      this.scalaData
-        .filter(x => x.godel_id > 0)
-        .map(a => a.count_emp)
-    );
+    if (!this.scalaData?.length) {
+      return 0;
+    }
+
+    return this.scalaData
+      .filter(item => item.godel_id > 0)
+      .reduce((max, item) => Math.max(max, Number(item.count_emp)), 0);
   }
 
-  get godelData(): Array<FilterData> {
+  get godelData(): FilterData[] {
     return this.appStore.godelFilterData.filter(x => x.value > 0);
   }
 
-  getGodelName(index: number): Array<FilterData> {
+  getGodelName(index: number): FilterData[] {
     return this.appStore.godelFilterData.filter(x => x.value === index);
   }
 
-  stateData(index: number): any {
+  stateData(index: number): ScalaItem[] {
     return this.scalaData
-      .filter(x => x.godel_id === index)
-      .sort((a, b) =>
-        a.godel_id > b.godel_id ? -1 :
-        a.godel_id < b.godel_id ? 1 : 0
-      );
+      ?.filter(item => item.godel_id === index)
+      .sort((a, b) => b.godel_id - a.godel_id) || [];
   }
 
   /* =========================
-     CSV EXPORT – NEW VERSION
+     CSV EXPORT
      ========================= */
 
-  private downloadCsv(filename: string, rows: any[], title?: string) {
-    if (!rows || !rows.length) {
+  private downloadCsv(
+    filename: string,
+    rows: Record<string, any>[],
+    title?: string
+  ): void {
+
+    if (!rows?.length) {
       return;
     }
 
     const separator = ',';
     const keys = Object.keys(rows[0]);
 
-    let csvContent = '\uFEFF'; // BOM – עברית תקינה באקסל
+    let csvContent = '\uFEFF';
 
     if (title) {
       csvContent += `"${title}"\n`;
@@ -87,9 +92,12 @@ export class bigBarByFilterComponent implements OnInit {
     csvContent += rows
       .map(row =>
         keys.map(key => {
-          let cell =
-            row[key] === null || row[key] === undefined ? '' : row[key];
-          cell = cell.toString().replace(/"/g, '""');
+          const rawCell = row[key];
+          const cell =
+            rawCell === null || rawCell === undefined
+              ? ''
+              : rawCell.toString().replace(/"/g, '""');
+
           return `"${cell}"`;
         }).join(separator)
       )
@@ -98,45 +106,53 @@ export class bigBarByFilterComponent implements OnInit {
     const blob = new Blob([csvContent], {
       type: 'text/csv;charset=utf-8;'
     });
+
     const url = URL.createObjectURL(blob);
 
     const link = document.createElement('a');
-    link.setAttribute('href', url);
-    link.setAttribute('download', `${filename}.csv`);
+    link.href = url;
+    link.download = `${filename}.csv`;
     link.click();
+
+    URL.revokeObjectURL(url);
   }
 
-  exportAsCSV() {
+  exportAsCSV(): void {
+    if (!this.scalaData?.length) {
+      return;
+    }
+
     const nameKotar = 'מספר מועסקים לפי גודל עסק';
-    let tableToExport: any[] = [];
 
-    tableToExport.push({
-      godel: 'גודל עסק',
-      mdd: 'מספר מועסקים'
-    });
+    const tableToExport: Record<string, any>[] = [
+      {
+        godel: 'גודל עסק',
+        mdd: 'מספר מועסקים'
+      }
+    ];
 
-    for (let i = 0; i < this.scalaData.length; i++) {
-      const godelNameArr = this.appStore.godelFilterData
-        .filter(x => x.value === this.scalaData[i].godel_id);
+    this.scalaData.forEach(item => {
+      const godelName = this.appStore.godelFilterData
+        .find(x => x.value === item.godel_id);
 
       tableToExport.push({
-        godel: godelNameArr.length ? godelNameArr[0].name : '',
-        mdd: Number(this.scalaData[i].count_emp)
+        godel: godelName?.name || '',
+        mdd: Number(item.count_emp)
       });
-    }
+    });
 
     let titleCsv = nameKotar;
 
-    this.appStore.tags.forEach(element => {
-      switch (element.type) {
+    this.appStore.tags.forEach(tag => {
+      switch (tag.type) {
         case 'gil':
           titleCsv += ',גיל:';
           break;
         default:
           titleCsv += ',';
-          break;
       }
-      titleCsv += element.value.name;
+
+      titleCsv += tag.value.name;
     });
 
     this.downloadCsv(nameKotar, tableToExport, titleCsv);

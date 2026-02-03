@@ -1,26 +1,48 @@
-.search{
-    // direction: rtl;
-   color: #0c3058;
+.search {
+  color: #0c3058;
 }
 
-.cubMdd{
-    width: 95%;
-    height: 80%;
-    padding: 10% 10% 10% 0%;
-    margin: 5%;
-    background-color: #ffffff;
-    display: inline-block; 
-    border-radius: 5px;   
-    font-size: 0.85em;
-    font-weight: 400;  
-  }
-  .cubMdd .num{
-    font-size: 1.5em;
-    font-weight: 400;    
-  }
-  .koter{
-    font-size: 0.85em;
-    font-weight: 500;    
-    display: inline-block;   
-    padding: 10%;   
-  }
+.cubMdd {
+  width: 95%;
+  height: 80%;
+
+  margin: 5%;
+  padding: 10% 10% 10% 0;
+
+  display: inline-block;
+  border-radius: 5px;
+
+  background-color: #ffffff;
+
+  font-size: 0.85em;
+  font-weight: 400;
+}
+
+.cubMdd .num {
+  font-size: 1.5em;
+  font-weight: 400;
+}
+
+.koter {
+  display: inline-block;
+
+  padding: 10%;
+
+  font-size: 0.85em;
+  font-weight: 500;
+}
+.workforce-table {
+  width: 100%;
+  margin-left: -15px;
+}
+
+.title-cell {
+  width: 10.6%;
+  height: 25%;
+  vertical-align: top;
+}
+
+.data-cell {
+  width: 17.6%;
+  height: 25%;
+}

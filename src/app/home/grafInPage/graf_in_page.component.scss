@@ -1,144 +1,191 @@
-.header-cont
-{
-    background-color: #f2f7ff;
-    width: 100%;
-    top: 0;
-    color:#015F8B ;
-    padding: 10%;
+.header-cont {
+  width: 100%;
+  top: 0;
+
+  padding: 10%;
+
+  background-color: #f2f7ff;
+  color: #015f8b;
 }
-.span_title
-{
+
+.span_title {
   font-size: 0.8em;
-  
 }
-.container{
+
+.container {
   height: 100%;
 }
-  
+
 .homeIn {
-  background-color: #ffff;
   margin-top: 2%;
   border-radius: 5px;
- 
+
+  background-color: #ffffff;
 }
 
-.grafBar{
-  background-color: yellow;
-  height: 100%;
+.grafBar {
   float: left;
+  height: 100%;
 
+  background-color: yellow;
 }
-.barAllAcl{
+
+.barAllAcl {
   text-align: center;
- // display: inline-block;
 }
-.row-item
-{
-    float:right;
-    width: 25%;
-    min-width: 12%;
-    max-width: 25% !important;
-    padding-right: 0px;
+
+.row-item {
+  float: right;
+
+  width: 25%;
+  min-width: 12%;
+  max-width: 25% !important;
+
+  padding-right: 0;
 }
-.grafBarDiv{
-  background-color:white;
-  height: 80%;
-  margin-top: 10%;
+
+.grafBarDiv {
   width: 25px;
+  height: 80%;
+
+  margin-top: 10%;
+
   display: inline-block;
+  background-color: #ffffff;
 }
-.grafBarDiv div{
-  
-  
-}
-.grafBarTxtTop{
-  vertical-align: top;
+
+.grafBarTxtTop {
   height: 58%;
-  text-align: right;
   padding-right: 15px;
+
+  text-align: right;
+  vertical-align: top;
 }
-.grafBarTxt{
+
+.grafBarTxt {
   display: inline-block;
-  font-size: 0.83em;
+
   height: 80%;
   margin-top: 10%;
+
+  font-size: 0.83em;
   vertical-align: top;
 }
-.image{
+
+.image {
   width: 10px;
   height: 27px;
 }
 
-.perotMDD{
+.perotMDD {
   float: left;
-  cursor: pointer;  
+  cursor: pointer;
 }
-.headerTxt{
-   font-weight: 400;
+
+.headerTxt {
+  font-weight: 400;
 }
-.title
-{   
-    direction: rtl;
-    font-size: 1.4em;
-    font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
-    letter-spacing: normal;
-    text-align: right;
-  
-  }
-  .logo{
-        float: right;
-  
-        object-fit: contain;
-      
-  }
-  .ui-inputswitch {
-    box-shadow: 10px 5px 10px 0 #bdc6e3;
-    width:5em
-  }
-  .operate-me
-  {
-    width: 159px;
+
+.title {
+  direction: rtl;
+
+  font-size: 1.4em;
+  font-weight: 600;
+
+  text-align: right;
+}
+
+.logo {
+  float: right;
+  object-fit: contain;
+}
+
+.ui-inputswitch {
+  width: 5em;
+  box-shadow: 10px 5px 10px 0 #bdc6e3;
+}
+
+.operate-me {
+  width: 159px;
   height: 34px;
-  //font-family: SegoeUI;
+
   font-size: 1em;
   font-weight: 600;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.35;
-  letter-spacing: normal;
+
   text-align: right;
   color: #ffffff;
-  }
-  .button-pages
-  {
-    padding-left: 30px;
-    padding-top: 10px;
-  }
-  .header-image{
-    height:50px;
-    margin-top: 7px;
-    margin-left: 10px;
-  }
+}
 
-  .divTop{
-    width:100%;
-    height: 48%;
-    padding-top: 2%;
-    border-top: solid 2px; 
-  }
+.button-pages {
+  padding-left: 30px;
+  padding-top: 10px;
+}
 
-  .divPerutGander{
-    width:30%;
-    height: 23%;
-    display: inline-block;
-    font-size: 0.7em;
-    vertical-align: top;
-    margin-top: 3%;
-  }
+.header-image {
+  height: 50px;
+  margin: 7px 0 0 10px;
+}
 
-  .imgTxt{
-    font-size: 0.83em;
-    vertical-align: bottom;
-  }
+.divTop {
+  width: 100%;
+  height: 48%;
+
+  padding-top: 2%;
+
+  border-top: 2px solid;
+}
+
+.divPerutGander {
+  width: 30%;
+  height: 23%;
+
+  display: inline-block;
+  vertical-align: top;
+
+  margin-top: 3%;
+
+  font-size: 0.7em;
+}
+
+.imgTxt {
+  font-size: 0.83em;
+  vertical-align: bottom;
+}
+.bar-container {
+  height: 95%;
+}
+
+.txt-right {
+  text-align: right;
+}
+
+.header-bold {
+  font-weight: 600;
+}
+
+.gender-section {
+  height: 42%;
+}
+
+.gender-block {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.gender-img {
+  height: 45%;
+  text-align: center;
+}
+
+.chart-section {
+  width: 100%;
+  height: 23%;
+}
+
+.pie-chart {
+  width: 50%;
+  margin-right: 19%;
+  height: 95%;
+  display: inline-block;
+}

@@ -1,11 +1,41 @@
 <div class="cubReport">
-     <br>
-    <div style="font-size: 0.83em;">
-          <span style="font-size: 1.25em;">{{headerTxt}}</span><br> 
-          <div class="colorCatgory" [ngStyle]="{'background-color': colorCatgory(1)}"></div>כלל הנשים
-          <div class="colorCatgory" [ngStyle]="{'background-color': colorCatgory(2)}"></div>ערבים<br>    
-          <div class="colorCatgory" [ngStyle]="{'background-color': colorCatgory(3)}"></div>יוצאי אתיופיה
-          <div class="colorCatgory" [ngStyle]="{'background-color': colorCatgory(4)}"></div>חרדים<br>          
-          <div class="colorCatgory" [ngStyle]="{'background-color': colorCatgory(5)}"></div>בני 45 ומעלה
-   </div> 
+
+  <br />
+
+  <div class="legend-container">
+
+    <span class="legend-title">
+      {{ headerTxt }}
+    </span>
+    <br />
+
+    <div class="colorCatgory"
+         [ngStyle]="{ 'background-color': colorCatgory(1) }">
+    </div>
+    כלל הנשים
+
+    <div class="colorCatgory"
+         [ngStyle]="{ 'background-color': colorCatgory(2) }">
+    </div>
+    ערבים
+    <br />
+
+    <div class="colorCatgory"
+         [ngStyle]="{ 'background-color': colorCatgory(3) }">
+    </div>
+    יוצאי אתיופיה
+
+    <div class="colorCatgory"
+         [ngStyle]="{ 'background-color': colorCatgory(4) }">
+    </div>
+    חרדים
+    <br />
+
+    <div class="colorCatgory"
+         [ngStyle]="{ 'background-color': colorCatgory(5) }">
+    </div>
+    בני 45 ומעלה
+
+  </div>
+
 </div>
