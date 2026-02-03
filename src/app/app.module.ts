@@ -91,90 +91,83 @@ export class MyHammerConfig extends HammerGestureConfig {
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    MillionPipe,
-    report1Component,
-    report2Component,
-    report3Component,
-    report4Component,
-    Page2Component,
-    Page3Component,
-    Page4Component,
-    MenuComponent,
-    DialogComponent,
-    DialogAlertComponent,
-    SearchComponent,
-    Page1Component,
-    FilterComponent,    
-    Filter2Component,
-    Filter3Component,
-    Filter4Component,
-    HomeComponent,
-    GrafAcademicComponent,
-    PageHomeComponent,
-    GrafInPageComponent,
-    PerutFilterComponent,
-    perutCategoryComponent,
-    numCategoryComponent,
-    barByFilterComponent,
-    BarByCategoryComponent ,
-    bigBarByFilterComponent
-  ],
-  imports: [
-    CommonModule,
-    BrowserModule,
-    AppRoutingModule,
-     HttpClientModule,
-    AlertModule.forRoot(), 
-    //MDBBootstrapModule.forRoot(),
-     NgxEchartsModule.forRoot({
-  echarts: () => import('echarts')
-}),
-     FormsModule, 
-    BrowserAnimationsModule, NgxDatatableModule,
-    //ScrollToModule.forRoot(),
-     AngularSvgIconModule,
-    ChartModule,
-    TableModule,
-    InputSwitchModule,
-    //NgxHighlightWordsModule,
-    TooltipModule.forRoot(),
-    MatExpansionModule,
-    MatDialogModule,
-    MatButtonModule,
-    RecaptchaV3Module,
-  ],
-  schemas: [ NO_ERRORS_SCHEMA ],
-  providers: [
-    {
-      provide: RECAPTCHA_V3_SITE_KEY,
-      useValue: environment.recaptcha.siteKey,
-    },
-    AppService,
-    {
-      provide: HAMMER_GESTURE_CONFIG,
-      useClass: MyHammerConfig
-    },
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: Interceptor,
-      multi: true
-    },
-    MillionPipe,
-    APP_STORE_PROVIDER,
-    RootService,
-    CacheService,
- //  { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: true } }
-    
-
-  ],
-  bootstrap: [AppComponent],
-  entryComponents: [
-      DialogComponent,
-      DialogAlertComponent
-      ]
-  
+    declarations: [
+        AppComponent,
+        MillionPipe,
+        report1Component,
+        report2Component,
+        report3Component,
+        report4Component,
+        Page2Component,
+        Page3Component,
+        Page4Component,
+        MenuComponent,
+        DialogComponent,
+        DialogAlertComponent,
+        SearchComponent,
+        Page1Component,
+        FilterComponent,
+        Filter2Component,
+        Filter3Component,
+        Filter4Component,
+        HomeComponent,
+        GrafAcademicComponent,
+        PageHomeComponent,
+        GrafInPageComponent,
+        PerutFilterComponent,
+        perutCategoryComponent,
+        numCategoryComponent,
+        barByFilterComponent,
+        BarByCategoryComponent,
+        bigBarByFilterComponent
+    ],
+    imports: [
+        CommonModule,
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        AlertModule.forRoot(),
+        //MDBBootstrapModule.forRoot(),
+        NgxEchartsModule.forRoot({
+            echarts: () => import('echarts')
+        }),
+        FormsModule,
+        BrowserAnimationsModule, NgxDatatableModule,
+        //ScrollToModule.forRoot(),
+        AngularSvgIconModule,
+        ChartModule,
+        TableModule,
+        InputSwitchModule,
+        //NgxHighlightWordsModule,
+        TooltipModule.forRoot(),
+        MatExpansionModule,
+        MatDialogModule,
+        MatButtonModule,
+        RecaptchaV3Module,
+    ],
+    schemas: [NO_ERRORS_SCHEMA],
+    providers: [
+        {
+            provide: RECAPTCHA_V3_SITE_KEY,
+            useValue: environment.recaptcha.siteKey,
+        },
+        AppService,
+        {
+            provide: HAMMER_GESTURE_CONFIG,
+            useClass: MyHammerConfig
+        },
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: Interceptor,
+            multi: true
+        },
+        MillionPipe,
+        APP_STORE_PROVIDER,
+        RootService,
+        CacheService,
+        //  { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: true } }
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }
