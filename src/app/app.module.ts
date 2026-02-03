@@ -6,7 +6,7 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CacheService } from 'ng2-cache';
 import { NgModule, NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
-import { ScrollToModule } from 'ng2-scroll-to-el';
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from 'ng-recaptcha';
 
 import { AppComponent } from './app.component';
@@ -122,6 +122,7 @@ export class MyHammerConfig extends HammerGestureConfig {
     bigBarByFilterComponent
   ],
   imports: [
+    ScrollToModule.forRoot(),
     CommonModule,
     BrowserModule,
     AppRoutingModule,
