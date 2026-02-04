@@ -4,7 +4,7 @@ import { InputSwitchModule } from 'primeng/inputswitch';
 
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CacheService } from 'ng2-cache';
+//import { CacheService } from 'ng2-cache';
 import { NgModule, NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
 //import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from 'ng-recaptcha';
@@ -122,28 +122,30 @@ export class MyHammerConfig extends HammerGestureConfig {
         bigBarByFilterComponent
     ],
     imports: [
-        CommonModule,
+      CommonModule,
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
         AlertModule.forRoot(),
-        //MDBBootstrapModule.forRoot(),
-        NgxEchartsModule.forRoot({
-            echarts: () => import('echarts')
-        }),
         FormsModule,
         BrowserAnimationsModule, NgxDatatableModule,
-        //ScrollToModule.forRoot(),
         AngularSvgIconModule,
-        ChartModule,
-        TableModule,
-        InputSwitchModule,
-        //NgxHighlightWordsModule,
         TooltipModule.forRoot(),
         MatExpansionModule,
         MatDialogModule,
         MatButtonModule,
-        RecaptchaV3Module,
+        RecaptchaV3Module, 
+        ChartModule,
+        TableModule,
+        InputSwitchModule,    
+      
+        //MDBBootstrapModule.forRoot(),
+        NgxEchartsModule.forRoot({
+            echarts: () => import('echarts')
+        }),
+        
+        //NgxHighlightWordsModule,
+        
     ],
     schemas: [NO_ERRORS_SCHEMA],
     providers: [
@@ -164,7 +166,7 @@ export class MyHammerConfig extends HammerGestureConfig {
         MillionPipe,
         APP_STORE_PROVIDER,
         RootService,
-        CacheService,
+        //CacheService,
         //  { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: true } }
     ],
     bootstrap: [AppComponent]
