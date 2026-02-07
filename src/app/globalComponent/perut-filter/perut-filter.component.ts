@@ -1,5 +1,5 @@
 import { Component, OnInit, HostBinding, Input } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { RootService } from 'src/app/root.service';
 import { AppState } from 'src/app/app.state';
 import { DialogComponent } from '../dialog/dialog.component';

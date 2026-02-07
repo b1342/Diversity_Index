@@ -2,7 +2,7 @@
 import { RootService } from './../../root.service';
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { AppState } from '../../app.state';
-import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
+import { MatLegacyDialogConfig as MatDialogConfig, MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { DialogComponent } from 'src/app/globalComponent/dialog/dialog.component';
 
 

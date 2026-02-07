@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppState, DataByGivunGroup } from '../../app.state';
 import * as echarts from 'echarts';
 import { RootService } from '../../root.service';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog, MatLegacyDialogConfig as MatDialogConfig } from '@angular/material/legacy-dialog';
 import { DialogComponent } from 'src/app/globalComponent/dialog/dialog.component';
 
 @Component({

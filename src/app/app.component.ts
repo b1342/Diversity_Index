@@ -3,7 +3,7 @@ import { RootService } from './root.service';
 import { Component,  OnInit, HostBinding } from '@angular/core';
 import { AppService } from './app.service';
 import { AppState } from './app.state';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog, MatLegacyDialogConfig as MatDialogConfig } from '@angular/material/legacy-dialog';
 import { DialogAlertComponent } from './globalComponent/dialog-alert/dialog-alert.component';
 
 
