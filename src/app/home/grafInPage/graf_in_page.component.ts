@@ -7,9 +7,10 @@ import {MatDialogConfig, MatDialog } from '@angular/material/dialog';
 
 
 @Component({
-  selector: 'graf_in_page',
-  templateUrl: './graf_in_page.component.html',
-  styleUrls: ['./graf_in_page.component.scss']
+    selector: 'graf_in_page',
+    templateUrl: './graf_in_page.component.html',
+    styleUrls: ['./graf_in_page.component.scss'],
+    standalone: false
 })
 export class GrafInPageComponent implements OnInit {
   @HostBinding('class.container') container = true;

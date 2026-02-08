@@ -74,7 +74,8 @@ import { CommonModule } from '@angular/common';
 
 // tslint:disable-next-line:use-pipe-transform-interface
 @Pipe({
-  name: 'million'
+    name: 'million',
+    standalone: false
 })
 
 export class MillionPipe extends DecimalPipe {

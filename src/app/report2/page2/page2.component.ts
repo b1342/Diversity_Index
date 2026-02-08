@@ -6,9 +6,10 @@ import {  MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { DialogComponent } from 'src/app/globalComponent/dialog/dialog.component';
 
 @Component({
-  selector: 'app-page2',
-  templateUrl: './page2.component.html',
-  styleUrls: ['./page2.component.css']
+    selector: 'app-page2',
+    templateUrl: './page2.component.html',
+    styleUrls: ['./page2.component.css'],
+    standalone: false
 })
 export class Page2Component implements OnInit {
   height : number;

@@ -10,9 +10,10 @@ interface ScalaItem {
 }
 
 @Component({
-  selector: 'app-bar-by-filter',
-  templateUrl: './bar-by-filter.component.html',
-  styleUrls: ['./bar-by-filter.component.scss']
+    selector: 'app-bar-by-filter',
+    templateUrl: './bar-by-filter.component.html',
+    styleUrls: ['./bar-by-filter.component.scss'],
+    standalone: false
 })
 export class barByFilterComponent implements OnInit {
 

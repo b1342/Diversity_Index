@@ -12,9 +12,10 @@ interface ScalaItem {
 }
 
 @Component({
-  selector: 'app-num-category',
-  templateUrl: './num-category.component.html',
-  styleUrls: ['./num-category.component.scss']
+    selector: 'app-num-category',
+    templateUrl: './num-category.component.html',
+    styleUrls: ['./num-category.component.scss'],
+    standalone: false
 })
 export class numCategoryComponent implements OnInit {
 

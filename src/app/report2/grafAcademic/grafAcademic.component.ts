@@ -3,9 +3,10 @@ import { AppState } from '../../app.state';
 import { RootService } from '../../root.service';
 
 @Component({
-  selector: 'app-grafAcademic',
-  templateUrl: './grafAcademic.component.html',
-  styleUrls: ['./grafAcademic.component.css']
+    selector: 'app-grafAcademic',
+    templateUrl: './grafAcademic.component.html',
+    styleUrls: ['./grafAcademic.component.css'],
+    standalone: false
 })
 export class GrafAcademicComponent implements OnInit {
 

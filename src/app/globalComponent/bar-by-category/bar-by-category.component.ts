@@ -12,9 +12,10 @@ interface ScalaItem {
 }
 
 @Component({
-  selector: 'app-bar-by-category',
-  templateUrl: './bar-by-category.component.html',
-  styleUrls: ['./bar-by-category.component.scss']
+    selector: 'app-bar-by-category',
+    templateUrl: './bar-by-category.component.html',
+    styleUrls: ['./bar-by-category.component.scss'],
+    standalone: false
 })
 export class BarByCategoryComponent implements OnInit {
 

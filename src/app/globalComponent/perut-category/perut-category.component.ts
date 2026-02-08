@@ -3,9 +3,10 @@ import { RootService } from 'src/app/root.service';
 import { AppState } from 'src/app/app.state';
 
 @Component({
-  selector: 'app-perut-category',
-  templateUrl: './perut-category.component.html',
-  styleUrls: ['./perut-category.component.scss']
+    selector: 'app-perut-category',
+    templateUrl: './perut-category.component.html',
+    styleUrls: ['./perut-category.component.scss'],
+    standalone: false
 })
 export class perutCategoryComponent implements OnInit {
 

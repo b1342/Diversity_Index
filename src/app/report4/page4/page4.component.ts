@@ -6,9 +6,10 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { DialogComponent } from 'src/app/globalComponent/dialog/dialog.component';
 
 @Component({
-  selector: 'app-page4',
-  templateUrl: './page4.component.html',
-  styleUrls: ['./page4.component.css']
+    selector: 'app-page4',
+    templateUrl: './page4.component.html',
+    styleUrls: ['./page4.component.css'],
+    standalone: false
 })
 export class Page4Component implements OnInit {
 

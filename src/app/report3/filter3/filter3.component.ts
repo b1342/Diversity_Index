@@ -8,9 +8,10 @@ import { Router } from '@angular/router';
 import { Report3Service } from '../report3.service';
 
 @Component({
-  selector: 'app-filter3',
-  templateUrl: './filter3.component.html',
-  styleUrls: ['./filter3.component.scss']
+    selector: 'app-filter3',
+    templateUrl: './filter3.component.html',
+    styleUrls: ['./filter3.component.scss'],
+    standalone: false
 })
 export class Filter3Component implements OnInit {
 

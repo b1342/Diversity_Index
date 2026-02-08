@@ -8,9 +8,10 @@ import { DialogComponent } from 'src/app/globalComponent/dialog/dialog.component
 
 
 @Component({
-  selector: 'app-page_home',
-  templateUrl: './page_home.component.html',
-  styleUrls: ['./page_home.component.scss']
+    selector: 'app-page_home',
+    templateUrl: './page_home.component.html',
+    styleUrls: ['./page_home.component.scss'],
+    standalone: false
 })
 export class PageHomeComponent implements OnInit {
   @HostBinding('class.container') container = true;

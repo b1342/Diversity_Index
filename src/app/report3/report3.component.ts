@@ -6,9 +6,10 @@ import { DialogAlertComponent } from '../globalComponent/dialog-alert/dialog-ale
 
 
 @Component({
-  selector: 'app-report3',
-  templateUrl: './report3.component.html',
-  styleUrls: ['./report3.component.scss']
+    selector: 'app-report3',
+    templateUrl: './report3.component.html',
+    styleUrls: ['./report3.component.scss'],
+    standalone: false
 })
 export class report3Component implements OnInit,OnChanges {
   

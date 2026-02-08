@@ -7,9 +7,10 @@ import { DialogComponent } from 'src/app/globalComponent/dialog/dialog.component
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-filter4',
-  templateUrl: './filter4.component.html',
-  styleUrls: ['./filter4.component.scss']
+    selector: 'app-filter4',
+    templateUrl: './filter4.component.html',
+    styleUrls: ['./filter4.component.scss'],
+    standalone: false
 })
 export class Filter4Component implements OnInit {
 

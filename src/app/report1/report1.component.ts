@@ -5,9 +5,10 @@ import { RootService } from '../root.service';
 // import { TouchSequence } from 'selenium-webdriver';
 
 @Component({
-  selector: 'app-report1',
-  templateUrl: './report1.component.html',
-  styleUrls: ['./report1.component.scss']
+    selector: 'app-report1',
+    templateUrl: './report1.component.html',
+    styleUrls: ['./report1.component.scss'],
+    standalone: false
 })
 export class report1Component implements OnInit {
   

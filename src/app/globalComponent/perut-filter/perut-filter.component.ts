@@ -6,9 +6,10 @@ import { DialogComponent } from '../dialog/dialog.component';
 import { Report3Service } from 'src/app/report3/report3.service';
 
 @Component({
-  selector: 'app-perut-filter',
-  templateUrl: './perut-filter.component.html',
-  styleUrls: ['./perut-filter.component.scss']
+    selector: 'app-perut-filter',
+    templateUrl: './perut-filter.component.html',
+    styleUrls: ['./perut-filter.component.scss'],
+    standalone: false
 })
 export class PerutFilterComponent implements OnInit {
 

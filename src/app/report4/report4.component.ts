@@ -3,9 +3,10 @@ import { AppState } from '../app.state';
 import { RootService } from '../root.service';
 
 @Component({
-  selector: 'app-report4',
-  templateUrl: './report4.component.html',
-  styleUrls: ['./report4.component.scss']
+    selector: 'app-report4',
+    templateUrl: './report4.component.html',
+    styleUrls: ['./report4.component.scss'],
+    standalone: false
 })
 export class report4Component implements OnInit,OnChanges {
   

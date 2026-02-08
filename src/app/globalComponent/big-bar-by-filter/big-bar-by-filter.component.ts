@@ -8,9 +8,10 @@ interface ScalaItem {
 }
 
 @Component({
-  selector: 'app-big-bar-by-filter',
-  templateUrl: './big-bar-by-filter.component.html',
-  styleUrls: ['./big-bar-by-filter.component.scss']
+    selector: 'app-big-bar-by-filter',
+    templateUrl: './big-bar-by-filter.component.html',
+    styleUrls: ['./big-bar-by-filter.component.scss'],
+    standalone: false
 })
 export class bigBarByFilterComponent implements OnInit {
 
