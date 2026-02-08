@@ -1,6 +1,6 @@
 import { ChartModule } from 'primeng/chart';
 import { TableModule } from 'primeng/table';
-import { InputSwitchModule } from 'primeng/inputswitch';
+import { ToggleSwitchModule } from 'primeng/toggleswitch';
 
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -143,7 +143,7 @@ export class MyHammerConfig extends HammerGestureConfig {
         MatButtonModule,
         ChartModule,
         TableModule,
-        InputSwitchModule,
+ToggleSwitchModule,
 
  //RecaptchaV3Module,
         
