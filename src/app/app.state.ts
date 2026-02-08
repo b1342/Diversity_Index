@@ -12,14 +12,16 @@ export interface Item {
     etl_time_stmp: Date;
     analysys_mail: string;
     load_period: string;
-    business_repherant_name: string;
-    tag: string;
+    business_repherant_name: string;      
+    tag: string;     
     tags: Array<string>;
 }
+
+
 export interface AnafData{
     anaf_Type: string;
-    anaf_Global: string;
-    Anaf_Num: string;
+    anaf_Global: string;    
+    Anaf_Num: string;     
     anaf_Name: string;
     anaf_Name_Short: string;
     anaf_sivug: string;
@@ -70,6 +72,7 @@ export interface homeSumAllData{
     value :number;
     year:number;
 }
+
 export interface academicPrcnt{
     anaf_Global: string;
     anaf_sivug: string;	
