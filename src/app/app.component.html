@@ -1,15 +1,19 @@
 <div ></div>
 <div class="header" >
-    <app-menu></app-menu>
+  <app-menu></app-menu>
 </div>
-<div class="content" *ngIf="isReady && this.appStore.isReady "> 
-    <router-outlet></router-outlet>  
-</div>
+@if (isReady && this.appStore.isReady ) {
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+}
 
-<!-- <div class="content" *ngIf="this.appStore.selectyear"> 
-    <router-outlet></router-outlet>  
+<!-- <div class="content" *ngIf="this.appStore.selectyear">
+<router-outlet></router-outlet>
 </div>-->
- <div class="stateNoData" *ngIf="!this.appStore.isReady">שימוש לא תקין במערכת <br>הכנס במועד מאוחר יותר</div>  
+@if (!this.appStore.isReady) {
+  <div class="stateNoData">שימוש לא תקין במערכת <br>הכנס במועד מאוחר יותר</div>
+}
 
 
 

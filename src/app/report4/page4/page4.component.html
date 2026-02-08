@@ -1,104 +1,131 @@
 <app-perut-filter [report]=4 style="height:35px;"></app-perut-filter>
 <div  width="100%"  [ngStyle]="{'height': height + 'px' }">
-<div  style="width:20%;" height="100%" class="divTbl4" >         
-        <div dir="ltr" class="kotar-app-bar-by-filter" [ngStyle]="{'height': (height-30)/3 + 'px' }"  >   
-            <div class="divHaeder" style="padding-top: 5%;height: 15%;">אקדמאים</div>
-            <div class="stateNoData" *ngIf="!stateMumifAcademic">אין נתונים להצגה</div>             
-            <div class="barAllAcl" style="height: 85%;" *ngIf="stateMumifAcademic" > 
-                    <div class="grafBarDiv"> 
-                            <span>{{stateMumifAcademic[0]?.academic_prcnt_2020 | percent}}</span>
-                            <div class="grafBar grafBarAll"
-                                [ngStyle]="{'height':  100 - (stateMumifAcademic[0]?.academic_prcnt_2020 *100) + '%','background-color':'#D3E3FD'}"></div> 
-                            <div class="grafBar grafBarNum"
-                                [ngStyle]="{'height': (stateMumifAcademic[0]?.academic_prcnt_2020*100) + '%','background-color': '#8F4091'}"></div>
-                            <span>ענף נבחר</span>
-                      </div>
-                    <div class="grafBarDiv"> 
-                         <div>{{numAllAcadmic[0]?.value | number:'1.0-2'}}%</div>
-                          <div class="grafBar grafBarAll"
-                              [ngStyle]="{'height':  100 - numAllAcadmic[0]?.value + '%','background-color':'#D3E3FD'}"></div> 
-                          <div class="grafBar grafBarNum"
-                              [ngStyle]="{'height': numAllAcadmic[0]?.value + '%','background-color': '#0095DA'}"></div>
-                         <div>כלל הענפים</div>
-                    </div>
-
-                </div>
-        </div>       
-        <div dir="ltr"   class="kotar-app-bar-by-filter" [ngStyle]="{'height': (height-30)/3 + 'px' }"  >                
-            <div class="divHaeder" style="padding-top: 5%;height: 15%;">התפלגות מספר מועסקים בענף (2020)</div>
-            <div  title="אקסל"  class="cssCSVcub" (click)="exportAsCSVcub(appStore.countEmpSum,'התפלגות מספר מועסקים בענף (2020)')">
-                    <img class="imageCSV" src="./assets/Library/Icons/svg/excel.svg"  />
-            </div>
-            <app-big-bar-by-filter [Scala]=appStore.countEmpSum [catgory]=-1 style="height:85%"></app-big-bar-by-filter>
-       </div>
-       <div dir="ltr"   class="kotar-app-bar-by-filter" [ngStyle]="{'height': (height-30)/3 + 'px' }"  >                
-            <div class="divHaeder" style="padding-top: 5%;height: 20%;">התפלגות מספר מועסקים מהקבוצה<br>* הנבחרת בענף (2020)</div>
-            <div  title="אקסל"  class="cssCSVcub" (click)="exportAsCSVcub(dataGraf3(),'התפלגות מספר מועסקים מהקבוצה * הנבחרת בענף (2020)')">
-                    <img class="imageCSV" src="./assets/Library/Icons/svg/excel.svg"  />
-            </div>
-            <app-big-bar-by-filter [Scala]=dataGraf3()  [catgory]=appStore.selectgivunGroup.value style="height:80%"></app-big-bar-by-filter>
+  <div  style="width:20%;" height="100%" class="divTbl4" >
+    <div dir="ltr" class="kotar-app-bar-by-filter" [ngStyle]="{'height': (height-30)/3 + 'px' }"  >
+      <div class="divHaeder" style="padding-top: 5%;height: 15%;">אקדמאים</div>
+      @if (!stateMumifAcademic) {
+        <div class="stateNoData">אין נתונים להצגה</div>
+      }
+      @if (stateMumifAcademic) {
+        <div class="barAllAcl" style="height: 85%;" >
+          <div class="grafBarDiv">
+            <span>{{stateMumifAcademic[0]?.academic_prcnt_2020 | percent}}</span>
+            <div class="grafBar grafBarAll"
+            [ngStyle]="{'height':  100 - (stateMumifAcademic[0]?.academic_prcnt_2020 *100) + '%','background-color':'#D3E3FD'}"></div>
+            <div class="grafBar grafBarNum"
+            [ngStyle]="{'height': (stateMumifAcademic[0]?.academic_prcnt_2020*100) + '%','background-color': '#8F4091'}"></div>
+            <span>ענף נבחר</span>
+          </div>
+          <div class="grafBarDiv">
+            <div>{{numAllAcadmic[0]?.value | number:'1.0-2'}}%</div>
+            <div class="grafBar grafBarAll"
+            [ngStyle]="{'height':  100 - numAllAcadmic[0]?.value + '%','background-color':'#D3E3FD'}"></div>
+            <div class="grafBar grafBarNum"
+            [ngStyle]="{'height': numAllAcadmic[0]?.value + '%','background-color': '#0095DA'}"></div>
+            <div>כלל הענפים</div>
+          </div>
+        </div>
+      }
+    </div>
+    <div dir="ltr"   class="kotar-app-bar-by-filter" [ngStyle]="{'height': (height-30)/3 + 'px' }"  >
+      <div class="divHaeder" style="padding-top: 5%;height: 15%;">התפלגות מספר מועסקים בענף (2020)</div>
+      <div  title="אקסל"  class="cssCSVcub" (click)="exportAsCSVcub(appStore.countEmpSum,'התפלגות מספר מועסקים בענף (2020)')">
+        <img class="imageCSV" src="./assets/Library/Icons/svg/excel.svg"  />
       </div>
-   
-</div>
-<div  height="100%" class="divEcharts"  >        
-        <div class="tdContainer" [ngStyle]="{'height': height/2 + 'px' }">           
-                <div dir="ltr" class="kotar" >
-                    <div *ngIf="stateMegama2" title="אקסל"  class="cssCSV" (click)="exportAsCSV(stateMegama2.data,'מספר מועסקים לפי גילאים',appStore.mddFilterData[1].value)">
-                        <img class="image" src="./assets/Library/Icons/svg/excel.svg"  />
-                    </div>
-                    <span class="divHaeder">מספר מועסקים לפי גילאים</span>
-                </div>
-        <div class="stateNoData" *ngIf="!stateMegama2" >אין נתונים להצגה</div> 
-        <div class="chart" *ngIf="stateMegama2" >
-            <div class="echarts-div"  echarts  [options]="stateMegama2.chart"  style="width: 100%;height:90%"  ></div>
-        </div>  
-       </div>
-        <div class="tdContainer"  [ngStyle]="{'height': height/2 + 'px' }">           
-            <div dir="ltr" class="kotar" >
-                 <div *ngIf="stateMegama" title="אקסל"  class="cssCSV" (click)="exportAsCSV(stateMegama.data,'שכר חודשי ממוצע לפי גילאים',appStore.mddFilterData[0].value)">
-                    <img class="image" src="./assets/Library/Icons/svg/excel.svg"  />
-                </div>
-                <span class="divHaeder">שכר חודשי ממוצע לפי גילאים</span>
-            </div>
-         <div class="stateNoData" *ngIf="!stateMegama" >אין נתונים להצגה</div> 
-        <div class="chart" *ngIf="stateMegama">
-            <div class="echarts-div"  echarts  [options]="stateMegama.chart"  style="width: 100%;height:90%"  ></div>
-        </div>  
-    </div>  
+      <app-big-bar-by-filter [Scala]=appStore.countEmpSum [catgory]=-1 style="height:85%"></app-big-bar-by-filter>
+    </div>
+    <div dir="ltr"   class="kotar-app-bar-by-filter" [ngStyle]="{'height': (height-30)/3 + 'px' }"  >
+      <div class="divHaeder" style="padding-top: 5%;height: 20%;">התפלגות מספר מועסקים מהקבוצה<br>* הנבחרת בענף (2020)</div>
+      <div  title="אקסל"  class="cssCSVcub" (click)="exportAsCSVcub(dataGraf3(),'התפלגות מספר מועסקים מהקבוצה * הנבחרת בענף (2020)')">
+        <img class="imageCSV" src="./assets/Library/Icons/svg/excel.svg"  />
+      </div>
+      <app-big-bar-by-filter [Scala]=dataGraf3()  [catgory]=appStore.selectgivunGroup.value style="height:80%"></app-big-bar-by-filter>
+    </div>
 
- <!-- <div width="20%"  height="100%"  class="divTbl"  [ngStyle]="{'height': height + 'px' }">
-    
-    <app-num-category></app-num-category>
-</div> -->
-</div>
-<div  height="100%" class="divEcharts"  >        
-        <div class="tdContainer" [ngStyle]="{'height': height/2 + 'px' }">           
-                <div dir="ltr" class="kotar" >
-                    <div *ngIf="stateMegama3" title="אקסל"  class="cssCSV" (click)="exportAsCSV(stateMegama3.data,'ציון ייצוג לפי גילאים',appStore.mddFilterData[3].value)">
-                        <img class="image" src="./assets/Library/Icons/svg/excel.svg"  />
-                    </div>
-                    <span class="divHaeder">ציון ייצוג לפי גילאים</span>
-                </div>
-        <div class="stateNoData" *ngIf="!stateMegama3" >אין נתונים להצגה</div> 
-        <div class="chart" *ngIf="stateMegama3" >
-            <div class="echarts-div"  echarts  [options]="stateMegama3.chart"  style="width: 100%;height:90%"  ></div>
-        </div>  
-       </div>
-        <div class="tdContainer"  [ngStyle]="{'height': height/2 + 'px' }">           
-            <div dir="ltr" class="kotar" >
-                 <div *ngIf="stateMegama4" title="אקסל"  class="cssCSV" (click)="exportAsCSV(stateMegama4.data,'ציון שיוויוניות שכר לפי גילאים',appStore.mddFilterData[2].value)">
-                    <img class="image" src="./assets/Library/Icons/svg/excel.svg"  />
-                </div>
-                <span class="divHaeder">ציון שיוויוניות שכר לפי גילאים</span>
-            </div>
-         <div class="stateNoData" *ngIf="!stateMegama4" >אין נתונים להצגה</div> 
-        <div class="chart" *ngIf="stateMegama4">
-            <div class="echarts-div"  echarts  [options]="stateMegama4.chart"  style="width: 100%;height:90%"  ></div>
-        </div>  
-    </div>  
+  </div>
+  <div  height="100%" class="divEcharts"  >
+    <div class="tdContainer" [ngStyle]="{'height': height/2 + 'px' }">
+      <div dir="ltr" class="kotar" >
+        @if (stateMegama2) {
+          <div title="אקסל"  class="cssCSV" (click)="exportAsCSV(stateMegama2.data,'מספר מועסקים לפי גילאים',appStore.mddFilterData[1].value)">
+            <img class="image" src="./assets/Library/Icons/svg/excel.svg"  />
+          </div>
+        }
+        <span class="divHaeder">מספר מועסקים לפי גילאים</span>
+      </div>
+      @if (!stateMegama2) {
+        <div class="stateNoData" >אין נתונים להצגה</div>
+      }
+      @if (stateMegama2) {
+        <div class="chart" >
+          <div class="echarts-div"  echarts  [options]="stateMegama2.chart"  style="width: 100%;height:90%"  ></div>
+        </div>
+      }
+    </div>
+    <div class="tdContainer"  [ngStyle]="{'height': height/2 + 'px' }">
+      <div dir="ltr" class="kotar" >
+        @if (stateMegama) {
+          <div title="אקסל"  class="cssCSV" (click)="exportAsCSV(stateMegama.data,'שכר חודשי ממוצע לפי גילאים',appStore.mddFilterData[0].value)">
+            <img class="image" src="./assets/Library/Icons/svg/excel.svg"  />
+          </div>
+        }
+        <span class="divHaeder">שכר חודשי ממוצע לפי גילאים</span>
+      </div>
+      @if (!stateMegama) {
+        <div class="stateNoData" >אין נתונים להצגה</div>
+      }
+      @if (stateMegama) {
+        <div class="chart">
+          <div class="echarts-div"  echarts  [options]="stateMegama.chart"  style="width: 100%;height:90%"  ></div>
+        </div>
+      }
+    </div>
 
- <!-- <div width="20%"  height="100%"  class="divTbl"  [ngStyle]="{'height': height + 'px' }">
-    
+    <!-- <div width="20%"  height="100%"  class="divTbl"  [ngStyle]="{'height': height + 'px' }">
+
     <app-num-category></app-num-category>
+  </div> -->
+</div>
+<div  height="100%" class="divEcharts"  >
+  <div class="tdContainer" [ngStyle]="{'height': height/2 + 'px' }">
+    <div dir="ltr" class="kotar" >
+      @if (stateMegama3) {
+        <div title="אקסל"  class="cssCSV" (click)="exportAsCSV(stateMegama3.data,'ציון ייצוג לפי גילאים',appStore.mddFilterData[3].value)">
+          <img class="image" src="./assets/Library/Icons/svg/excel.svg"  />
+        </div>
+      }
+      <span class="divHaeder">ציון ייצוג לפי גילאים</span>
+    </div>
+    @if (!stateMegama3) {
+      <div class="stateNoData" >אין נתונים להצגה</div>
+    }
+    @if (stateMegama3) {
+      <div class="chart" >
+        <div class="echarts-div"  echarts  [options]="stateMegama3.chart"  style="width: 100%;height:90%"  ></div>
+      </div>
+    }
+  </div>
+  <div class="tdContainer"  [ngStyle]="{'height': height/2 + 'px' }">
+    <div dir="ltr" class="kotar" >
+      @if (stateMegama4) {
+        <div title="אקסל"  class="cssCSV" (click)="exportAsCSV(stateMegama4.data,'ציון שיוויוניות שכר לפי גילאים',appStore.mddFilterData[2].value)">
+          <img class="image" src="./assets/Library/Icons/svg/excel.svg"  />
+        </div>
+      }
+      <span class="divHaeder">ציון שיוויוניות שכר לפי גילאים</span>
+    </div>
+    @if (!stateMegama4) {
+      <div class="stateNoData" >אין נתונים להצגה</div>
+    }
+    @if (stateMegama4) {
+      <div class="chart">
+        <div class="echarts-div"  echarts  [options]="stateMegama4.chart"  style="width: 100%;height:90%"  ></div>
+      </div>
+    }
+  </div>
+
+  <!-- <div width="20%"  height="100%"  class="divTbl"  [ngStyle]="{'height': height + 'px' }">
+
+  <app-num-category></app-num-category>
 </div> -->
 </div>

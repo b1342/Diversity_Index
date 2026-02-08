@@ -1,98 +1,94 @@
-<div class="smart-header" style="width: 90%;" dir="ltr"  *ngIf="stateNameMadd && stateCount_emp">
-<!-- <div style="width: 2%;height: 100%;"  title="אקסל"  class="cssCSV" (click)="exportAsCSV()">
-         <img class="image" src="./assets/Library/Icons/svg/excel.svg"  />
-</div> -->
-  <div id="unit_title" class="header-title"  [ngStyle]="{'width': '25%'}">   
-      <div  title="אקסל"  class="cssCSV" (click)="exportAsCSV(statetZiunei_yetzug,stateNameMadd[0])">
-            <img class="image" src="./assets/Library/Icons/svg/excel.svg"  />
-      </div>
-       <div > {{stateNameMadd[0].name}}</div>
+@if (stateNameMadd && stateCount_emp) {
+  <div class="smart-header" style="width: 90%;" dir="ltr" >
+    <!-- <div style="width: 2%;height: 100%;"  title="אקסל"  class="cssCSV" (click)="exportAsCSV()">
+    <img class="image" src="./assets/Library/Icons/svg/excel.svg"  />
+  </div> -->
+  <div id="unit_title" class="header-title"  [ngStyle]="{'width': '25%'}">
+    <div  title="אקסל"  class="cssCSV" (click)="exportAsCSV(statetZiunei_yetzug,stateNameMadd[0])">
+      <img class="image" src="./assets/Library/Icons/svg/excel.svg"  />
+    </div>
+    <div > {{stateNameMadd[0].name}}</div>
   </div>
- 
-  <div id="unit_title" class="header-title"   [ngStyle]="{'width':'25%'}"> 
-      <div  title="אקסל"  class="cssCSV" (click)="exportAsCSV(stateZiun_shivioniut_sahar,stateNameMadd[1])">
-            <img class="image" src="./assets/Library/Icons/svg/excel.svg"  />
-    </div>       
-     <div> {{stateNameMadd[1].name}}</div>        
+  <div id="unit_title" class="header-title"   [ngStyle]="{'width':'25%'}">
+    <div  title="אקסל"  class="cssCSV" (click)="exportAsCSV(stateZiun_shivioniut_sahar,stateNameMadd[1])">
+      <img class="image" src="./assets/Library/Icons/svg/excel.svg"  />
+    </div>
+    <div> {{stateNameMadd[1].name}}</div>
   </div>
- 
   <div id="unit_title" class="header-title "   [ngStyle]="{'width': '25%'}">
-      <div  title="אקסל"  class="cssCSV" (click)="exportAsCSV(stateCount_emp,stateNameMadd[2])">
-            <img class="image" src="./assets/Library/Icons/svg/excel.svg"  />
-     </div>   
-     <div> {{stateNameMadd[2].name}}</div>
+    <div  title="אקסל"  class="cssCSV" (click)="exportAsCSV(stateCount_emp,stateNameMadd[2])">
+      <img class="image" src="./assets/Library/Icons/svg/excel.svg"  />
+    </div>
+    <div> {{stateNameMadd[2].name}}</div>
   </div>
- 
   <div id="unit_title" class="header-title"   [ngStyle]="{'width': '25%'}">
-      <div  title="אקסל"  class="cssCSV" (click)="exportAsCSV(stateAverage_salary,stateNameMadd[3])">
-            <img class="image" src="./assets/Library/Icons/svg/excel.svg"  />
-      </div>   
-      <div > {{stateNameMadd[3].name}}</div>
-  </div>  
-
+    <div  title="אקסל"  class="cssCSV" (click)="exportAsCSV(stateAverage_salary,stateNameMadd[3])">
+      <img class="image" src="./assets/Library/Icons/svg/excel.svg"  />
+    </div>
+    <div > {{stateNameMadd[3].name}}</div>
+  </div>
 </div>
+}
 
 
-<div class="container"  >  
-      
+<div class="container"  >
+
   <ul style="list-style: none">
-    <li *ngIf="stateCount_emp?.length === 0"> <div class="header-title" style="text-align: center;margin-top: 4%">אין נתונים להצגה</div> </li>
-    <li *ngFor="let item of stateCount_emp ;  let i = index;">
-      
-      <div  class="row-container" >
-         <!-- <div style="width: 2%;height: 100%;" ></div>     -->
-               <div class="row-item" [ngStyle]="{'width': '25%' }">
-               <div class="tdDiv">
-                    <div class=" shem">
-                        {{statetZiunei_yetzug[i].anaf_Name_Short}}
-                     </div>    
-                  <div class="tdDiv-inside"
-                    [ngStyle]="{'width': ((statetZiunei_yetzug[i].tziunei_yetzug === -1? null :statetZiunei_yetzug[i].tziunei_yetzug) / statetZiunei_yetzug[0].tziunei_yetzug )*100 + 'px','background-color':'#1A6F96'}"></div>
-                
-                <span class="achuz" >{{statetZiunei_yetzug[i].tziunei_yetzug === -1? null : statetZiunei_yetzug[i].tziunei_yetzug | number:'1.0-2'}}
-                </span>
-               </div>
-            </div>             
-            <div class="row-item" [ngStyle]="{'width': '25%' }">
-               <div class="tdDiv">
-                    <div class=" shem">
-                        {{stateZiun_shivioniut_sahar[i].anaf_Name_Short}}
-                     </div>    
-                  <div class="tdDiv-inside"
-                    [ngStyle]="{'width': ((stateZiun_shivioniut_sahar[i].tziun_shivioniut_sahar === -1? null :stateZiun_shivioniut_sahar[i].tziun_shivioniut_sahar) / stateZiun_shivioniut_sahar[0].tziun_shivioniut_sahar )*100 + 'px','background-color':'#8CB7CB'}"></div>
-                
-                <span class="achuz">{{stateZiun_shivioniut_sahar[i].tziun_shivioniut_sahar === -1? null : stateZiun_shivioniut_sahar[i].tziun_shivioniut_sahar | number:'1.0-2'}}
-                </span>
-               </div>
-            </div>  
-            <div class="row-item" [ngStyle]="{'width': '25%' }">
-                 
-               <div class="tdDiv">
-                   <div class=" shem">
-                       {{stateCount_emp[i].anaf_Name_Short}}
-                    </div>    
-                 <div class="tdDiv-inside"
-                   [ngStyle]="{'width': ((stateCount_emp[i].count_emp=== -1? null : stateCount_emp[i].count_emp) / stateCount_emp[0].count_emp )*100 + 'px','background-color':'#1A6F96'}"></div>
-               
-               <span class="achuz">{{stateCount_emp[i].count_emp=== -1? null :  stateCount_emp[i].count_emp | number:'1.0-0'}}
-               </span>
-              </div> 
-           </div>            
-            <div class="row-item" [ngStyle]="{'width': '25%' }">
-               <div class="tdDiv">
-                    <div class=" shem">
-                        {{stateAverage_salary[i].anaf_Name_Short}}
-                     </div>    
-                  <div class="tdDiv-inside"
-                    [ngStyle]="{'width': ((stateAverage_salary[i].average_salary=== -1? null : stateAverage_salary[i].average_salary) / stateAverage_salary[0].average_salary )* 100 + 'px','background-color':'#8CB7CB'}"></div>
-                
-                <span class="achuz">{{stateAverage_salary[i].average_salary=== -1? null : stateAverage_salary[i].average_salary | number:'1.0-0'}}
-                </span>
-               </div>
-            </div>                 
-        <div style="clear: both"></div>
-      </div>
-    </li>
+    @if (stateCount_emp?.length === 0) {
+      <li> <div class="header-title" style="text-align: center;margin-top: 4%">אין נתונים להצגה</div> </li>
+    }
+    @for (item of stateCount_emp ; track item; let i = $index) {
+      <li>
+        <div  class="row-container" >
+          <!-- <div style="width: 2%;height: 100%;" ></div>     -->
+          <div class="row-item" [ngStyle]="{'width': '25%' }">
+            <div class="tdDiv">
+              <div class=" shem">
+                {{statetZiunei_yetzug[i].anaf_Name_Short}}
+              </div>
+              <div class="tdDiv-inside"
+              [ngStyle]="{'width': ((statetZiunei_yetzug[i].tziunei_yetzug === -1? null :statetZiunei_yetzug[i].tziunei_yetzug) / statetZiunei_yetzug[0].tziunei_yetzug )*100 + 'px','background-color':'#1A6F96'}"></div>
+              <span class="achuz" >{{statetZiunei_yetzug[i].tziunei_yetzug === -1? null : statetZiunei_yetzug[i].tziunei_yetzug | number:'1.0-2'}}
+              </span>
+            </div>
+          </div>
+          <div class="row-item" [ngStyle]="{'width': '25%' }">
+            <div class="tdDiv">
+              <div class=" shem">
+                {{stateZiun_shivioniut_sahar[i].anaf_Name_Short}}
+              </div>
+              <div class="tdDiv-inside"
+              [ngStyle]="{'width': ((stateZiun_shivioniut_sahar[i].tziun_shivioniut_sahar === -1? null :stateZiun_shivioniut_sahar[i].tziun_shivioniut_sahar) / stateZiun_shivioniut_sahar[0].tziun_shivioniut_sahar )*100 + 'px','background-color':'#8CB7CB'}"></div>
+              <span class="achuz">{{stateZiun_shivioniut_sahar[i].tziun_shivioniut_sahar === -1? null : stateZiun_shivioniut_sahar[i].tziun_shivioniut_sahar | number:'1.0-2'}}
+              </span>
+            </div>
+          </div>
+          <div class="row-item" [ngStyle]="{'width': '25%' }">
+            <div class="tdDiv">
+              <div class=" shem">
+                {{stateCount_emp[i].anaf_Name_Short}}
+              </div>
+              <div class="tdDiv-inside"
+              [ngStyle]="{'width': ((stateCount_emp[i].count_emp=== -1? null : stateCount_emp[i].count_emp) / stateCount_emp[0].count_emp )*100 + 'px','background-color':'#1A6F96'}"></div>
+              <span class="achuz">{{stateCount_emp[i].count_emp=== -1? null :  stateCount_emp[i].count_emp | number:'1.0-0'}}
+              </span>
+            </div>
+          </div>
+          <div class="row-item" [ngStyle]="{'width': '25%' }">
+            <div class="tdDiv">
+              <div class=" shem">
+                {{stateAverage_salary[i].anaf_Name_Short}}
+              </div>
+              <div class="tdDiv-inside"
+              [ngStyle]="{'width': ((stateAverage_salary[i].average_salary=== -1? null : stateAverage_salary[i].average_salary) / stateAverage_salary[0].average_salary )* 100 + 'px','background-color':'#8CB7CB'}"></div>
+              <span class="achuz">{{stateAverage_salary[i].average_salary=== -1? null : stateAverage_salary[i].average_salary | number:'1.0-0'}}
+              </span>
+            </div>
+          </div>
+          <div style="clear: both"></div>
+        </div>
+      </li>
+    }
   </ul>
 
 </div>

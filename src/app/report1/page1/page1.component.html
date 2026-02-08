@@ -1,102 +1,138 @@
 <app-perut-filter [report]=1></app-perut-filter>
 <table  class="tblGraf" dir="rtl"  style="width: 100%; margin-left: -15px;"  [ngStyle]="{'height': height + 'px' }">
-    <tr>
-        <td width="33%" height="50%"  > 
-               
-                <div class="tdContainer" >           
-                <div dir="ltr" class="kotar" >
-                 <div *ngIf="stateMegama" title="אקסל"  class="cssCSV" (click)="exportAsCSV(stateMegama.data,stateMegama.name)">
-                    <img class="image" src="./assets/Library/Icons/svg/excel.svg"  />
-                </div>
-                <span class="divHaeder">{{ getAnafName(1)[0]?.name}}</span>
-                </div>
-                <div class="stateNoData" *ngIf="!stateMegama" >אין נתונים להצגה</div> 
-                <div class="chart" *ngIf="stateMegama">
-                    <div class="echarts-div"  echarts  [options]="stateMegama.chart"  style="width: 100%;height:100%"  ></div>
-                </div> 
-            </div>          
-        </td>
-        <td width="33%" height="50%">
-                 
-                <div class="tdContainer" >           
-                        <div dir="ltr" class="kotar" >
-                         <div *ngIf="stateMegama2" title="אקסל"  class="cssCSV" (click)="exportAsCSV(stateMegama2.data,stateMegama2.name)">
-                            <img class="image" src="./assets/Library/Icons/svg/excel.svg"  />
-                        </div>
-                        <span class="divHaeder">{{ getAnafName(2)[0]?.name}}</span>
-                        </div>  
-                        <div class="stateNoData" *ngIf="!stateMegama2" >אין נתונים להצגה</div>       
-                <div class="chart" *ngIf="stateMegama2">
-                    <div class="echarts-div"  echarts  [options]="stateMegama2.chart"  style="width: 100%;height:100%"  ></div>
-                </div> 
-            </div>               
-        </td>          
-        <td width="33%" height="50%">
-                 
-                <div class="tdContainer" >           
-                        <div dir="ltr" class="kotar" >
-                         <div *ngIf="stateMegama3" title="אקסל"  class="cssCSV" (click)="exportAsCSV(stateMegama3.data,stateMegama3.name)">
-                            <img class="image" src="./assets/Library/Icons/svg/excel.svg"  />
-                        </div>
-                        <span class="divHaeder">{{ getAnafName(3)[0]?.name}}</span>
-                        </div>
-                        <div class="stateNoData" *ngIf="!stateMegama3" >אין נתונים להצגה</div>
-                <div class="chart" *ngIf="stateMegama3">
-                    <div class="echarts-div"  echarts  [options]="stateMegama3.chart"  style="width: 100%;height:100%"  ></div>
-                </div> 
-            </div>
-        </td>       
-        
-    </tr>
-    <tr>
-        <td width="33%" height="50%">
-               
-                <div class="tdContainer" >           
-                        <div dir="ltr" class="kotar" >
-                         <div *ngIf="stateMegama4" title="אקסל"  class="cssCSV" (click)="exportAsCSV(stateMegama4.data,stateMegama4.name)">
-                            <img class="image" src="./assets/Library/Icons/svg/excel.svg"  />
-                        </div>
-                        <span class="divHaeder">{{ getAnafName(4)[0]?.name}}</span>
-                        </div>
-                        <div class="stateNoData" *ngIf="!stateMegama4" >אין נתונים להצגה</div> 
-                <div class="chart" *ngIf="stateMegama4">
-                    <div class="echarts-div"  echarts  [options]="stateMegama4.chart"  style="width: 100%;height:90%"  ></div>
-                </div>
-            </div>
-        </td>
-        <td width="33%" height="50%">
-                
-                <div class="tdContainer" >           
-                        <div dir="ltr" class="kotar" >
-                         <div *ngIf="stateMegama5" title="אקסל"  class="cssCSV" (click)="exportAsCSV(stateMegama5.data,stateMegama5.name)">
-                            <img class="image" src="./assets/Library/Icons/svg/excel.svg"  />
-                        </div>
-                        <span class="divHaeder">{{ getAnafName(5)[0]?.name}}</span>
-                        </div>
-                 <div class="stateNoData" *ngIf="!stateMegama5" >אין נתונים להצגה</div> 
-                <div class="chart" *ngIf="stateMegama5">
-                    <div class="echarts-div"  echarts  [options]="stateMegama5.chart"  style="width: 100%;height:90%"  ></div>
-                </div>  
-            </div>    
-        </td>          
-        <td width="33%" height="50%">
-                
-                <div class="tdContainer" >           
-                        <div dir="ltr" class="kotar" >
-                         <div *ngIf="stateMegama6" title="אקסל"  class="cssCSV" (click)="exportAsCSV(stateMegama6.data,getAnafName(7)[0]?.name)">
-                            <img class="image" src="./assets/Library/Icons/svg/excel.svg"  />
-                        </div>
-                        <span class="divHaeder">{{ getAnafName(7)[0]?.name}}</span>
-                        </div>
-                <div class="stateNoData"   *ngIf="!stateMegama6" >אין נתונים להצגה</div> 
-                <div class="chart" *ngIf="stateMegama6" >
-                    <div class="echarts-div"  echarts 
-                     [options]="stateMegama6.chart"  style="width: 100%;height:90%"  ></div>
-                </div>
-            </div>
-        </td>       
-        
-    </tr>
+  <tr>
+    <td width="33%" height="50%"  >
 
-   
+      <div class="tdContainer" >
+        <div dir="ltr" class="kotar" >
+          @if (stateMegama) {
+            <div title="אקסל"  class="cssCSV" (click)="exportAsCSV(stateMegama.data,stateMegama.name)">
+              <img class="image" src="./assets/Library/Icons/svg/excel.svg"  />
+            </div>
+          }
+          <span class="divHaeder">{{ getAnafName(1)[0]?.name}}</span>
+        </div>
+        @if (!stateMegama) {
+          <div class="stateNoData" >אין נתונים להצגה</div>
+        }
+        @if (stateMegama) {
+          <div class="chart">
+            <div class="echarts-div"  echarts  [options]="stateMegama.chart"  style="width: 100%;height:100%"  ></div>
+          </div>
+        }
+      </div>
+    </td>
+    <td width="33%" height="50%">
+
+      <div class="tdContainer" >
+        <div dir="ltr" class="kotar" >
+          @if (stateMegama2) {
+            <div title="אקסל"  class="cssCSV" (click)="exportAsCSV(stateMegama2.data,stateMegama2.name)">
+              <img class="image" src="./assets/Library/Icons/svg/excel.svg"  />
+            </div>
+          }
+          <span class="divHaeder">{{ getAnafName(2)[0]?.name}}</span>
+        </div>
+        @if (!stateMegama2) {
+          <div class="stateNoData" >אין נתונים להצגה</div>
+        }
+        @if (stateMegama2) {
+          <div class="chart">
+            <div class="echarts-div"  echarts  [options]="stateMegama2.chart"  style="width: 100%;height:100%"  ></div>
+          </div>
+        }
+      </div>
+    </td>
+    <td width="33%" height="50%">
+
+      <div class="tdContainer" >
+        <div dir="ltr" class="kotar" >
+          @if (stateMegama3) {
+            <div title="אקסל"  class="cssCSV" (click)="exportAsCSV(stateMegama3.data,stateMegama3.name)">
+              <img class="image" src="./assets/Library/Icons/svg/excel.svg"  />
+            </div>
+          }
+          <span class="divHaeder">{{ getAnafName(3)[0]?.name}}</span>
+        </div>
+        @if (!stateMegama3) {
+          <div class="stateNoData" >אין נתונים להצגה</div>
+        }
+        @if (stateMegama3) {
+          <div class="chart">
+            <div class="echarts-div"  echarts  [options]="stateMegama3.chart"  style="width: 100%;height:100%"  ></div>
+          </div>
+        }
+      </div>
+    </td>
+
+  </tr>
+  <tr>
+    <td width="33%" height="50%">
+
+      <div class="tdContainer" >
+        <div dir="ltr" class="kotar" >
+          @if (stateMegama4) {
+            <div title="אקסל"  class="cssCSV" (click)="exportAsCSV(stateMegama4.data,stateMegama4.name)">
+              <img class="image" src="./assets/Library/Icons/svg/excel.svg"  />
+            </div>
+          }
+          <span class="divHaeder">{{ getAnafName(4)[0]?.name}}</span>
+        </div>
+        @if (!stateMegama4) {
+          <div class="stateNoData" >אין נתונים להצגה</div>
+        }
+        @if (stateMegama4) {
+          <div class="chart">
+            <div class="echarts-div"  echarts  [options]="stateMegama4.chart"  style="width: 100%;height:90%"  ></div>
+          </div>
+        }
+      </div>
+    </td>
+    <td width="33%" height="50%">
+
+      <div class="tdContainer" >
+        <div dir="ltr" class="kotar" >
+          @if (stateMegama5) {
+            <div title="אקסל"  class="cssCSV" (click)="exportAsCSV(stateMegama5.data,stateMegama5.name)">
+              <img class="image" src="./assets/Library/Icons/svg/excel.svg"  />
+            </div>
+          }
+          <span class="divHaeder">{{ getAnafName(5)[0]?.name}}</span>
+        </div>
+        @if (!stateMegama5) {
+          <div class="stateNoData" >אין נתונים להצגה</div>
+        }
+        @if (stateMegama5) {
+          <div class="chart">
+            <div class="echarts-div"  echarts  [options]="stateMegama5.chart"  style="width: 100%;height:90%"  ></div>
+          </div>
+        }
+      </div>
+    </td>
+    <td width="33%" height="50%">
+
+      <div class="tdContainer" >
+        <div dir="ltr" class="kotar" >
+          @if (stateMegama6) {
+            <div title="אקסל"  class="cssCSV" (click)="exportAsCSV(stateMegama6.data,getAnafName(7)[0]?.name)">
+              <img class="image" src="./assets/Library/Icons/svg/excel.svg"  />
+            </div>
+          }
+          <span class="divHaeder">{{ getAnafName(7)[0]?.name}}</span>
+        </div>
+        @if (!stateMegama6) {
+          <div class="stateNoData"   >אין נתונים להצגה</div>
+        }
+        @if (stateMegama6) {
+          <div class="chart" >
+            <div class="echarts-div"  echarts
+            [options]="stateMegama6.chart"  style="width: 100%;height:90%"  ></div>
+          </div>
+        }
+      </div>
+    </td>
+
+  </tr>
+
+
 </table>

@@ -1,54 +1,51 @@
 <div class="row-item">
 
-  <div class="stateNoData" *ngIf="maxScala < 0">
-    אין נתונים להצגה
-  </div>
+  @if (maxScala < 0) {
+    <div class="stateNoData">
+      אין נתונים להצגה
+    </div>
+  }
 
-  <ul
-    *ngIf="maxScala > 0"
-    style="list-style: none; padding: 0; width: 70%;"
-  >
-
-    <li
-      *ngFor="let item of givunGroupData"
-      style="padding: 0; height: 2%;"
-    >
-
-      <ng-container *ngIf="stateData(item.value) as state">
-
-        <div class="tdDiv" style="margin: 0;">
-          <div
-            class="tdDiv-inside"
+  @if (maxScala > 0) {
+    <ul
+      style="list-style: none; padding: 0; width: 70%;"
+      >
+      @for (item of givunGroupData; track item) {
+        <li
+          style="padding: 0; height: 2%;"
+          >
+          @if (stateData(item.value); as state) {
+            <div class="tdDiv" style="margin: 0;">
+              <div
+                class="tdDiv-inside"
             [ngStyle]="{
               width: (state[0]?.value / maxScala) * 80 + '%',
               'background-color': colorCatgory(item.value)
             }"
-          >
-          </div>
+                >
+              </div>
+              <span class="achuz">
+                {{ state[0]?.value | number:'1.0-' + numToFixed }}
+              </span>
+            </div>
+          }
+        </li>
+      }
+    </ul>
+  }
 
-          <span class="achuz">
-            {{ state[0]?.value | number:'1.0-' + numToFixed }}
-          </span>
-        </div>
+  @if (maxScala > 0) {
+    <div
+      class="cssCSV"
+      title="אקסל"
+      (click)="exportAsCSV()"
+      >
+      <img
+        class="image"
+        src="./assets/Library/Icons/svg/excel.svg"
+        alt="Export to Excel"
+        />
+      </div>
+    }
 
-      </ng-container>
-
-    </li>
-
-  </ul>
-
-  <div
-    *ngIf="maxScala > 0"
-    class="cssCSV"
-    title="אקסל"
-    (click)="exportAsCSV()"
-  >
-    <img
-      class="image"
-      src="./assets/Library/Icons/svg/excel.svg"
-      alt="Export to Excel"
-    />
   </div>
-
-</div>
- 

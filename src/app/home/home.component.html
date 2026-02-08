@@ -1,55 +1,58 @@
 
- <div class="search" dir="rtl" >
-    <table  dir="rtl"   style="width: 100%;height:60px; margin-left: -15px;background-color: #0072A7;" >
-        <tr>
-            <td width="7%" height="25%"  style="cursor: auto; background-color: #0072A7;text-align: center;">
-                <div class="koter">תפריט</div>
-            </td>
-            <td width="15.5%" (click)="openPage('report1')" height="25%" >
-                <div class="cubMdd">
-                    ייצוג ושכר בכל ענפי <br>הכלכלה לפי קבוצת גיוון
-                </div> 
-                <div class="num"><img class="image" src="./assets/Library/Icons/Png/Vector.png"  /> </div>                 
-            </td>          
-            <td width="15.5%" height="25%" (click)="openPage('report2')">
-                <div class="cubMdd" >
-                    דירוג ייצוג ושכר בכל ענפי <br>הכלכלה, לפי שנה וקבוצת גיוון                
-                </div>
-                <div class="num"><img class="image" src="./assets/Library/Icons/Png/Vector.png"  /> </div>  
-            </td>
-            <td width="15.5%"  height="25%" (click)="openPage('report3')" >
-                
-                <div class="cubMdd" >
-                        השוואת נתוני  <br>הגיוון ב 4 ענפי כלכלה
-                </div>
-                <div class="num"><img class="image" src="./assets/Library/Icons/Png/Vector.png"  /> </div>  
-            </td>
-            <td width="15.5%" height="25%" (click)="openPage('report4')" >
-                
-                <div class="cubMdd" >
-                        השוואת קבוצות<br> הגיוון בענף כלכלי
-                 </div>
-                 <div class="num"><img class="image" src="./assets/Library/Icons/Png/Vector.png"  /> </div>  
-            </td> 
-            <td width="15.5%" height="25%" class="disable" >
-                
-                    <div class="cubMdd" >
-                        מבט עומק של קבוצת<br> גיוון בענף כלכלי
-                     </div>
-                     <!-- <div class="num"><img class="image" src="./assets/Library/Icons/Png/Vector.png"  /> </div>   -->
-                </td> 
-            <td width="15.5%" height="25%" class="disable"  >
-            
-                    <div class="cubMdd disable" >
-                            השוואת גיוון רב <br>שנתית בענף כלכלי אחד 
-                        </div>
-                    <!-- <div class="num"><img class="image" src="./assets/Library/Icons/Png/Vector.png"  /> </div>   -->
-                </td> 
-        </tr>
-    </table>
- <div class="content" *ngIf="!appStore.homePageData && !appStore.homePageSumData && !appStore.homePageSumAllData" style="width: 100%; "  [ngStyle]="{'height': height + 'px' }">
-    <div class="loader" ></div>
-  </div> 
- <div *ngIf="appStore.homePageData && appStore.homePageSumData && appStore.homePageSumAllData"><app-page_home></app-page_home></div>
+<div class="search" dir="rtl" >
+  <table  dir="rtl"   style="width: 100%;height:60px; margin-left: -15px;background-color: #0072A7;" >
+    <tr>
+      <td width="7%" height="25%"  style="cursor: auto; background-color: #0072A7;text-align: center;">
+        <div class="koter">תפריט</div>
+      </td>
+      <td width="15.5%" (click)="openPage('report1')" height="25%" >
+        <div class="cubMdd">
+          ייצוג ושכר בכל ענפי <br>הכלכלה לפי קבוצת גיוון
+        </div>
+        <div class="num"><img class="image" src="./assets/Library/Icons/Png/Vector.png"  /> </div>
+      </td>
+      <td width="15.5%" height="25%" (click)="openPage('report2')">
+        <div class="cubMdd" >
+          דירוג ייצוג ושכר בכל ענפי <br>הכלכלה, לפי שנה וקבוצת גיוון
+        </div>
+        <div class="num"><img class="image" src="./assets/Library/Icons/Png/Vector.png"  /> </div>
+      </td>
+      <td width="15.5%"  height="25%" (click)="openPage('report3')" >
+
+        <div class="cubMdd" >
+          השוואת נתוני  <br>הגיוון ב 4 ענפי כלכלה
+        </div>
+        <div class="num"><img class="image" src="./assets/Library/Icons/Png/Vector.png"  /> </div>
+      </td>
+      <td width="15.5%" height="25%" (click)="openPage('report4')" >
+
+        <div class="cubMdd" >
+          השוואת קבוצות<br> הגיוון בענף כלכלי
+        </div>
+        <div class="num"><img class="image" src="./assets/Library/Icons/Png/Vector.png"  /> </div>
+      </td>
+      <td width="15.5%" height="25%" class="disable" >
+
+        <div class="cubMdd" >
+          מבט עומק של קבוצת<br> גיוון בענף כלכלי
+        </div>
+        <!-- <div class="num"><img class="image" src="./assets/Library/Icons/Png/Vector.png"  /> </div>   -->
+      </td>
+      <td width="15.5%" height="25%" class="disable"  >
+
+        <div class="cubMdd disable" >
+          השוואת גיוון רב <br>שנתית בענף כלכלי אחד
+        </div>
+        <!-- <div class="num"><img class="image" src="./assets/Library/Icons/Png/Vector.png"  /> </div>   -->
+      </td>
+    </tr>
+  </table>
+  @if (!appStore.homePageData && !appStore.homePageSumData && !appStore.homePageSumAllData) {
+    <div class="content" style="width: 100%; "  [ngStyle]="{'height': height + 'px' }">
+      <div class="loader" ></div>
+    </div>
+  }
+  @if (appStore.homePageData && appStore.homePageSumData && appStore.homePageSumAllData) {
+    <div><app-page_home></app-page_home></div>
+  }
 </div>
-    

@@ -1,107 +1,98 @@
-<div class="search" dir="rtl" *ngIf="numAll && getNumAllByCatgory">
-
-  <table
-    class="workforce-table"
-    dir="rtl"
-    [ngStyle]="{ height: height + 'px' }"
-  >
-
-    <tr>
-
-      <td class="title-cell">
-        <div class="koter">
-          הרכב כוח עבודה<br />
-          בישראל ({{ numAll[0]?.year }})&nbsp;>
-        </div>
-      </td>
-
-      <!-- 1 -->
-      <td class="data-cell">
-        <ng-container *ngIf="getNumAllByCatgory(1) as c1">
-          <ng-container *ngIf="NameCatgory(1) as n1">
-            <div
-              class="cubMdd"
+@if (numAll && getNumAllByCatgory) {
+  <div class="search" dir="rtl">
+    <table
+      class="workforce-table"
+      dir="rtl"
+      [ngStyle]="{ height: height + 'px' }"
+      >
+      <tr>
+        <td class="title-cell">
+          <div class="koter">
+            הרכב כוח עבודה<br />
+            בישראל ({{ numAll[0]?.year }})&nbsp;>
+          </div>
+        </td>
+        <!-- 1 -->
+        <td class="data-cell">
+          @if (getNumAllByCatgory(1); as c1) {
+            @if (NameCatgory(1); as n1) {
+              <div
+                class="cubMdd"
               [ngStyle]="{
                 'border-right': '5px solid ' + colorCatgory(1)
               }"
-            >
-              <span class="num">{{ c1[0]?.value }}%</span>
-              &nbsp; {{ n1[0]?.name }}
-            </div>
-          </ng-container>
-        </ng-container>
-      </td>
-
-      <!-- 2 -->
-      <td class="data-cell">
-        <ng-container *ngIf="getNumAllByCatgory(2) as c2">
-          <ng-container *ngIf="NameCatgory(2) as n2">
-            <div
-              class="cubMdd"
+                >
+                <span class="num">{{ c1[0]?.value }}%</span>
+                &nbsp; {{ n1[0]?.name }}
+              </div>
+            }
+          }
+        </td>
+        <!-- 2 -->
+        <td class="data-cell">
+          @if (getNumAllByCatgory(2); as c2) {
+            @if (NameCatgory(2); as n2) {
+              <div
+                class="cubMdd"
               [ngStyle]="{
                 'border-right': '5px solid ' + colorCatgory(2)
               }"
-            >
-              <span class="num">{{ c2[0]?.value }}%</span>
-              &nbsp; {{ n2[0]?.name }}
-            </div>
-          </ng-container>
-        </ng-container>
-      </td>
-
-      <!-- 3 -->
-      <td class="data-cell">
-        <ng-container *ngIf="getNumAllByCatgory(3) as c3">
-          <ng-container *ngIf="NameCatgory(3) as n3">
-            <div
-              class="cubMdd"
+                >
+                <span class="num">{{ c2[0]?.value }}%</span>
+                &nbsp; {{ n2[0]?.name }}
+              </div>
+            }
+          }
+        </td>
+        <!-- 3 -->
+        <td class="data-cell">
+          @if (getNumAllByCatgory(3); as c3) {
+            @if (NameCatgory(3); as n3) {
+              <div
+                class="cubMdd"
               [ngStyle]="{
                 'border-right': '5px solid ' + colorCatgory(3)
               }"
-            >
-              <span class="num">{{ c3[0]?.value }}%</span>
-              &nbsp; {{ n3[0]?.name }}
-            </div>
-          </ng-container>
-        </ng-container>
-      </td>
-
-      <!-- 4 -->
-      <td class="data-cell">
-        <ng-container *ngIf="getNumAllByCatgory(4) as c4">
-          <ng-container *ngIf="NameCatgory(4) as n4">
-            <div
-              class="cubMdd"
+                >
+                <span class="num">{{ c3[0]?.value }}%</span>
+                &nbsp; {{ n3[0]?.name }}
+              </div>
+            }
+          }
+        </td>
+        <!-- 4 -->
+        <td class="data-cell">
+          @if (getNumAllByCatgory(4); as c4) {
+            @if (NameCatgory(4); as n4) {
+              <div
+                class="cubMdd"
               [ngStyle]="{
                 'border-right': '5px solid ' + colorCatgory(4)
               }"
-            >
-              <span class="num">{{ c4[0]?.value }}%</span>
-              &nbsp; {{ n4[0]?.name }}
-            </div>
-          </ng-container>
-        </ng-container>
-      </td>
-
-      <!-- 5 -->
-      <td class="data-cell">
-        <ng-container *ngIf="getNumAllByCatgory(5) as c5">
-          <ng-container *ngIf="NameCatgory(5) as n5">
-            <div
-              class="cubMdd"
+                >
+                <span class="num">{{ c4[0]?.value }}%</span>
+                &nbsp; {{ n4[0]?.name }}
+              </div>
+            }
+          }
+        </td>
+        <!-- 5 -->
+        <td class="data-cell">
+          @if (getNumAllByCatgory(5); as c5) {
+            @if (NameCatgory(5); as n5) {
+              <div
+                class="cubMdd"
               [ngStyle]="{
                 'border-right': '5px solid ' + colorCatgory(5)
               }"
-            >
-              <span class="num">{{ c5[0]?.value }}%</span>
-              &nbsp; {{ n5[0]?.name }}
-            </div>
-          </ng-container>
-        </ng-container>
-      </td>
-
-    </tr>
-
-  </table>
-
-</div>
+                >
+                <span class="num">{{ c5[0]?.value }}%</span>
+                &nbsp; {{ n5[0]?.name }}
+              </div>
+            }
+          }
+        </td>
+      </tr>
+    </table>
+  </div>
+}

@@ -1,37 +1,41 @@
 
 <app-perut-filter [report]=2></app-perut-filter>
-  
+
 <table  class="tblGraf" dir="rtl"  style="width: 100%; "  [ngStyle]="{'height': height + 'px' }">
-    <tr>
-        <td width="8%" height="50%"  class="academicImg" [ngStyle]="{'border-right-color': pngAcademicColor  }">        
-            <div style="width: 100%">
-              <img class="image" src="./assets/Library/Icons/svg/academic{{pngAcademic}}.svg"  /> 
-              <div class="txtImage">  בעלי השכלה אקדמית</div>
-            </div>
-        </td>
-        <td width="92%" height="50%" style="min-height:50%;max-height: 50%"  >            
-               <app-grafAcademic  *ngIf="appStore.factAllData" [isAcademic] = 2></app-grafAcademic>              
-        </td>    
-        <!-- <td width="4%" height="50%" >           
-            <div style="width: 100%;height: 100%;"  title="אקסל"  class="cssCSV" (click)="exportAsCSV(stateMegama6.data,getAnafName(7)[0]?.name)">
-                    <img class="image" src="./assets/Library/Icons/svg/excel.svg"  />
-           </div>
-        </td> -->
-    </tr>
-    <tr>
-        <td width="8%" height="50%" class="academicImg" [ngStyle]="{'border-right-color': pngAcademicColor  }">           
-            <div style="width: 100%">
-                <img class="image" src="./assets/Library/Icons/svg/non academic{{pngAcademic}}.svg"  /> 
-                <div class="txtImage"> ללא השכלה אקדמית</div>
-           </div>
-        </td>
-          <td width="92%" height="50%" style="min-height:50%;max-height: 50%">           
-                <app-grafAcademic *ngIf="appStore.factAllData" [isAcademic] = 3 ></app-grafAcademic>
-         </td> 
-         <!-- <td width="4%" height="50%" >           
-            <div style="width: 100%;height: 100%;"  title="אקסל"  class="cssCSV" (click)="exportAsCSV(stateMegama6.data,getAnafName(7)[0]?.name)">
-                    <img class="image" src="./assets/Library/Icons/svg/excel.svg"  />
-           </div>
-        </td> -->
-    </tr>
+  <tr>
+    <td width="8%" height="50%"  class="academicImg" [ngStyle]="{'border-right-color': pngAcademicColor  }">
+      <div style="width: 100%">
+        <img class="image" src="./assets/Library/Icons/svg/academic{{pngAcademic}}.svg"  />
+        <div class="txtImage">  בעלי השכלה אקדמית</div>
+      </div>
+    </td>
+    <td width="92%" height="50%" style="min-height:50%;max-height: 50%"  >
+      @if (appStore.factAllData) {
+        <app-grafAcademic  [isAcademic] = 2></app-grafAcademic>
+      }
+    </td>
+    <!-- <td width="4%" height="50%" >
+    <div style="width: 100%;height: 100%;"  title="אקסל"  class="cssCSV" (click)="exportAsCSV(stateMegama6.data,getAnafName(7)[0]?.name)">
+      <img class="image" src="./assets/Library/Icons/svg/excel.svg"  />
+    </div>
+  </td> -->
+</tr>
+<tr>
+  <td width="8%" height="50%" class="academicImg" [ngStyle]="{'border-right-color': pngAcademicColor  }">
+    <div style="width: 100%">
+      <img class="image" src="./assets/Library/Icons/svg/non academic{{pngAcademic}}.svg"  />
+      <div class="txtImage"> ללא השכלה אקדמית</div>
+    </div>
+  </td>
+  <td width="92%" height="50%" style="min-height:50%;max-height: 50%">
+    @if (appStore.factAllData) {
+      <app-grafAcademic [isAcademic] = 3 ></app-grafAcademic>
+    }
+  </td>
+  <!-- <td width="4%" height="50%" >
+  <div style="width: 100%;height: 100%;"  title="אקסל"  class="cssCSV" (click)="exportAsCSV(stateMegama6.data,getAnafName(7)[0]?.name)">
+    <img class="image" src="./assets/Library/Icons/svg/excel.svg"  />
+  </div>
+</td> -->
+</tr>
 </table>

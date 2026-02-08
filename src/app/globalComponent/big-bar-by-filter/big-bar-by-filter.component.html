@@ -1,48 +1,42 @@
 <div class="row-item">
 
-  <div class="stateNoData" *ngIf="maxScala < 0">
-    אין נתונים להצגה
-  </div>
+  @if (maxScala < 0) {
+    <div class="stateNoData">
+      אין נתונים להצגה
+    </div>
+  }
 
-  <ul
-    *ngIf="maxScala > 0"
-    style="list-style: none; padding: 0; width: 90%;"
-  >
-
-    <li
-      *ngFor="let item of godelData; let i = index"
-      style="padding: 0; height: 15%;"
-    >
-
-      <ng-container *ngIf="stateData(i + 1) as state">
-        <ng-container *ngIf="getGodelName(i + 1) as godelName">
-
-          <div class="tdDiv" style="margin: 5px;">
-
-            <div class="shem">
-              {{ godelName[0]?.name }}
-            </div>
-
-            <div
-              class="tdDiv-inside"
+  @if (maxScala > 0) {
+    <ul
+      style="list-style: none; padding: 0; width: 90%;"
+      >
+      @for (item of godelData; track item; let i = $index) {
+        <li
+          style="padding: 0; height: 15%;"
+          >
+          @if (stateData(i + 1); as state) {
+            @if (getGodelName(i + 1); as godelName) {
+              <div class="tdDiv" style="margin: 5px;">
+                <div class="shem">
+                  {{ godelName[0]?.name }}
+                </div>
+                <div
+                  class="tdDiv-inside"
               [ngStyle]="{
                 width: (state[0]?.count_emp / maxScala) * 60 + '%',
                 'background-color': colorCatgory(i + 1)
               }"
-            >
-            </div>
-
-            <span class="achuz">
-              {{ state[0]?.count_emp | number:'1.0-2' }}
-            </span>
-
-          </div>
-
-        </ng-container>
-      </ng-container>
-
-    </li>
-
-  </ul>
+                  >
+                </div>
+                <span class="achuz">
+                  {{ state[0]?.count_emp | number:'1.0-2' }}
+                </span>
+              </div>
+            }
+          }
+        </li>
+      }
+    </ul>
+  }
 
 </div>
