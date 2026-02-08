@@ -189,7 +189,7 @@ ul{
   background-image: url(/assets/arrowUp.png) !important ;
   
 }
-.mat-dialog-container{
+.mat-mdc-dialog-container{
   padding:7px 12px 12px 12px !important;
 } 
 /*.cdk-global-scrollblock {

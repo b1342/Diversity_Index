@@ -1,7 +1,7 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
 import { AppState } from '../app.state';
 import { RootService } from '../root.service';
-import { MatLegacyDialogConfig as MatDialogConfig, MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
+import {  MatDialogConfig,  MatDialog } from '@angular/material/dialog';
 import { DialogAlertComponent } from '../globalComponent/dialog-alert/dialog-alert.component';
 
 

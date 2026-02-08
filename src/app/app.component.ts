@@ -3,7 +3,7 @@ import { RootService } from './root.service';
 import { Component,  OnInit, HostBinding } from '@angular/core';
 import { AppService } from './app.service';
 import { AppState } from './app.state';
-import { MatLegacyDialog as MatDialog, MatLegacyDialogConfig as MatDialogConfig } from '@angular/material/legacy-dialog';
+import {MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { DialogAlertComponent } from './globalComponent/dialog-alert/dialog-alert.component';
 
 
@@ -12,7 +12,7 @@ import { DialogAlertComponent } from './globalComponent/dialog-alert/dialog-aler
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
  
-})
+})     
 export class AppComponent implements  OnInit {
   ngOnInit() {
     console.log('AppStore:', this.appStore);

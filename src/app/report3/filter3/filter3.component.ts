@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AppState } from '../../app.state';
 import { RootService } from '../../root.service';
-import { MatLegacyDialogConfig as MatDialogConfig } from '@angular/material/legacy-dialog';
-import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
+import { MatDialogConfig } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from 'src/app/globalComponent/dialog/dialog.component';
 import { Router } from '@angular/router';
 import { Report3Service } from '../report3.service';
