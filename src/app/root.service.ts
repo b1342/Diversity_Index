@@ -14,7 +14,8 @@ import { HttpClient, HttpResponse, HttpHeaders } from '@angular/common/http';
 import { formatNumber } from '@angular/common';
 import { strictEqual } from 'assert';
 import { IfStmt } from '@angular/compiler';
-import { ReCaptchaV3Service } from 'ng-recaptcha';
+import { RecaptchaService } from './recaptcha.service';
+
 //import * as XLSX from 'ts-xlsx';
  
 
@@ -32,7 +33,7 @@ export class RootService {
         private route: Router,
         private activatedRoute: ActivatedRoute,
         private appService: AppService,
-        private recaptchaV3Service: ReCaptchaV3Service,
+        private recaptchaService: RecaptchaService,
         private http: HttpClient) {
           console.log(window.innerWidth);
           this.fontResulation = window.innerWidth < 1300 ? 0 : 5;
@@ -177,7 +178,7 @@ export class RootService {
         // this.loadaALLDataByFilter(5,'בני ובנות 45 ומעלה'); 
         // this.loadaALLDataByFilter(-1,'לא קבוצת גיוון'); 
         try {
-          this.recaptchaV3Service.execute('importantAction')
+          this.recaptchaService.execute('importantAction')
           .subscribe((token: string) => {
               console.log('starALLDataByFilter'  +Date());
               this.http.get(this.url+ givunGroup
@@ -262,27 +263,27 @@ export class RootService {
      }
     
     async loadFilterToData() {
-        Promise.all([    
-        this.loadAcademicPrcntData(),     
-        this.loadHomePageData(),
-        this.loadaHomeSumAllData(),
-        this.loadaHomeSumData(),
-        this.loadFilterAnafAllData(),  
-        this.loadCountEmpSum(), 
-        this.loadFilterData('year'),
-        this.loadFilterData('leom'),
-        this.loadFilterData('godel'),
-        this.loadFilterData('gil'),
-        this.loadFilterData('anafGlobal'), 
-       // this.loadFilterData('givunGroup'), 
-      ]).then((data) => {
-        console.log('Data loaded:', data);
-      }).catch((error) => {
-        console.error('Error loading data:', error);
-               
-        }).then(function(data) {               
-      });
-    }
+  try {
+    await this.loadAcademicPrcntData();
+    await this.loadHomePageData();
+    await this.loadaHomeSumAllData();
+    await this.loadaHomeSumData();
+    await this.loadFilterAnafAllData();
+    await this.loadCountEmpSum();
+
+    await this.loadFilterData('year');
+    await this.loadFilterData('leom');
+    await this.loadFilterData('godel');
+    await this.loadFilterData('gil');
+    await this.loadFilterData('anafGlobal');
+
+    console.log('Data loaded');
+  } catch (error) {
+    console.error('Error loading data:', error);
+    this.appStore.isReady = false;
+  }
+}
+
     //פונקציה המחזירה נתונים כל פעם 180 רשומות כל עוד חוזרים נתונים
     loadaALLDataByCount180(numRows) {       
       console.log('starALLDataByFilter' + numRows + ' ' +Date());    
@@ -361,7 +362,7 @@ export class RootService {
     }
     async loadCountEmpSum() {     
       try {
-        this.recaptchaV3Service.execute('importantAction')
+        this.recaptchaService.execute('importantAction')
       .subscribe((token: string) => {
         this.getData('countEmpSum',token).subscribe((data: any) => { console.log(data);
         if ( data == '405' )  { this.appStore.isReady = false; return; }     
@@ -392,7 +393,7 @@ export class RootService {
       }
        loadAcademicPrcntData() : any{
         try {
-          this.recaptchaV3Service.execute('importantAction')
+          this.recaptchaService.execute('importantAction')
           .subscribe((token: string) => {
             this.getData('academicPrcntData',token).subscribe((data: any) => { 
               console.log(data);
@@ -421,7 +422,7 @@ export class RootService {
        }
         async loadFilterAnafAllData() {
           try {
-         this.recaptchaV3Service.execute('importantAction')
+         this.recaptchaService.execute('importantAction')
             .subscribe((token: string) => {
               this.getData('anaf',token).subscribe((data: any) => { 
                   if ( data == '405' )  { this.appStore.isReady = false; return; }      
@@ -443,7 +444,7 @@ export class RootService {
 
   async loadaHomeSumAllData() {
     try {
-      this.recaptchaV3Service.execute('importantAction')
+      this.recaptchaService.execute('importantAction')
       .subscribe((token: string) => {
     this.getData('Equality_globaldata_population',token).subscribe((data: any) => {  console.log(data);
       if ( data == '405' )  { this.appStore.isReady = false; return; }            
@@ -463,7 +464,7 @@ export class RootService {
 }
   async loadaHomeSumData() {
     try { 
-      this.recaptchaV3Service.execute('importantAction')
+      this.recaptchaService.execute('importantAction')
       .subscribe((token: string) => {
 
     this.getData('Equality_globaldata_academic',token).subscribe((data: any) => { console.log("kkkkkkkkkk",data);
@@ -487,7 +488,7 @@ export class RootService {
 }
   async loadHomePageData() {
    try { 
-    this.recaptchaV3Service.execute('importantAction')
+    this.recaptchaService.execute('importantAction')
     .subscribe((token: string) => {  
     this.getData('Equality_globaldata',token).subscribe((data: any) => {  console.log(data);
       if ( data == '405' )  { this.appStore.isReady = false; return; }            
@@ -513,35 +514,34 @@ export class RootService {
    } catch (error) {
     }
  }
- loadDataCaptchaV3(){
- if(this.appStore.factAll===null){
-  this.recaptchaV3Service.execute('importantAction')
-  .subscribe((token: string) => {
-    console.log(`Token [${token}] generated`);
-    if(token === null || token === undefined){
-     // res.status(201).send({success: false, message: "Token is empty or invalid"})
-      console.log("token empty");
-      this.appStore.isReady = false; return;
-     // return console.log("token empty");
-    }
-    else {      
-    const response = grecaptcha.getResponse;
-    console.log(grecaptcha);
-    if(response.length == 0){//reCaptcha not verified
-      this.appStore.isReady = false; return;
-    } 
-    else {
-        this.appStore.factAll= new Array<factData>();  
-        this.appStore.givunGroupFilterData = new Array<FilterData>();      
-        this.loadALLDataByFilter(1,'נשים');
-        this.loadALLDataByFilter(2,'ערבים וערביות');
-        this.loadALLDataByFilter(3,'יוצאי ויוצאות אתיופיה');
-        this.loadALLDataByFilter(4,'חרדים וחרדיות');
-        this.loadALLDataByFilter(5,'בני ובנות 45 ומעלה'); 
-        this.loadALLDataByFilter(-1,'לא קבוצת גיוון');      
-      }}});
-      }
+ loadDataCaptchaV3() {
+  if (this.appStore.factAll === null) {
+    this.recaptchaService.execute('importantAction')
+      .subscribe({
+        next: (token: string) => {
+          if (!token) {
+            console.log('Recaptcha token is missing');
+            this.appStore.isReady = false;
+            return;
+          }  
+
+          this.appStore.factAll = new Array<factData>();
+          this.appStore.givunGroupFilterData = new Array<FilterData>();
+
+          this.loadALLDataByFilter(1,'נשים');
+          this.loadALLDataByFilter(2,'ערבים וערביות');
+          this.loadALLDataByFilter(3,'יוצאי ויוצאות אתיופיה');
+          this.loadALLDataByFilter(4,'חרדים וחרדיות');
+          this.loadALLDataByFilter(5,'בני ובנות 45 ומעלה');
+          this.loadALLDataByFilter(-1,'לא קבוצת גיוון');
+        },
+        error: () => {
+          this.appStore.isReady = false;
+        }
+      });
+  }
 }
+
 loadSselect(){
  
     this.appStore.selectgil=this.appStore.gilFilterData[0]; 

@@ -7,11 +7,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //import { CacheService } from 'ng2-cache';
 import { NgModule, NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
 //import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
-import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from 'ng-recaptcha';
+//import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from 'ng-recaptcha';
+import { providePrimeNG } from 'primeng/config';
+import Lara from '@primeng/themes/lara';
 
 import { AppComponent } from './app.component';
 import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
-import { AlertModule } from 'ngx-bootstrap/alert';
+//import { AlertModule } from 'ngx-bootstrap/alert';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatTooltipModule } from '@angular/material/tooltip';
+
 import { NgxEchartsModule } from 'ngx-echarts';
 import * as echarts from 'echarts';
 import { AppRoutingModule } from './app.routes';
@@ -35,7 +40,7 @@ import { RootService } from './root.service';
 
 import { AngularSvgIconModule } from 'angular-svg-icon';
 //import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import { TooltipModule } from 'ngx-bootstrap/tooltip';
+//import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 import { MatExpansionModule } from '@angular/material/expansion';
 
@@ -121,29 +126,39 @@ export class MyHammerConfig extends HammerGestureConfig {
         bigBarByFilterComponent
     ],
     schemas: [NO_ERRORS_SCHEMA],
-    bootstrap: [AppComponent], imports: [CommonModule,
+    bootstrap: [AppComponent], imports: [
+      
+      
+      CommonModule,
         BrowserModule,
         AppRoutingModule,
-        AlertModule.forRoot(),
+        MatTooltipModule,
+        MatSnackBarModule,
         FormsModule,
         BrowserAnimationsModule, NgxDatatableModule,
         AngularSvgIconModule,
-        TooltipModule.forRoot(),
         MatExpansionModule,
         MatDialogModule,
         MatButtonModule,
-        RecaptchaV3Module,
         ChartModule,
         TableModule,
         InputSwitchModule,
-        //MDBBootstrapModule.forRoot(),
+
+ //RecaptchaV3Module,
+        
         NgxEchartsModule.forRoot({
             echarts: () => import('echarts')
-        })], providers: [
-        {
-            provide: RECAPTCHA_V3_SITE_KEY,
-            useValue: environment.recaptcha.siteKey,
-        },
+        })],
+        providers: [
+          providePrimeNG({
+        theme: {
+            preset: Lara
+        }
+    }),
+        // {
+        //     provide: RECAPTCHA_V3_SITE_KEY,
+        //     useValue: environment.recaptcha.siteKey,
+        // },
         AppService,
         {
             provide: HAMMER_GESTURE_CONFIG,
