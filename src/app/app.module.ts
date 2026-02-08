@@ -10,7 +10,7 @@ import { NgModule, NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
 import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from 'ng-recaptcha';
 
 import { AppComponent } from './app.component';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { AlertModule } from 'ngx-bootstrap/alert';
 import { NgxEchartsModule } from 'ngx-echarts';
 import * as echarts from 'echarts';
@@ -90,8 +90,7 @@ export class MyHammerConfig extends HammerGestureConfig {
 }
 
 
-@NgModule({
-    declarations: [
+@NgModule({ declarations: [
         AppComponent,
         MillionPipe,
         report1Component,
@@ -121,11 +120,10 @@ export class MyHammerConfig extends HammerGestureConfig {
         BarByCategoryComponent,
         bigBarByFilterComponent
     ],
-    imports: [
-      CommonModule,
+    schemas: [NO_ERRORS_SCHEMA],
+    bootstrap: [AppComponent], imports: [CommonModule,
         BrowserModule,
         AppRoutingModule,
-        HttpClientModule,
         AlertModule.forRoot(),
         FormsModule,
         BrowserAnimationsModule, NgxDatatableModule,
@@ -134,21 +132,14 @@ export class MyHammerConfig extends HammerGestureConfig {
         MatExpansionModule,
         MatDialogModule,
         MatButtonModule,
-        RecaptchaV3Module, 
+        RecaptchaV3Module,
         ChartModule,
         TableModule,
-        InputSwitchModule,    
-      
+        InputSwitchModule,
         //MDBBootstrapModule.forRoot(),
         NgxEchartsModule.forRoot({
             echarts: () => import('echarts')
-        }),
-        
-        //NgxHighlightWordsModule,
-        
-    ],
-    schemas: [NO_ERRORS_SCHEMA],
-    providers: [
+        })], providers: [
         {
             provide: RECAPTCHA_V3_SITE_KEY,
             useValue: environment.recaptcha.siteKey,
@@ -166,10 +157,7 @@ export class MyHammerConfig extends HammerGestureConfig {
         MillionPipe,
         APP_STORE_PROVIDER,
         RootService,
-        //CacheService,
-        //  { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: true } }
-    ],
-    bootstrap: [AppComponent]
-})
+        provideHttpClient(withInterceptorsFromDi()),
+    ] })
 export class AppModule {
 }

@@ -2,7 +2,7 @@ import { AppState } from './app.state';
 import { Observable } from 'rxjs';
 import { environment } from './../environments/environment';
 import { Injectable , OnInit } from '@angular/core';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 
 

@@ -10,7 +10,7 @@ import { Injectable } from '@angular/core';
 import { AppState, AppStateError, FilterData, factData, homeData, homeSumData, homeSumAllData, FilterStrData, academicPrcnt, DataByGivunGroup, CountEmpSum } from './app.state';
 import {map} from 'rxjs/operators';
 import { Pipe, PipeTransform } from '@angular/core';
-import { HttpClientModule, HttpClient, HttpResponse, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpResponse, HttpHeaders } from '@angular/common/http';
 import { formatNumber } from '@angular/common';
 import { strictEqual } from 'assert';
 import { IfStmt } from '@angular/compiler';
